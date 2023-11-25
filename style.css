@@ -3,7 +3,7 @@
     margin-top: 5%;
     margin: auto;
     max-width: 900px;
-
+    
 
 }
 .kontenti{
@@ -11,4 +11,60 @@
     border: 10px;
     margin:auto;
     padding: 50px 50px;
+    width:100%;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+nav ul{
+    list-style: none;
+    width: 100% ;
+    text-align: right top;
+    padding-right: 60px;
+}
+
+nav ul li{
+    display: inline-block;
+    margin : 10px 20px;
+}
+nav ul li a {
+    text-decoration: none;
+    color:darkslategrey;
+}
+
+.fotot {
+   flex-wrap: wrap;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    height: 300px;
+    position:relative;
+   
+    
+   
+    
+}
+.background-image {
+    width: 170%;
+    height: 150%;
+    border-radius: 50% ;
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    z-index: 1; 
+    transform: translate(-50%, -50%);
+   
+}
+
+.overlay-image {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    z-index: 1; 
+    transform: translate(-50%, -50%);
+   /* This places the airplane image above the background image */
+    /* You can adjust the top, left, and z-index values to position the airplane as you like */
 }
