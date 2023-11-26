@@ -5,25 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Booking Website</title>
 <link rel="stylesheet" type="text/css" href="style.css">
+
 </head>
+<script>
+    function toggleLoginForm() {
+      var loginForm = document.getElementById('loginForm');
+      loginForm.style.display = (loginForm.style.display === 'none') ? 'block' : 'none';
+    }
+</script>
+
 
 <body >
     <div id="Kontinieri">
         <div class="kontenti">
-    <p style="font-size: x-large; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" ><b>Luxury
+    <p id="kontenti" style="font-size: x-large; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" ><b>Luxury
    <br> Heaven</b> </p> <br></p>
    <div>
     <nav>
 
 <div class="nav-links">
-<ul>
-    <li><a href="#"> Home </a> </li>
-    <li><a href="#"> About Us </a> </li>
-    <li><a href="#"> Contact Us </a> </li>
-    <li><a href="#"> Log In </a> </li>
-    <li><a href="#"> Register </a> </li>
+    <p><a href="index.html">Home</a></p>
+    <p><a href="Offers.html" target="_blank">Offers</a></p>
+    <p><a href="#" onclick="toggleLoginForm();">Log in</a></p>
+
+    <div id="loginForm">
+      <h2>Login Form</h2>
+      <form action="your_login_process_script.php" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <input type="submit" value="Login">
+      </form>
+   
+
     
-</ul>
+
+    
+
+
+
+    </div>
     </nav>
 </div>
 </div>
