@@ -7,12 +7,7 @@
 <link rel="stylesheet" type="text/css" href="style.css">
 
 </head>
-<script>
-    function toggleLoginForm(event) {
-      var loginForm = document.getElementById('loginForm');
-      loginForm.style.display = (loginForm.style.display === 'none') ? 'block' : 'none';
-    }
-</script>
+
 
 
 <body >
@@ -26,20 +21,8 @@
 <div class="nav-links">
     <p><a href="index.html">Home</a></p>
     <p><a href="Offers.html" target="_blank">Offers</a></p>
-    <p  ><a href="#" onclick="toggleLoginForm(event);">Log in</a></p>
-
-    <div id="loginForm">
-      <h2>Login Form</h2>
-      <form action="your_login_process_script.php" method="post">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required>
-        <br>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
-        <br>
-        <input type="submit" value="Login">
-      </form>
    
+    <p><a href="login.html" target="_blank">Log In</a></p>
 
     
 
