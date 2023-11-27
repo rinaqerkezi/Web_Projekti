@@ -8,7 +8,7 @@
 
 </head>
 <script>
-    function toggleLoginForm() {
+    function toggleLoginForm(event) {
       var loginForm = document.getElementById('loginForm');
       loginForm.style.display = (loginForm.style.display === 'none') ? 'block' : 'none';
     }
@@ -26,7 +26,7 @@
 <div class="nav-links">
     <p><a href="index.html">Home</a></p>
     <p><a href="Offers.html" target="_blank">Offers</a></p>
-    <p><a href="#" onclick="toggleLoginForm();">Log in</a></p>
+    <p  ><a href="#" onclick="toggleLoginForm(event);">Log in</a></p>
 
     <div id="loginForm">
       <h2>Login Form</h2>
