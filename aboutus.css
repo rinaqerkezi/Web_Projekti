@@ -1,0 +1,162 @@
+*{
+    padding:0 ;
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+    box-sizing: border-box;
+}
+
+.about{
+    width: 100%;
+    padding: 78px 0px;
+    background-color: rgb(255, 255, 255);
+}
+
+.about img{
+    height: auto;
+    width: 420px;
+
+}
+.about-text{
+    width: 550px;
+
+}
+.maini{
+    width: 1130px;
+    max-width: 95%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.about-text h1{
+    color: aliceblue;
+    font-size: 80px;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+}
+.about-text h5{
+    color: aliceblue;
+    font-size: 25px;
+    text-transform: capitalize;
+    margin-bottom: 25px;
+    letter-spacing: 2px;
+}
+
+span{
+    color: rgb(66, 66, 252);
+}
+.about-text p{
+    color: rgb(0, 0, 0);
+    letter-spacing: 1px;
+    line-height: 28px;
+    font-size: 18px;
+    margin-bottom: 45px;
+}
+button{
+   background-color: #d81351;
+   color: aliceblue;
+   text-decoration: none;
+   border: 2px solid transparent;
+   font-weight: bold;
+   padding: 13px 30px;
+   border-radius: 30px;
+   transition: .4s;
+
+
+}
+button:hover{
+    background: transparent;
+    border: 2px solid ;
+    cursor: pointer;
+}
+
+body{
+    width: 100%;
+    background-color: #809faa;
+}
+.title h1{
+  text-align: center;
+  padding-top: 50px;
+  font-size: 42px;
+
+}
+.title h1::after{
+    content: "";
+    height: 4px;
+    width: 230px;
+    background-color: #000;
+    display: block;
+    margin: auto;
+
+}
+
+.services{
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 75px auto;
+    text-align: center;
+}
+.card{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    margin: 0px 20px;
+    padding: 20px 20px;
+    background-color: #efefef;
+    border-radius: 10px;
+    cursor: pointer;
+   
+}
+.card:hover{
+    background-color: #b8d4de;
+    transition: 0.4s ease;
+}
+
+.nav-links{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: self-end;
+}
+
+
+.card .ikona{
+font-size: 35px;
+margin-bottom: 10px;
+}
+.card h2{
+    font-size: 20px;
+    color: #c94f4f;
+    margin-bottom: 20px;
+}
+.card p{
+    font-size: 17px;
+    margin-bottom: 30px;
+    line-height: 1.2;
+    color: #5e5e5e;
+
+}
+
+
+
+@media screen and(max-width: 940px){
+    .services{
+        display: flex;
+        flex-direction: column;
+
+    }
+    .card {
+        width: 85%;
+        display: flex;
+       
+        margin: 20px 0px;
+    }
+  
+}
+
+
+
+
