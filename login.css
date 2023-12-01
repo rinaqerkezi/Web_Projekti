@@ -6,8 +6,11 @@
 }
 
 body{
+    display: flex;
+    width: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background:  #dfe9f5;
-   
+   serif;
 
 }
 
@@ -36,6 +39,12 @@ form input{
     border-radius: 20px;
     background: #e4e4e4;
 
+}
+
+.wrapper{
+    width: 40%;
+    margin: 0 auto;
+    background-color: azure;
 }
 
 button{
