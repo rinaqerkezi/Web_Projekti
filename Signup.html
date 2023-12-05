@@ -3,27 +3,38 @@
       <head>
         <title>Sign Up</title>
         <link rel="stylesheet" href="signup.css" />
+        <script src="ValidoSignUp.js"></script>
         <link
           href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
           rel="stylesheet"
         />
       </head>
       <body>
+        <header>
+          <nav>
+              <ul>
+                  <li><a href="index.html">HOME</a></li>
+                  <li><a href="aboutus.html">ABOUT US</a></li>
+                  <li><a href="login.html">LOG IN</a></li>
+                  <li><a href="offers.html">OFFERS</a></li>
+              </ul>
+          </nav>
+      </header>
         <div class="signup-box">
           <h1>Sign Up</h1>
           
           <form>
             <label>First Name</label>
-            <input type="text" placeholder="" />
+            <input type="text" id="emri" size="15" />
             <label>Last Name</label>
-            <input type="text" placeholder="" />
+            <input type="text" id="mbiemri" size="15" />
             <label>Email</label>
-            <input type="email" placeholder="" />
+            <input type="email" id="email" size="15"/>
             <label>Password</label>
-            <input type="password" placeholder="" />
+            <input type="password" id="passwordi" size="15" />
             <label>Confirm Password</label>
-            <input type="password" placeholder="" />
-            <input type="button" value="Submit" />
+            <input type="password" id="confirm" size="15" />
+            <input type="button" value="Submit" id="submit" size="15"/>
           </form>
           <p>
             By clicking the Sign Up button,you agree to our <br />
