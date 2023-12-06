@@ -5,16 +5,47 @@
     font-family: "Poppins",sans-serif;
 }
 
-body{
-    display: flex;
-    width: 100%;
+body {
+    margin: 0;
+    padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background:  #dfe9f5;
-   serif;
+}
+header{
+    background-color: rgb(17, 107, 143);
+    
+    padding: 10px 20px;
+    }
+    nav{
+        display: flex;
+        justify-content: flex-end;
+      }
 
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
+nav li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+nav  a:hover{
+    color:blue;
+  }
+
 .wrapper{
+    
+    justify-content: center;
     width: 330px;
     padding: 2rem 1rem;
     margin: 50px auto;
