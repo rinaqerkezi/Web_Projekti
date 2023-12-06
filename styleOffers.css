@@ -85,7 +85,7 @@ p {
 	justify-content: space-between;
 	align-items: center;
 	align-content: space-evenly;
-    background-image: linear-gradient(rgba(44, 189, 228, 0.7), rgba(43, 14, 121, 0.7));
+    background-image: white ;
     overflow: hidden;
     width: 100vw;
   height: 100vh;
