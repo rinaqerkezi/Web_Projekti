@@ -406,6 +406,8 @@ footer p{
     background: rgb(77, 207, 212);
 }
 
+
+
 .copyRightText{
     width: 100%;
     background: #181818;
@@ -476,7 +478,7 @@ footer p{
 
     }
     footer .container{
-        flex-direction: column;
+        flex-direction: row;
     }
     footer .container .sec{
         margin-right: 0;
