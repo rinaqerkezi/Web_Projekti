@@ -15,6 +15,22 @@ header{
         justify-content: space-between;
         
     }
+
+    .nav-links nav {
+        display: flex;
+        justify-content: space-between;
+        list-style: none;
+        padding-top: 10px;
+      }
+      
+      .nav-links nav li {
+        display: inline-flex;
+        align-items: end;
+        justify-content: space-evenly;
+        margin-right: 20px;
+        padding-top: 10px;
+        list-style: none;
+      }
     
     .nav-links img{
        display: flex;
@@ -27,33 +43,21 @@ header{
         padding-left: 0;
       
     }
-   
-    nav-links ul{
-        display: flex;
-       
-        justify-content: space-between;
-        list-style: none;
-       
-        padding-top: 10px;
-      
+    .nav-links nav a {
+        text-decoration: none; 
+        color: #ffffff;
+        font-weight: bold;
+        font-size: 18px; 
+        transition: color 0.3s; 
       }
+      
+      .nav-links nav a:hover {
+        color: #1d44f9; 
+      }
+   
 
   
-      nav-links li{
-      
-       
-        display: flex;
-        align-items: end;
-        justify-content: space-evenly;
-        margin-left: 20px;
-        padding-top: 10px;
-       
-      }
-    
-     .nav-links a :hover{
-        color: #1d44f9;
-     }
-
+   
 
 
 .about{
@@ -283,18 +287,39 @@ margin-bottom: 10px;
         text-align: center;
         margin-top: 40px;
     }
-    .nav-links img{
-        display: flex;
-        width: 55%;
+    .nav-links img {
+        width: 100%; 
         height: auto;
     }
-.about.main img{
-    width: 85%;
-   height: auto;
-   display:flex ;
-   margin: 20px 0px;
+    
+    .about.main img {
+        width: 100%; 
+        height: auto;
+        display: flex;
+        margin: 20px 0px;
+    }
+    .btn button:hover {
+        background-color: #1d44f9;
+        color: aliceblue;
+        transition: 0.3s;
+        cursor: pointer;
+    }
 
-}
+    .nav-links ul {
+        display: flex;
+        justify-content: space-between;
+        list-style: none;
+        padding-top: 10px;
+    }
+    
+    .nav-links li {
+        display: inline-flex;
+        align-items: end;
+        justify-content: space-evenly;
+        margin-right: 20px;
+        padding-top: 10px;
+        list-style: none;
+    }
   
 }
 
