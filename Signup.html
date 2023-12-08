@@ -25,18 +25,26 @@
         <div class="signup-box">
           <h1>Sign Up</h1>
           
-          <form>
-            <label>First Name</label>
-            <input type="text" id="emri" size="15" />
+          <form onsubmit="validateForm()">
+            <label for="emri" title="Enter your first name" >First Name</label>
+            <input type="text" id="emri" name="emri" placeholder="John" size="15" />
+            <div class="error-message" id="emriError"></div>
             <label>Last Name</label>
             <input type="text" id="mbiemri" size="15" />
+            <div class="error-message" id="mbiemriError"></div>
             <label>Email</label>
             <input type="email" id="email" size="15"/>
+            <div class="error-message" id="EmailError"></div>
             <label>Password</label>
             <input type="password" id="passwordi" size="15" />
+            <div class="error-message" id="PasswordError"></div>
             <label>Confirm Password</label>
             <input type="password" id="confirm" size="15" />
-            <input type="button" value="Submit" id="submit" size="15"/>
+            <div class="error-message" id="ConfirmPassError"></div>
+
+
+            <input type="button" onclick="validateForm()" value="Submit" id="submit" size="15"/>
+           
           </form>
           <p>
             By clicking the Sign Up button,you agree to our <br />
@@ -46,6 +54,7 @@
         <p class="para-2">
           Already have an account? <a href="login.html">Login here</a>
         </p>
-      
+        
+        <script src="ValidoSignUp.js" defer></script>
       </body>
     </html></span>

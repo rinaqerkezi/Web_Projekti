@@ -1,64 +1,52 @@
-document.addEventListener("DOMContentLoaded",
-function(ngjarja) {
-const BtnSubmit = document.getElementById('submit');
+/*document.querySelector('form').addEventListener('submit', validateForm);*/
 
-const validate = (ngjarja) => {
-ngjarja.preventDefault();
+let emriRegex = /^[A-Z][a-z]{3,8}$/;
+let emailRegex = /[a-zA-Z.-_]+@[a-z]+\.[a-z]{2,3}$/;
+let mbiemriRegex = /^[a-zA-Z]{2,}(?:\s[a-zA-Z]{1,}'?-?[a-zA-Z]{2,})?$/;
+let passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,10}$/;
 
+function validateForm() {
+    let emriInput = document.getElementById('emri');
+    let emriError = document.getElementById('emriError');
+    let mbiemriInput = document.getElementById('mbiemri');
+    let mbiemriError = document.getElementById('mbiemriError');
+    let emailInput = document.getElementById('email');
+    let emailError = document.getElementById('EmailError');
+    let passwordInput = document.getElementById('passwordi');
+    let passwordError = document.getElementById('PasswordError');
+    let confPasswordInput = document.getElementById('confirm');
+    let confPasswordError = document.getElementById('ConfirmPassError');
 
-const emrin = document.getElementById('emri');
-const mbiemrin = document.getElementById('mbiemri');
-const emailin = document.getElementById('email');
-const fjalkalimi = document.getElementById('passwordi');
-const confirm = document.getElementById('confirm');
-if (emri.value === "") {
-alert("Ju lutem shtoni emrin.");
-emri.focus();
-return false;
+    emriError.innerText = '';
+    mbiemriError.innerText = '';
+    emailError.innerText = '';
+    passwordError.innerText = '';
+    confPasswordError.innerText = '';
+
+    if (!emriRegex.test(emriInput.value)) {
+        emriError.innerText = 'Invalid name';
+        return;
+    }
+
+     if (!mbiemriRegex.test(mbiemriInput.value)) {
+        mbiemriError.innerText = 'Invalid last name';
+        return;
+    }
+
+     if (!emailRegex.test(emailInput.value)) {
+        emailError.innerText = 'Invalid email';
+        return;
+    }
+
+    if (!passwordRegex.test(passwordInput.value)) {
+        passwordError.innerText = 'Invalid password';
+        return;
+    }
+
+    if (passwordInput.value !== confPasswordInput.value) {
+        confPasswordError.innerText = 'Passwords do not match';
+        return;
+    }
+
+    alert('Form submitted successfully!');
 }
-if (mbiemri.value === "") {
-    alert("Ju lutem shtoni emrin.");
-    mbiemri.focus();
-    return false;
-    }
-
-
-if (emailin.value === "") {
-alert("Ju lutem shtoni emailin.");
-emailin.focus();
-return false;
-}
-if (fjalkalimi.value === "") {
-    alert("Ju lutem shtoni Fjalkalimin.");
-    fjalkalimi.focus();
-    return false;
-    }
-    if (confirm.value === "") {
-        alert("Ju lutem shtoni Konfirmimin.");
-        confirm.focus();
-        return false;
-        }
-
-
-    }
-
-}
-
-if (!emailValid(emailin.value)) {
-    alert("Ju lutem te shtoni email'in valid.");
-    emailin.focus();
-    return false;
-    }
-    return true; // mund te dergohet te serveri
-    const emailValid = (email) => {
-    const emailRegex = /^([A-Za-z0-9_\-.])+@([A-Za-z0-9_\-
-    .])+\.([A-Za-z]{2,4})$/;
-    return emailRegex.test(email.toLowerCase());
-    }
-    BtnSubmit.addEventListener('click', validate);
-    });
-    
-
-
-    
-    
