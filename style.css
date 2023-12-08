@@ -4,7 +4,7 @@
     margin: auto;
     max-width: 2000px;
     
-m
+
 }
 
 
@@ -119,4 +119,146 @@ nav  a {
 .text h4{
   position: relative;
   z-index:10;
+}
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 20px;
+    background: #517e92;
+}
+
+footer .container .sec{
+    margin-right: 30px;
+}
+
+footer .container .sec.aboutus{
+    
+    width: 30%;
+}
+footer .container .sec.aboutus ul{
+    display: inline-block;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .container .sec.aboutus h2{
+    position: relative;
+    color: #000000;
+    font-weight: 500;
+    margin-bottom: 15px;
+
+
+}
+
+footer .container .sec.aboutus h2:before{
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #bdd5e3;
+    padding: 20px;
+
+background: rgb(48, 127, 200);
+
+}
+footer p{
+    color:#999 ;
+    
+}
+
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.sec.aboutus {
+    position: relative;
+    padding: 10px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    margin-right: 10px;
+
+}
+
+.secquicklinks {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; 
+    justify-content: space-evenly;
+    text-align: center;
+    margin-right: 50%; 
+}
+
+
+
+
+.secquicklinks h2 {
+    position: relative;
+    color: #0e0808;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+.secquicklinks ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.secquicklinks ul li {
+    margin-bottom: 10px;
+}
+
+.secquicklinks ul li a {
+    color: #999;
+    text-decoration: none;
+}
+
+.secquicklinks ul li a:hover {
+    color: #fff;
+}
+
+
+
+.sci {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+
+.sci li{
+    list-style: none;
+
+}
+
+.sci li a{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    text-decoration: none;
+    border-radius: 4px;
+
+}
+
+.sci li a:hover{
+    background: rgb(77, 207, 212);
+}
+
+
+
+.copyRightText{
+    width: 100%;
+    background: #181818;
+    padding: 8px 100px;
+    text-align: center;
+    color: #999;
+
 }
