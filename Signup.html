@@ -1,11 +1,11 @@
 <span style="font-family: verdana, geneva, sans-serif;">
-  <!DOCTYPE html>
+<!DOCTYPE html>
   <html lang="en">
 
   <head>
     <title>Sign Up</title>
     <link rel="stylesheet" href="signup.css" />
-    <script src="ValidoSignUp.js"></script>
+   <script src="ValidoSignUp.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet" />
   </head>
 
@@ -25,7 +25,7 @@
     <div class="signup-box">
       <h1>Sign Up</h1>
 
-      <form onsubmit="validateForm()">
+      <form id="signupForm" onsubmit= "validateForm(event)">
         <label for="emri" title="Enter your first name">First Name:</label>
         <input type="text" id="emri" name="emri" placeholder="John" size="15" />
         <div class="error-message" id="emriError"></div>
@@ -54,11 +54,13 @@
         <div class="error-message" id="PhoneNumberError"></div>
 
 
-        <input type="button" onclick="validateForm()" value="Submit" id="submit" size="15" />
+        <button type="submit" id="submit" size="15">Submit</button>
 
       </form>
       <p>
+        <br>
         By clicking the Sign Up button,you agree to our <br />
+        
         <a href="#">Terms and Condition</a> and <a href="#">Policy Privacy</a>
       </p>
     </div>
@@ -66,7 +68,7 @@
       Already have an account? <a href="login.html">Login here</a>
     </p>
 
-    <script src="ValidoSignUp.js" defer></script>
+    
   </body>
 
   </html>

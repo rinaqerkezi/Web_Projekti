@@ -1,6 +1,4 @@
 *{
-    padding: 0;
-    margin: 0;
     box-sizing: border-box;
 }
 .kontinieri {
@@ -9,10 +7,12 @@
     background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(images/background.jpg);
     background-position: center;
     background-size:cover;
-    padding-left: 0%;
-    padding-top: 0%;
+    padding-left: 5%;
+    padding-top: 5%;
     box-sizing: border-box;
     min-width: 300px;
+    overflow: hidden;
+    word-wrap: break-word;
 
 }
 
@@ -20,7 +20,7 @@
     height: 12%;
     display: flex;
     align-items: center;
-    padding: 0 20px;
+    padding: 0 5%;
     
 }
 
@@ -38,13 +38,13 @@ nav {
 nav ul li {
     list-style: none;
     display: inline-block;
-    margin-left: 60px;
+    margin-left: 5vh;
 }
 
 nav ul li a {
     text-decoration: none;
     color: beige;
-    font-size: 13px;
+    font-size: 5vh;
 }
 
 /*.row {
@@ -59,23 +59,27 @@ nav ul li a {
     padding-top: 50px;
     max-width: 800px;
     width:100%;
+    word-wrap: break-word;
+
    
 }
 
- h1, p {
-    font-size: 1.5rem;
+ h1 {
+    font-size: 5vh;
     color: beige;
     font-size: 80px;
     margin-bottom: 15px;
+    word-wrap: break-word;
     
 }
+
 
 button{
     background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(images/background.jpg);
     color:beige;
     border-color: beige;
     font-weight: bold;
-    padding: 13px 30px;
+    padding:  1.5vh 3vh;
     border-radius: 20px;
     transition: .3s;
     
@@ -88,8 +92,10 @@ button:hover{
 }
 
 p {
-    font-size: 20px;
+    font-size: 4vh;
     color: beige;
+    margin-bottom: 10px;
+    word-wrap: break-word;
 }
  
 
@@ -178,12 +184,195 @@ p {
 @media (max-width:768px){
     .container{
         padding:20px ;
+        word-wrap: break-word;
+
     }
     .kontinieri{
         padding:20px ;
+        
     }
    .col{
-    max-zoom: 150%;
+    max-zoom: 100%;
+    word-wrap: break-word;
   } 
+    .h1 {
+        font-size: 5vh;
+        word-wrap: break-word;
+
+    }
+    p{
+        font-size: 4vh;
+        word-wrap: break-word;
+    }
+}
+
+
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 20px;
+    background: #517e92;
+}
+
+footer .containerr .sec {
+    margin-right: 30px;
+}
+
+footer .containerr .sec.aboutus {
+    width: 30%;
+}
+
+footer .containerr .sec.aboutus ul {
+    display: inline;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .containerr .sec.aboutus h2 {
+    position: relative;
+    color: #000000;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+footer .containerr .sec.aboutus h2:before {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #bdd5e3;
+    padding: 20px;
+    background: rgb(48, 127, 200);
+}
+
+
+
+.containerr {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 20%;
+}
+
+.sec.aboutus {
+    position: relative;
+    padding: 10px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.secquicklinks {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-evenly;
+    text-align: center;
+ 
+}
+
+.secquicklinks h2 {
+    position: relative;
+    color: #0e0808;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.secquicklinks ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.secquicklinks ul li {
+    margin-bottom: 10px;
+  
+}
+
+.secquicklinks ul li a {
+    color: #999;
+    text-decoration: none;
+}
+
+.secquicklinks ul li a:hover {
+    color: #fff;
+}
+
+.sci {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
     
+}
+
+.sci li {
+    list-style: none;
+}
+
+.sci li a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.sci li a:hover {
+    background: rgb(77, 207, 212);
+}
+
+footer .containerr {
+    
+margin-right: 45%;
+position: relative;
+    
+}
+
+footer .containerr .sec.contact {
+    
+    position: relative;
+    margin-left: 20px;
+   
+ 
+    
+}
+
+
+
+.copyRightText{
+    width: 100%;
+    background: #181818;
+    padding: 8px 100px;
+    text-align: center;
+    color: #999;
+
+}
+
+
+@media screen and(max-width: 940px){
+    footer{
+        padding: 30px;s
+
+    }
+    footer .containerr{
+        flex-direction: row;
+    }
+    footer .containerr .sec{
+        margin-right: 0;
+        margin-bottom: 40px;
+
+    }
+    footer .containerr .sec.aboutus,
+    .secquicklinks,
+    .contact{
+        width: 100%;
+    }
+    .copyRightText{
+        padding: 8px 40px;
+    }
 }
