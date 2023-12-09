@@ -3,7 +3,7 @@
     margin: 0;
     box-sizing: border-box;
 }
-.container {
+.kontinieri {
     width: 100%;
     height: 100vh;
     background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(images/background.jpg);
@@ -47,12 +47,12 @@ nav ul li a {
     font-size: 13px;
 }
 
-.row {
+/*.row {
     display: flex;
     height: 88%;
     
 
-}
+}*/
 
 .col {
     flex: 1;
@@ -62,7 +62,7 @@ nav ul li a {
    
 }
 
-h1, p {
+ h1, p {
     font-size: 1.5rem;
     color: beige;
     font-size: 80px;
@@ -92,92 +92,98 @@ p {
     color: beige;
 }
  
-.flex-container {
-    display: flex;
-	
-	flex-wrap: wrap;
-	justify-content: space-evenly;
-	align-items: center;
-	align-content: space-evenly;
-    background-image: white ;
-    overflow: hidden;
-    width: 100vw;
-  height: 100vh;
-  
-    
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin:0; padding:0;
+    box-sizing:border-box;
+    outline: none; border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
 }
 
 
-.flex-item {
-    flex: 1;
-    margin: 5px;
-    border: 1px solid #ddd;
-    padding: 10px;
-    text-align:center;
-    position: relative;
-    max-width: 100%;
-    word-wrap: break-word;
-    font-size: 1.2em;
-    line-height: 1.5;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    box-sizing: border-box;
-   
+.container{
+    background:whitesmoke ;
+    padding:15px 9% ;
+    padding-bottom: 100px;
+}
+
+.container .heading{
+    text-align: center;
+    padding-bottom: 15px;
+    color:rgb(17, 107, 143);
+    text-shadow: 0 5px 10px rgba(0,0,0,.2);
+    font-size: 50px;
+
+}
+
+.container  .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(270px , 1fr));
+    gap:15px;
     
 }
 
-.flex-item img {
-    max-width: 100%;
-    height:100%;
-    object-fit:cover;
-   
-    
-    
-}
-.flex-item p {
-    margin-top: 10px; 
+.container .box-container .box {
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    border-radius: 5px;
+    background: white;
+    text-align: center;
+    padding: 30px 20px;
+
 }
 
-@media screen and (max-width: 940px) {
-    body {
-     display: flex;
-     height: auto;
-     margin: 20px 0;
-     padding: 60px 0;
-     text-align: center;
-     flex-direction: column;
+.container .box-container.box img {
+    height:80px;
+    object-fit: cover;
+    
+}
+.container .box-container .box h3{
+    color: grey;
+    font-size: 22px;
+    padding: 10px 0;
+}
+
+.container .box-container .box p{
+    color:grey;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+
+.container .box-container .box .btn{
+    margin-top:10px;
+    display: inline-block;
+    background:#333;
+    color:white;
+    font-size:17px;
+    border-radius: 5px;
+    padding: 8px 25px;
+}
+
+.container .box-container .box .btn:hover{
+    letter-spacing: 1px;
+}
+
+.container .box-container .box .btn:hover{
+    box-sizing: 0 10px 15px rgba(0,0,0,0.3);
+    transform: scale(1.03);
+}
+
+@media (max-width:768px){
+    .container{
+        padding:20px ;
     }
- 
-    .col {
-     padding: 0; 
+    .kontinieri{
+        padding:20px ;
     }
- 
-    .row {
-     margin: 20px;
-     min-height: auto;
-     display: flex;
-    }
- 
-    h1, p {
-     font-size: 1.2rem;
-    }
- 
-    button {
-     padding: 10px 20px;
-    }
- 
-    .flex-container {
-     flex: 1;
-     margin: 5px;
-     padding: 10px;
-     max-width: 100%;
-    }
- 
-    .flex-item {
-     flex: 1;
-     margin: 5px;
-     padding: 10px;
-     max-width: 100%;
-    }
- }
- 
+   .col{
+    max-zoom: 150%;
+  } 
+    
+}
