@@ -8,6 +8,8 @@
 }
 
 
+
+
 body {
     margin: 0;
     padding: 0;
@@ -20,11 +22,18 @@ header {
     padding: 10px 20px;
 }
 
+
 nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
 }
+.kontenti h2{
+    font-size: x-large;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: italic;
+}
+
 
 nav li {
     display: inline-block;
@@ -121,6 +130,80 @@ nav  a {
   z-index:10;
 }
 
+.classes {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #e9fac4;
+   border-radius: 100px;
+   
+  }
+
+.classes .loc h1{
+   text-shadow: #333;
+   letter-spacing: normal;
+   font-family: 'Times New Roman', Times, serif;
+}
+
+.classes .travelers h1{
+    text-shadow: #333;
+   letter-spacing: normal;
+   font-family: 'Times New Roman', Times, serif;
+}
+.classes .check h1{
+    text-shadow: #333;
+   letter-spacing: normal;
+   font-family: 'Times New Roman', Times, serif;
+}
+
+.classes .checko h1{
+    text-shadow: #333;
+   letter-spacing: normal;
+   font-family: 'Times New Roman', Times, serif;
+}
+
+.f {
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #b1b1b0;
+    border-radius: 30px;
+    padding: 60px;
+}
+
+.f h5 {
+    margin-bottom: 10px;
+    text-align: center;
+    color: rgb(138, 89, 25);
+    font-size: x-large;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.f ul {
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+}
+
+
+.f li {
+    display: inline-block; 
+    margin-right: 5px; 
+}
+
+
+.f h1 {
+    color: #333;
+    font-size: large;
+}
+
+
+
+
+
+
+
 footer {
     display: flex;
     justify-content: space-around;
@@ -211,6 +294,7 @@ footer .container .sec.aboutus h2:before {
 }
 
 .sci {
+    list-style: none;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -268,7 +352,7 @@ footer .container .sec.contact {
 
 @media screen and(max-width: 940px){
     footer{
-        padding: 30px;
+        padding: 30px;s
 
     }
     footer .container{
