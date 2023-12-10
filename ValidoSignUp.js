@@ -1,67 +1,153 @@
-/*document.querySelector('form').addEventListener('submit', validateForm);*/
 
-let emriRegex = /^[A-Z][a-z]{3,8}$/;
-let emailRegex = /[a-zA-Z.-_]+@[a-z]+\.[a-z]{2,3}$/;
-let mbiemriRegex = /^[a-zA-Z]{2,}(?:\s[a-zA-Z]{1,}'?-?[a-zA-Z]{2,})?$/;
-let passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,10}$/;
-let phoneNumberRegex = /^\d{3}-\d{3}-\d{3}$/;
 
-function validateForm() {
+document.addEventListener("DOMContentLoaded", function () {
+  const signupForm = document.getElementById('signupForm');
+
+  const validateForm = (event) => {
+    event.preventDefault();
+
+
+    resetErrorMessages();
+
+    let emriRegex = /^[A-Z][a-z]{2,8}$/;
+    let mbiemriRegex = /^[a-zA-Z]{2,}(?:\s[a-zA-Z]{1,}'?-?[a-zA-Z]{2,})?$/;
+    let emailRegex = /[a-zA-Z.-_]+@[a-z]+\.[a-z]{2,3}$/;
+    let passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,10}$/;
+    let phoneNumberRegex = /^\d{3}-\d{3}-\d{3}$/;
+
     let emriInput = document.getElementById('emri');
     let emriError = document.getElementById('emriError');
     let mbiemriInput = document.getElementById('mbiemri');
     let mbiemriError = document.getElementById('mbiemriError');
     let emailInput = document.getElementById('email');
-    let emailError = document.getElementById('EmailError');
+    let emailError = document.getElementById('emailError');
     let passwordInput = document.getElementById('passwordi');
-    let passwordError = document.getElementById('PasswordError');
-    let confPasswordInput = document.getElementById('confirm');
-    let confPasswordError = document.getElementById('ConfirmPassError');
-    let phoneNumberInput = document.getElementById('phoneNumber');
-    let phoneNumberError = document.getElementById('PhoneNumberError');
+    let passwordError = document.getElementById('passwordError');
+    let confirmPassInput = document.getElementById('confirm');
+    let confirmPassError = document.getElementById('confirmPassError');
     let genderSelect = document.getElementById('gender');
-    let genderError = document.getElementById('GenderError');
+    let genderError = document.getElementById('genderError');
+    let phoneNumberInput = document.getElementById('phoneNumber');
+    let phoneNumberError = document.getElementById('phoneNumberError');
 
-    emriError.innerText = '';
-    mbiemriError.innerText = '';
-    emailError.innerText = '';
-    passwordError.innerText = '';
-    confPasswordError.innerText = '';
-    phoneNumberError.innerText = '';
-    genderError.innerText = '';
+    // Validate First Name
+
+    if (emriInput.value.trim() === "") {
+      displayError(emriError, 'Please enter your first name.');
+      emriInput.focus();
+      return false;
+    }
 
     if (!emriRegex.test(emriInput.value)) {
-        emriError.innerText = 'Invalid name';
-        return;
+      displayError(emriError, 'Invalid first name format.');
+      emriInput.focus();
+      return false;
     }
 
-     if (!mbiemriRegex.test(mbiemriInput.value)) {
-        mbiemriError.innerText = 'Invalid last name';
-        return;
+
+    // Validate Last Name
+    if (mbiemriInput.value.trim() === "") {
+      displayError(mbiemriError, 'Please enter your last name.');
+      mbiemriInput.focus();
+      return false;
+    }
+    if (!mbiemriRegex.test(mbiemriInput.value)) {
+      displayError(mbiemriError, 'Invalid last name format.');
+      mbiemriInput.focus();
+      return false;
     }
 
-     if (!emailRegex.test(emailInput.value)) {
-        emailError.innerText = 'Invalid email';
-        return;
+    // Validate Email
+    if (emailInput.value.trim() === "") {
+      displayError(emailError, 'Please enter your email.');
+      emailInput.focus();
+      return false;
+    }
+    if (!emailRegex.test(emailInput.value)) {
+      displayError(emailError, 'Invalid email format.');
+      emailInput.focus();
+      return false;
     }
 
+    // Validate Password
+
+    if (passwordInput.value.trim() === "") {
+      displayError(passwordError, 'Please enter your password.');
+      passwordInput.focus();
+      return false;
+    }
     if (!passwordRegex.test(passwordInput.value)) {
-        passwordError.innerText = 'Invalid password';
-        return;
+      displayError(passwordError, 'Invalid password format.');
+      passwordInput.focus();
+      return false;
     }
 
-    if (passwordInput.value !== confPasswordInput.value) {
-        confPasswordError.innerText = 'Passwords do not match';
-        return;
+
+    // Confirm Password
+    if (passwordInput.value !== confirmPassInput.value) {
+      displayError(confirmPassError, 'Passwords do not match.');
+      confirmPassInput.focus();
+      return false;
     }
+
+
+    // Validate Gender
+
+    if (genderSelect.value === '' || genderSelect.value === 'Select') {
+      displayError(genderError, 'Please select a valid gender.');
+      genderSelect.focus();
+      return false;
+    }
+
+
+
+    // Validate Phone Number
+    if (phoneNumberInput.value.trim() === "") {
+      displayError(phoneNumberError, 'Please enter your phone number.');
+      phoneNumberInput.focus();
+      return false;
+    }
+
     if (!phoneNumberRegex.test(phoneNumberInput.value)) {
-        phoneNumberError.innerText = 'Invalid phone number';
-        return;
+      displayError(phoneNumberError, 'Invalid phone number format.');
+      phoneNumberInput.focus();
+      return false;
     }
 
-    if (genderSelect.value === '') {
-        genderError.innerText = 'Please select a gender';
-        return;
+
+    if (phoneNumberInput.value.trim().length < 9) {
+      displayError(phoneNumberError, 'Number must be at least 9 characters.');
+      phoneNumberInput.focus();
+      return false;
+    }
+
+
+
+
+
 
     alert('Form submitted successfully!');
-}
+  };
+
+  const resetErrorMessages = () => {
+
+    document.getElementById('emriError').innerText = '';
+    document.getElementById('mbiemriError').innerText = '';
+    document.getElementById('emailError').innerText = '';
+    document.getElementById('passwordError').innerText = '';
+    document.getElementById('confirmPassError').innerText = '';
+    document.getElementById('genderError').innerText = '';
+    document.getElementById('phoneNumberError').innerText = '';
+  };
+
+
+  const displayError = (element, message) => {
+    element.innerText = message;
+    element.style.color = 'red';
+
+  };
+
+
+
+    signupForm.addEventListener('submit', validateForm);
+  });
