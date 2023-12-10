@@ -351,12 +351,57 @@ footer .container .sec.contact {
 
 
 @media screen and(max-width: 940px){
+    body{
+        width: 85%;
+        height: auto;
+        padding: 60px 0;
+        }
+        .background-image{
+            width: 85%;
+            height: auto;
+        }
+       
+.kontenti{
+    max-width: 600px;
+    margin:auto;
+    padding: 50px 50px;
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding: 10px 0;
+    
+}
+
+        .overlay-image{
+            width: 85%;
+        height: auto;
+        }
+        .fotot{
+            display: inline;
+            height: auto;
+
+        }
+        .nav ul li {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+        }
+
+        .container {
+            display: flex;
+            width: 85%;
+            height: auto;
+            padding: 60px 0;
+        }
+
+
     footer{
-        padding: 30px;s
+        padding: 30px;
 
     }
     footer .container{
-        flex-direction: row;
+        flex-direction: column;
     }
     footer .container .sec{
         margin-right: 0;
