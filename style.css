@@ -322,9 +322,6 @@ footer .container .sec.aboutus h2:before {
     background: rgb(77, 207, 212);
 }
 
-.continier{
-
-}
 footer .container {
     
 margin-right: 45%;
@@ -400,11 +397,11 @@ footer .container .sec.contact {
 
 
     footer{
-        padding: 30px;s
+        padding: 30px;
 
     }
     footer .container{
-        flex-direction: row;
+        flex-direction: column;
     }
     footer .container .sec{
         margin-right: 0;
