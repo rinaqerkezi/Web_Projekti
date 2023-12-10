@@ -145,7 +145,7 @@ document.addEventListener("DOMContentLoaded", function () {
     element.innerText = message;
     element.style.color = 'red';
 
-
+  };
 
 
 
