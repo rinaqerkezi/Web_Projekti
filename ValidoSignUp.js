@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let phoneNumberInput = document.getElementById('phoneNumber');
     let phoneNumberError = document.getElementById('phoneNumberError');
 
-    // Validate First Name
+    
 
     if (emriInput.value.trim() === "") {
       displayError(emriError, 'Please enter your first name.');
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    // Validate Last Name
+    
     if (mbiemriInput.value.trim() === "") {
       displayError(mbiemriError, 'Please enter your last name.');
       mbiemriInput.focus();
@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
       return false;
     }
 
-    // Validate Email
+    
     if (emailInput.value.trim() === "") {
       displayError(emailError, 'Please enter your email.');
       emailInput.focus();
@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
       return false;
     }
 
-    // Validate Password
+   
 
     if (passwordInput.value.trim() === "") {
       displayError(passwordError, 'Please enter your password.');
@@ -83,7 +83,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    // Confirm Password
     if (passwordInput.value !== confirmPassInput.value) {
       displayError(confirmPassError, 'Passwords do not match.');
       confirmPassInput.focus();
@@ -91,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    // Validate Gender
+  
 
     if (genderSelect.value === '' || genderSelect.value === 'Select') {
       displayError(genderError, 'Please select a valid gender.');
@@ -101,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-    // Validate Phone Number
+    
     if (phoneNumberInput.value.trim() === "") {
       displayError(phoneNumberError, 'Please enter your phone number.');
       phoneNumberInput.focus();
