@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const validateForm = (event) => {
     event.preventDefault();
 
-    // Reset all error messages before validating
+
     resetErrorMessages();
 
     let emriRegex = /^[A-Z][a-z]{2,8}$/;
@@ -31,26 +31,26 @@ document.addEventListener("DOMContentLoaded", function () {
     let phoneNumberError = document.getElementById('phoneNumberError');
 
     // Validate First Name
-   // Validate First Name
-if (emriInput.value.trim() === "") {
-displayError(emriError, 'Please enter your first name.');
-emriInput.focus();
-return false;
-}
 
-if (!emriRegex.test(emriInput.value)) {
-displayError(emriError, 'Invalid first name format.');
-emriInput.focus();
-return false;
-}
+    if (emriInput.value.trim() === "") {
+      displayError(emriError, 'Please enter your first name.');
+      emriInput.focus();
+      return false;
+    }
+
+    if (!emriRegex.test(emriInput.value)) {
+      displayError(emriError, 'Invalid first name format.');
+      emriInput.focus();
+      return false;
+    }
 
 
     // Validate Last Name
     if (mbiemriInput.value.trim() === "") {
-        displayError(mbiemriError, 'Please enter your first name.');
-        mbiemriInput.focus();
-        return false;
-      }
+      displayError(mbiemriError, 'Please enter your last name.');
+      mbiemriInput.focus();
+      return false;
+    }
     if (!mbiemriRegex.test(mbiemriInput.value)) {
       displayError(mbiemriError, 'Invalid last name format.');
       mbiemriInput.focus();
@@ -59,10 +59,10 @@ return false;
 
     // Validate Email
     if (emailInput.value.trim() === "") {
-        displayError(emailError, 'Please enter your email.');
-        emailInput.focus();
-        return false;
-      }
+      displayError(emailError, 'Please enter your email.');
+      emailInput.focus();
+      return false;
+    }
     if (!emailRegex.test(emailInput.value)) {
       displayError(emailError, 'Invalid email format.');
       emailInput.focus();
@@ -70,17 +70,17 @@ return false;
     }
 
     // Validate Password
-    // Validate Password
-if (passwordInput.value.trim() === "") {
-displayError(passwordError, 'Please enter your password.');
-passwordInput.focus();
-return false;
-}
-if (!passwordRegex.test(passwordInput.value)) {
-displayError(passwordError, 'Invalid password format.');
-passwordInput.focus();  // <-- Correct focus here
-return false;
-}
+
+    if (passwordInput.value.trim() === "") {
+      displayError(passwordError, 'Please enter your password.');
+      passwordInput.focus();
+      return false;
+    }
+    if (!passwordRegex.test(passwordInput.value)) {
+      displayError(passwordError, 'Invalid password format.');
+      passwordInput.focus();
+      return false;
+    }
 
 
     // Confirm Password
@@ -90,26 +90,47 @@ return false;
       return false;
     }
 
+
+    // Validate Gender
+
+    if (genderSelect.value === '' || genderSelect.value === 'Select') {
+      displayError(genderError, 'Please select a valid gender.');
+      genderSelect.focus();
+      return false;
+    }
+
+
+
     // Validate Phone Number
+    if (phoneNumberInput.value.trim() === "") {
+      displayError(phoneNumberError, 'Please enter your phone number.');
+      phoneNumberInput.focus();
+      return false;
+    }
+
     if (!phoneNumberRegex.test(phoneNumberInput.value)) {
       displayError(phoneNumberError, 'Invalid phone number format.');
       phoneNumberInput.focus();
       return false;
     }
 
-    // Validate Gender
-    if (genderSelect.value === '') {
-      displayError(genderError, 'Please select a gender.');
-      genderSelect.focus();
+
+    if (phoneNumberInput.value.trim().length < 9) {
+      displayError(phoneNumberError, 'Number must be at least 9 characters.');
+      phoneNumberInput.focus();
       return false;
     }
 
-    // If all validations pass, form is submitted successfully
+
+
+
+
+
     alert('Form submitted successfully!');
   };
 
   const resetErrorMessages = () => {
-    // Reset error messages for all fields
+
     document.getElementById('emriError').innerText = '';
     document.getElementById('mbiemriError').innerText = '';
     document.getElementById('emailError').innerText = '';
@@ -119,10 +140,14 @@ return false;
     document.getElementById('phoneNumberError').innerText = '';
   };
 
+
   const displayError = (element, message) => {
-    // Display error message for the given element
     element.innerText = message;
-  };
- 
-  signupForm.addEventListener('submit', validateForm);
-});
+    element.style.color = 'red';
+
+
+
+
+
+    signupForm.addEventListener('submit', validateForm);
+  });
