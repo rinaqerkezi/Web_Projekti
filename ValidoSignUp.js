@@ -1,12 +1,17 @@
-document.addEventListener("DOMContentLoaded", function (event) {
+
+
+document.addEventListener("DOMContentLoaded", function () {
   const signupForm = document.getElementById('signupForm');
 
   const validateForm = (event) => {
     event.preventDefault();
 
+    // Reset all error messages before validating
+    resetErrorMessages();
+
     let emriRegex = /^[A-Z][a-z]{2,8}$/;
-    let emailRegex = /[a-zA-Z.-_]+@[a-z]+\.[a-z]{2,3}$/;
     let mbiemriRegex = /^[a-zA-Z]{2,}(?:\s[a-zA-Z]{1,}'?-?[a-zA-Z]{2,})?$/;
+    let emailRegex = /[a-zA-Z.-_]+@[a-z]+\.[a-z]{2,3}$/;
     let passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,10}$/;
     let phoneNumberRegex = /^\d{3}-\d{3}-\d{3}$/;
 
@@ -15,72 +20,109 @@ document.addEventListener("DOMContentLoaded", function (event) {
     let mbiemriInput = document.getElementById('mbiemri');
     let mbiemriError = document.getElementById('mbiemriError');
     let emailInput = document.getElementById('email');
-    let emailError = document.getElementById('EmailError');
+    let emailError = document.getElementById('emailError');
     let passwordInput = document.getElementById('passwordi');
-    let passwordError = document.getElementById('PasswordError');
-    let confPasswordInput = document.getElementById('confirm');
-    let confPasswordError = document.getElementById('ConfirmPassError');
-    let phoneNumberInput = document.getElementById('phoneNumber');
-    let phoneNumberError = document.getElementById('PhoneNumberError');
+    let passwordError = document.getElementById('passwordError');
+    let confirmPassInput = document.getElementById('confirm');
+    let confirmPassError = document.getElementById('confirmPassError');
     let genderSelect = document.getElementById('gender');
-    let genderError = document.getElementById('GenderError');
+    let genderError = document.getElementById('genderError');
+    let phoneNumberInput = document.getElementById('phoneNumber');
+    let phoneNumberError = document.getElementById('phoneNumberError');
 
-    emriError.innerText = '';
-    mbiemriError.innerText = '';
-    emailError.innerText = '';
-    passwordError.innerText = '';
-    confPasswordError.innerText = '';
-    phoneNumberError.innerText = '';
-    genderError.innerText = '';
+    // Validate First Name
+   // Validate First Name
+if (emriInput.value.trim() === "") {
+displayError(emriError, 'Please enter your first name.');
+emriInput.focus();
+return false;
+}
 
-    let isValid = true;
+if (!emriRegex.test(emriInput.value)) {
+displayError(emriError, 'Invalid first name format.');
+emriInput.focus();
+return false;
+}
 
-    if (emriInput.value === "") {
-      alert("Ju lutem shtoni perdoruesin.");
-      emriInput.focus();
+
+    // Validate Last Name
+    if (mbiemriInput.value.trim() === "") {
+        displayError(mbiemriError, 'Please enter your first name.');
+        mbiemriInput.focus();
+        return false;
+      }
+    if (!mbiemriRegex.test(mbiemriInput.value)) {
+      displayError(mbiemriError, 'Invalid last name format.');
+      mbiemriInput.focus();
       return false;
     }
 
-    if (!emriRegex.test(emriInput.value)) {
-      emriError.innerText = 'Invalid name';
-      isValid = false;
-    }
-
-    if (!mbiemriRegex.test(mbiemriInput.value)) {
-      mbiemriError.innerText = 'Invalid last name';
-      isValid = false;
-    }
-
+    // Validate Email
+    if (emailInput.value.trim() === "") {
+        displayError(emailError, 'Please enter your email.');
+        emailInput.focus();
+        return false;
+      }
     if (!emailRegex.test(emailInput.value)) {
-      emailError.innerText = 'Invalid email';
-      isValid = false;
+      displayError(emailError, 'Invalid email format.');
+      emailInput.focus();
+      return false;
     }
 
-    if (!passwordRegex.test(passwordInput.value)) {
-      passwordError.innerText = 'Invalid password';
-      isValid = false;
+    // Validate Password
+    // Validate Password
+if (passwordInput.value.trim() === "") {
+displayError(passwordError, 'Please enter your password.');
+passwordInput.focus();
+return false;
+}
+if (!passwordRegex.test(passwordInput.value)) {
+displayError(passwordError, 'Invalid password format.');
+passwordInput.focus();  // <-- Correct focus here
+return false;
+}
+
+
+    // Confirm Password
+    if (passwordInput.value !== confirmPassInput.value) {
+      displayError(confirmPassError, 'Passwords do not match.');
+      confirmPassInput.focus();
+      return false;
     }
 
-    if (passwordInput.value !== confPasswordInput.value) {
-      confPasswordError.innerText = 'Passwords do not match';
-      isValid = false;
-    }
-
+    // Validate Phone Number
     if (!phoneNumberRegex.test(phoneNumberInput.value)) {
-      phoneNumberError.innerText = 'Invalid phone number';
-      isValid = false;
+      displayError(phoneNumberError, 'Invalid phone number format.');
+      phoneNumberInput.focus();
+      return false;
     }
 
+    // Validate Gender
     if (genderSelect.value === '') {
-      genderError.innerText = 'Please select a gender';
-      isValid = false;
+      displayError(genderError, 'Please select a gender.');
+      genderSelect.focus();
+      return false;
     }
 
-    if (isValid) {
-      alert('Form submitted successfully!');
-      
-    }
+    // If all validations pass, form is submitted successfully
+    alert('Form submitted successfully!');
   };
 
+  const resetErrorMessages = () => {
+    // Reset error messages for all fields
+    document.getElementById('emriError').innerText = '';
+    document.getElementById('mbiemriError').innerText = '';
+    document.getElementById('emailError').innerText = '';
+    document.getElementById('passwordError').innerText = '';
+    document.getElementById('confirmPassError').innerText = '';
+    document.getElementById('genderError').innerText = '';
+    document.getElementById('phoneNumberError').innerText = '';
+  };
+
+  const displayError = (element, message) => {
+    // Display error message for the given element
+    element.innerText = message;
+  };
+ 
   signupForm.addEventListener('submit', validateForm);
 });
