@@ -6,6 +6,47 @@ body {
     color: #666666;
     font-family: "Montserrat", sans-serif;
   }
+
+
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+#Kontinieri {
+  display: flex;
+justify-content: center;
+}
+
+
+ nav li {
+    display: inline-block;
+    margin-right: 200px;
+}
+
+ nav a {
+  display: flex;
+ align-items: center;
+    text-decoration: none;
+    color: #328ca0;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+nav a:hover {
+    color:rgb(13, 13, 184); 
+}
+
+
+
+
+
+
+
+
+
+
+
   
   .material-icons-outlined {
     vertical-align: middle;
@@ -227,6 +268,61 @@ body {
   ::-webkit-scrollbar-thumb:hover {
     background-color: #a5aaad;
   }
+
+
+  footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 20px;
+    background: #517e92;
+}
+
+footer .container .sec {
+    margin-right: 30px;
+}
+
+footer .container .sec.aboutus {
+    width: 30%;
+}
+
+footer .container .sec.aboutus ul {
+    display: inline;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .container .sec.aboutus h2 {
+    position: relative;
+    color: #000000;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+footer .container .sec.aboutus h2:before {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #bdd5e3;
+    padding: 20px;
+    background: rgb(48, 127, 200);
+}
+
+
+.copyRightText{
+  width: 100%;
+  background: #181818;
+  padding: 8px 100px;
+  text-align: center;
+  color: #999;
+
+}
+
+
+
+
+
+
   
   @media screen and (max-width: 992px) {
     .grid-container {
@@ -248,7 +344,17 @@ body {
     .sidebar-title > span {
       display: inline;
     }
+    .copyRightText{
+      padding: 8px 40px;
   }
+  }
+
+  
+
+  
+
+
+
 
   @media screen and (max-width: 768px) {
     .main-cards {
@@ -262,6 +368,24 @@ body {
       margin-top: 30px;
     }
   }
+
+  footer{
+    padding: 30px;
+
+}
+footer .container{
+    flex-direction: column;
+}
+footer .container .sec{
+    margin-right: 0;
+    margin-bottom: 40px;
+
+}
+footer .container .sec.aboutus,
+.secquicklinks,
+.contact{
+    width: 100%;
+}
   @media screen and (max-width: 576px) {
     .header-left {
       display: none;
