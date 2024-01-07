@@ -48,7 +48,7 @@ const barChartOptions = {
     show: false,
   },
   xaxis: {
-    categories: ['Laptop', 'Phone', 'Monitor', 'Headphones', 'Camera'],
+    categories: ['Economy', 'First class', 'Third class', 'Second class', 'PRIVATE'],
   },
   yaxis: {
     title: {
@@ -72,11 +72,11 @@ const areaChartOptions = {
   series: [
     {
       name: 'Purchase Orders',
-      data: [31, 40, 28, 51, 42, 109, 100],
+      data: [61, 90, 238, 561, 402, 1109, 11100],
     },
     {
       name: 'Sales Orders',
-      data: [11, 32, 45, 32, 34, 52, 41],
+      data: [177, 302, 455, 332, 374, 522, 411],
     },
   ],
   chart: {
