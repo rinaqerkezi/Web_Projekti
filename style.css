@@ -417,3 +417,50 @@ footer .container .sec.contact {
         padding: 8px 40px;
     }
 }
+
+#slider {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI light', Tahoma;
+    max-width: 100%; 
+    margin: 0 auto;
+    overflow: hidden; 
+}
+
+#slider img {
+    width: 100%; 
+    height: auto;
+ }
+
+button {
+    border-radius: 100%;
+    border-style: inherit;
+    width: 40px;
+    height: 40px;
+    font: 10pt;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: rgb(189, 186, 186);
+}
+
+.dots {
+    display: flex;
+    margin-top: 10px;
+}
+
+.dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: gray;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: black;
+}
