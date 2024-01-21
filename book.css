@@ -1,7 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 #Kontinieri{
     background:8px rgb(234, 231, 231);
     margin: auto;
-    max-width: 2000px;
+    max-width: 20000px;
 
 }
 
@@ -21,8 +22,8 @@ nav ul {
     font-size: x-large;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-style: italic;
-}
 
+}
 
 nav li {
     display: inline-flex;
@@ -48,6 +49,7 @@ nav a:hover {
     align-items:center;
     justify-content:center;
     padding: 10px 0;
+    
   
     
 }
@@ -68,8 +70,324 @@ nav a:hover {
     text-align: center;
    
   }
+  .home h1{
+    font-family:'Great Vibes',cursive;
+    font-size: 130px;
+    padding-top: 10%;
+    color: rgba(0, 0, 0, 0.5);
+
+  }
+  
+  .home .content {
+    text-align: left;
+    color: black;
+    margin-top: 7%;
+  }
+  
+  .home .box {
+    background: white;
+    padding: 35px;
+  }
+  .home input {
+    margin-top: 10px;
+  }
+  input {
+    border: none;
+    outline: none;
+  }
+
+  
+button {
+    background: #f4b747;
+    color: white;
+    padding:10px 20px ;
+    outline: none;
+    border: none;
+    border-radius: 30px;
+  }
+
+  button i {
+    margin-left: 20px;
+    font-size: 25px;
+  }
+  
+  
+  .wrapper2 {
+    position: relative;
+    text-align: center;
+  }
+  
+  .wrapper2 .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .wrapper2 .box {
+    box-shadow: 0 0 20px 3px rgb(0 0 0 / 5%);
+    padding: 20px;
+    transition: 0.5s;
+  }
+  
+  .wrapper2 i {
+    margin: 10px 0 15px 0;
+    color: #a87515;
+    font-size: 30px;
+  }
+  
+  .wrapper2 h3 {
+    font-size: 20px;
+    color:rgb(19, 6, 71);
+    font-family:serif;
+  }
+  p{
+    font-family:serif;
+  
+  }
+  .heading h2 {
+    color: #24416B;
+    font-size: 45px;
+    font-family: serif;
+    font-weight: bold;
+    
+  }
+  .heading h5{
+    font-weight: lighter;
+  }
+  .wrapper2 span {
+    padding: 10px;
+    background: #F5E8D1;
+    color: #CC8C18;
+    border-radius: 50%;
+  } 
+  
+  .wrapper2 .box:hover {
+    background: rgb(38, 135, 195);
+    cursor: pointer;
+  }
+  
+  .wrapper2 .box:hover span {
+    background: #fff;
+  }
+  
+  .wrapper2 .box:hover p,
+  .wrapper2 .box:hover h3,
+  .wrapper2 .box:hover i {
+    color: white;
+  }
+  
+  .wrapper2::after {
+    content: '';
+    position: absolute;
+    top: -22%;
+    left: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 75px;
+    width: 100%;
+    z-index: 2;
+  }
+
+  .room {
+    margin-bottom: 50px;
+    position: relative;
+  }
+  .room.wrapper2::after {
+    display: none;
+    top: 105%;
+    background-image: url("line2.png");
+  }
+
+
+  
+.grid2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 30px;
+}
+.room img {
+  width: 100%;
+  height: 100%;
+  margin-left: 20px;
+}
+
+.room h3 {
+  margin: 0;
+  padding: 0;
+}
+.owl-carousel .item {
+  width: 100%;
+  height: 300px; 
+}
+
+.owl-carousel .item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+}
+
+.gallary .item {
+  position: relative;
+  cursor: pointer;
+}
+
+.gallary .overlay i {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  z-index: 1;
+  opacity: 0;
+  font-size: 50px;
+  color: white;
+}
+
+.gallary .overlay {
+  position: absolute;
+  content: '';
+  background: rgba(204, 140, 24, 0.73);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.gallary .item:hover .overlay,
+.gallary .item:hover i {
+  opacity: 1;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+
+footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 20px;
+  background: #c6e0ec;
+}
+
+footer .containerr.sec {
+  margin-right: 30px;
+}
+
+footer .containerr .sec.aboutus {
+  width: 30%;
+}
+
+footer .containerr .sec.aboutus ul {
+  display: inline;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer .containerr .sec.aboutus h2 {
+  position: relative;
+  color: #000000;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+footer .containerr .sec.aboutus h2:before {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #bdd5e3;
+  padding: 20px;
+  background: rgb(48, 127, 200);
+}
 
 
 
+.containerr {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 20%;
+}
 
+.sec.aboutus {
+  position: relative;
+  padding: 10px;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
 
+.secquicklinks {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-evenly;
+  text-align: center;
+
+}
+
+.secquicklinks h2 {
+  position: relative;
+  color: #0e0808;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.secquicklinks ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.secquicklinks ul li {
+  margin-bottom: 10px;
+
+}
+
+.secquicklinks ul li a {
+  color: #999;
+  text-decoration: none;
+}
+
+.secquicklinks ul li a:hover {
+  color: #fff;
+}
+
+.sci {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  
+}
+
+.sci li {
+  list-style: none;
+}
+
+.sci li a {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background: #222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.sci li a:hover {
+  background: rgb(77, 207, 212);
+}
+
+footer .containerr {
+  
+margin-right: 45%;
+position: relative;
+  
+}
+
+footer .containerr .sec.contact {
+  
+  position: relative;
+  margin-left: 20px;
+ 
+
+  
+}
