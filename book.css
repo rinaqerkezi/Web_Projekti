@@ -203,16 +203,7 @@ button {
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 30px;
 }
-.room img {
-  width: 100%;
-  height: 100%;
-  margin-left: 20px;
-}
 
-.room h3 {
-  margin: 0;
-  padding: 0;
-}
 .owl-carousel .item {
   width: 100%;
   height: 300px; 
@@ -450,8 +441,44 @@ footer .containerr .sec.contact {
         height: 100%;
       }
       .room .heading h2 {
-        font-size: 2.5em; /* Adjust font size for smaller screens */
+        font-size: 2.5em; 
       }
      
     }
+    .customer-slider {
+      padding: 10px;
+    }
     
+    .customer-slider .item {
+      background: #f9f9f9;
+      border-radius: 8px;
+      padding: 10px;
+      text-align: center;
+    }
+    
+    .customer-slider .rating {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #FFD700; 
+    }
+    
+    .customer-slider p {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    
+    .customer-info {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .customer-info img {
+      width: 50px; 
+    height: 50px; 
+    border-radius: 50%; 
+    margin-right: 10px;
+    }
+  
+ 

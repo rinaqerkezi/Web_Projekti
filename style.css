@@ -86,6 +86,8 @@ nav  a {
     color:darkslategrey;
 }
 
+  
+  
 .fotot {
    flex-wrap: wrap;
     display: inline-flex;
@@ -96,7 +98,7 @@ nav  a {
     position:relative;
    
     
-   
+
     
 }
 .background-image {
@@ -121,6 +123,13 @@ nav  a {
    
 }
 
+@media only screen and (max-width: 768px) {
+    .background-image,
+    .overlay-image {
+      width: 150%; 
+      height: 120%; 
+    }
+  }
 .text {
   position:relative;
   

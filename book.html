@@ -161,35 +161,105 @@
       </div>
       
     </div>
-
+   
+    <script>
+      $(document).ready(function () {
+          $(' .owl-carousel').owlCarousel({
+              loop: true,
+              margin: 0,
+              nav: false,
+              dots: false,
+              autoplay: true,
+              slideTransition: 'linear',
+              autoplayTimeout: 4000,
+              autoplaySpeed: 4000,
+              autoplayHoverPause: true,
+              responsive: {
+                  0: {
+                      items: 1
+                  },
+                  768: {
+                      items: 3
+                  },
+                  1000: {
+                      items: 5
+                  }
+              }
+          });
+      });
+  </script>
   </section>
-
-  <script>
-    $(document).ready(function () {
-        $('.owl-carousel').owlCarousel({
-            loop: true,
-            margin: 0,
-            nav: false,
-            dots: false,
-            autoplay: true,
-            slideTransition: 'linear',
-            autoplayTimeout: 4000,
-            autoplaySpeed: 4000,
-            autoplayHoverPause: true,
-            responsive: {
-                0: {
-                    items: 1
-                },
-                768: {
-                    items: 3
-                },
-                1000: {
-                    items: 5
-                }
+  <section class="customer-slider" id="customerSlider">
+    <div class="owl-carousel owl-theme">
+      <div class="item">
+        <div class="rating">4.5</div>
+        <p>The booking process was quick, and I received all the necessary details promptly. Appreciate the reliability and efficiency of this flight booking service. Thumbs up!"</p>
+        <div class="customer-info">
+          <img src="images/client-1.jpg" alt="Customer 1">
+        
+        </div>
+      </div>
+      <div class="item">
+        <div class="rating">4.8</div>
+        <p>"Found the best prices for my flights here! The range of options allowed me to choose the most convenient and affordable one. </p>
+        <div class="customer-info">
+          <img src="images/client-2.jpg" alt="Customer 1">
+        
+        </div>
+      </div>
+      <div class="item">
+        <div class="rating">4.3</div>
+        <p>"From booking to check-in, the entire process was smooth. The airline staff was friendly and helpful. </p>
+        <div class="customer-info">
+          <img src="images/client-3.jpg" alt="Customer 1">
+          
+        </div>
+      </div>
+      <div class="item">
+        <div class="rating">4.7</div>
+        <p>"Impressed with the fast and straightforward booking process. Got a great deal on my flight, and the confirmation was instant."</p>
+        <div class="customer-info">
+          <img src="images/client-4.jpg" alt="Customer 1">
+          
+        </div>
+      </div>
+      <div class="item">
+        <div class="rating">4.7</div>
+        <p>"Booked my flight with ease and had a smooth experience. The website is user-friendly, and the customer service was exceptional. Will definitely use this service again!"</p>
+        <div class="customer-info">
+          <img src="images/client-5.jpg" alt="Customer 1" >
+         
+        </div>
+      </div>
+    
+    </div>
+      
+    <script>
+      $(document).ready(function () {
+        $('#customerSlider .owl-carousel').owlCarousel({
+          loop: true,
+          margin: 0,
+          nav: false,
+          dots: true,
+          slideTransition: 'linear',
+          responsive: {
+            0: {
+              items: 1
+            },
+            768: {
+              items: 2
+            },
+            1000: {
+              items: 3
             }
+          }
         });
-    });
-</script>
+      });
+    </script>
+  </section>
+ 
+  
+
 
 <footer>
   <div class="containerr">
