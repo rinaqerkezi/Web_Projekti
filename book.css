@@ -445,40 +445,4 @@ footer .containerr .sec.contact {
       }
      
     }
-    .customer-slider {
-      padding: 10px;
-    }
     
-    .customer-slider .item {
-      background: #f9f9f9;
-      border-radius: 8px;
-      padding: 10px;
-      text-align: center;
-    }
-    
-    .customer-slider .rating {
-      font-size: 24px;
-      font-weight: bold;
-      margin-bottom: 10px;
-      color: #FFD700; 
-    }
-    
-    .customer-slider p {
-      font-size: 16px;
-      margin-bottom: 10px;
-    }
-    
-    .customer-info {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    
-    .customer-info img {
-      width: 50px; 
-    height: 50px; 
-    border-radius: 50%; 
-    margin-right: 10px;
-    }
-  
- 
