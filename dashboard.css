@@ -309,12 +309,107 @@ footer .container .sec.aboutus h2:before {
 }
 
 
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 20%;
+}
+
+.sec.aboutus {
+    position: relative;
+    padding: 10px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.secquicklinks {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-evenly;
+    text-align: center;
+ 
+}
+
+.secquicklinks h2 {
+    position: relative;
+    color: #0e0808;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.secquicklinks ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.secquicklinks ul li {
+    margin-bottom: 10px;
+  
+}
+
+.secquicklinks ul li a {
+    color: #999;
+    text-decoration: none;
+}
+
+.secquicklinks ul li a:hover {
+    color: #fff;
+}
+
+.sci {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    
+}
+
+.sci li {
+    list-style: none;
+}
+
+.sci li a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.sci li a:hover {
+    background: rgb(77, 207, 212);
+}
+
+footer .container {
+    
+margin-right: 45%;
+position: relative;
+    
+}
+
+footer .container .sec.contact {
+    
+    position: relative;
+    margin-left: 20px;
+   
+ 
+    
+}
+
+
 .copyRightText{
-  width: 100%;
-  background: #181818;
-  padding: 8px 100px;
-  text-align: center;
-  color: #999;
+    width: 100%;
+    background: #181818;
+    padding: 8px 100px;
+    text-align: center;
+    color: #999;
 
 }
 

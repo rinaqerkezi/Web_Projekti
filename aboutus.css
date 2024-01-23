@@ -56,7 +56,10 @@ header{
         color: #1d44f9; 
       }
    
-
+      .navbar{
+        display: flex;
+align-items: flex-end;
+    }
    
 
   
