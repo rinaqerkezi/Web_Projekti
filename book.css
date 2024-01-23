@@ -102,11 +102,14 @@ button {
     outline:none;
     border:none;
     border-radius: 30px;
+    cursor: pointer;
+    
   }
 
   button i {
     margin-left: 20px;
     font-size: 25px;
+   
   }
   
   
