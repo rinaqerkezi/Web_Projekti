@@ -209,7 +209,7 @@ nav  a {
 }
 footer {
     display: flex;
-    justify-content: space-around;
+    justify-content:space-around;
     align-items: flex-start;
     padding: 20px;
     background: #517e92;
@@ -217,6 +217,7 @@ footer {
 
 footer .container .sec {
     margin-right: 30px;
+   
 }
 
 footer .container .sec.aboutus {
@@ -249,6 +250,10 @@ footer .container .sec.aboutus h2:before {
 
 .container {
     display: flex;
+<<<<<<< HEAD
+=======
+    
+>>>>>>> 398cc6233ffa7efaf7fb30ab2a79cff7cd6512c9
     margin-right: 20%;
 }
 
@@ -400,10 +405,11 @@ footer .container .sec.contact {
 
     footer{
         padding: 30px;
+        align-items: center;
 
     }
     footer .container{
-        flex-direction: column;
+        flex-direction: center;
     }
     footer .container .sec{
         margin-right: 0;
@@ -467,15 +473,11 @@ button:hover {
 .dot.active {
     background-color: black;
 }
-@media screen and (max-width: 600px) {
-   
-    .fotot {
-        width: 100%; 
-    }
-
+@media only screen and (max-width: 1300px) and (max-width:750px) and (min-width: 360px) {
     .background-image,
     .overlay-image {
         width: 100%; 
+<<<<<<< HEAD
         height: auto; 
     }
     .copyRightText{
@@ -492,6 +494,9 @@ button:hover {
     .overlay-image {
         width: 100%; 
         
+=======
+        height:auto;
+>>>>>>> 398cc6233ffa7efaf7fb30ab2a79cff7cd6512c9
         top: 50%;
         left: 50%;
     }

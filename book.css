@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 #Kontinieri{
     background:8px rgb(234, 231, 231);
-    margin: auto;
+    margin:0;
     max-width: 20000px;
+  padding:0;
 
 }
 body {
@@ -15,6 +16,8 @@ nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
+    display: inline-flex;
+  
 }
 .kontenti h2{
     font-size: x-large;
@@ -24,7 +27,7 @@ nav ul {
 }
 
 nav li {
-    display: inline-flex;
+    display:inline-block;
     margin : 10px 20px;
 }
 
@@ -83,7 +86,7 @@ nav a:hover {
   
   .home .box {
     background: white;
-      padding: 35px;
+      padding: 20px;
   
   }
   .home input {
@@ -394,7 +397,8 @@ footer .containerr .sec.contact {
   
 }
   
-  @media only screen and (max-width:512px) {
+  @media only screen (max-width: 1300px) and (max-width:750px) and (min-width: 360px) {
+   
     .home h1 {
       font-size: 70px;
       }
