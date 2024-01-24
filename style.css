@@ -250,10 +250,7 @@ footer .container .sec.aboutus h2:before {
 
 .container {
     display: flex;
-<<<<<<< HEAD
-=======
-    
->>>>>>> 398cc6233ffa7efaf7fb30ab2a79cff7cd6512c9
+
     margin-right: 20%;
 }
 
@@ -389,38 +386,27 @@ footer .container .sec.contact {
             height: auto;
 
         }
+        
         .nav ul li {
             background-color: #333;
             color: #fff;
             padding: 10px 20px;
         }
 
-        .container {
-            display: flex;
-            width: 85%;
-            height: auto;
-            padding: 60px 0;
-        }
+        
 
-
-    footer{
+    footer .container{
         padding: 30px;
         align-items: center;
+        width: auto;
 
     }
-    footer .container{
-        flex-direction: center;
-    }
-    footer .container .sec{
-        margin-right: 0;
-        margin-bottom: 40px;
 
-    }
-    footer .container .sec-aboutus,
-    .secquicklinks,
-    .contact{
-        width: 100%;
-    }
+   
+   
+
+      
+
     .copyRightText{
         padding: 8px 40px;
         width: auto;
@@ -477,9 +463,17 @@ button:hover {
     .background-image,
     .overlay-image {
         width: 100%; 
-<<<<<<< HEAD
+
         height: auto; 
     }
+    
+    footer .container{
+        padding: 30px;
+        align-items: center;
+        width: auto;
+
+    }
+    
     .copyRightText{
         padding: 8px 40px;
         width: auto;
@@ -493,13 +487,17 @@ button:hover {
     .background-image,
     .overlay-image {
         width: 100%; 
-        
-=======
         height:auto;
->>>>>>> 398cc6233ffa7efaf7fb30ab2a79cff7cd6512c9
         top: 50%;
         left: 50%;
     }
+    
+    footer .container{
+        padding: 30px;
+        align-items: center;
+width: auto;
+    }
+   
     .copyRightText{
         padding: 8px 40px;
         width: auto;
