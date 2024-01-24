@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 #Kontinieri{
     background:8px rgb(234, 231, 231);
-    margin: auto;
+    margin:0;
     max-width: 20000px;
+  padding:0;
 
 }
 body {
@@ -383,7 +384,8 @@ footer .containerr .sec.contact {
   
 }
   
-  @media only screen and (max-width:512px) {
+  @media only screen (max-width: 1300px) and (max-width:750px) and (min-width: 360px) {
+   
     .home h1 {
       font-size: 70px;
       }
