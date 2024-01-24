@@ -3,9 +3,17 @@
     margin-top: 5%;
     margin: auto;
     max-width: 2000px;
-    
+
 
 }
+
+
+
+
+
+
+
+
 body {
     margin: 0;
     padding: 0;
@@ -19,7 +27,7 @@ header {
 }
 nav ul {
     list-style: none;
-    margin: 0;
+margin: 0;
     padding: 0;
 }
 .kontenti h2{
@@ -42,10 +50,21 @@ nav a {
 nav a:hover {
     color:blue; 
 }
+.navbar{
+    display: flex;
+    justify-content: center;
+}
+
 
 .logo {
     width: 20%;
     height : auto;
+    cursor: pointer;
+    cursor: pointer;
+    justify-content:center;
+
+
+
     cursor: pointer;
    
 }

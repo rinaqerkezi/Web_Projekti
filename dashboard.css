@@ -8,40 +8,58 @@ body {
   }
 
 
-  nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  
+#Kontinieri{
+  background:8px rgb(191, 191, 191);
+  margin-top: 5%;
+  margin: auto;
+  max-width: 2000px;
+
+
 }
-#Kontinieri {
-  display: flex;
-justify-content: center;
+
+
+
+
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
 }
 
 
- nav li {
-    display: inline-block;
-    margin-right: 200px;
+nav ul {
+  list-style: none;
+margin: 0;
+  padding: 0;
+}
+.kontenti h2{
+  font-size: x-large;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-style: italic;
 }
 
- nav a {
-  display: flex;
- align-items: center;
-    text-decoration: none;
-    color: #328ca0;
-    font-weight: bold;
-    font-size: 16px;
+
+nav li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
 }
 
 nav a:hover {
-    color:rgb(13, 13, 184); 
+  color:blue; 
 }
-
-
-
-
-
-
+.navbar{
+  display: flex;
+  justify-content: center;
+}
 
 
 
@@ -269,52 +287,139 @@ nav a:hover {
     background-color: #a5aaad;
   }
 
-
   footer {
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
     padding: 20px;
-    background: #517e92;
-}
-
-footer .container .sec {
+    background: #5c8ca3;
+  }
+  
+  footer .containerr.sec {
     margin-right: 30px;
-}
-
-footer .container .sec.aboutus {
+  }
+  
+  footer .containerr .sec.aboutus {
     width: 30%;
-}
-
-footer .container .sec.aboutus ul {
+  }
+  
+  footer .containerr .sec.aboutus ul {
     display: inline;
     justify-content: space-between;
     align-items: center;
-}
-
-footer .container .sec.aboutus h2 {
+  }
+  
+  footer .containerr .sec.aboutus h2 {
     position: relative;
     color: #000000;
     font-weight: 500;
     margin-bottom: 15px;
-}
-
-footer .container .sec.aboutus h2:before {
+  }
+  
+  footer .containerr .sec.aboutus h2:before {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #bdd5e3;
+    background-color: #407391;
     padding: 20px;
-    background: rgb(48, 127, 200);
-}
+    background: rgb(48, 123, 193);
+  }
+  
+  
+  
+  .containerr {
+    display: flex;
+    margin-right: 20%;
+  }
+  
+  .sec.aboutus {
+    position: relative;
+    padding: 10px;
+    font-weight: 500;
+    margin-bottom: 15px;
+  }
+  
+  .secquicklinks {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-evenly;
+    text-align: center;
+  
+  }
+  
+  .secquicklinks h2 {
+    position: relative;
+    color: #0e0808;
+    font-weight: 500;
+    margin-bottom: 15px;
+  }
+  
+  .secquicklinks ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .secquicklinks ul li {
+    margin-bottom: 10px;
+  
+  }
+  
+  .secquicklinks ul li a {
+    color: #3a3838;
+    text-decoration: none;
+  }
+  
+  .secquicklinks ul li a:hover {
+    color: #d2cccc;
+  }
+  
+  .sci {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    
+  }
+  
+  .sci li a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    text-decoration: none;
+    border-radius: 4px;
+  }
+  
+  .sci li a:hover {
+    background: rgb(77, 207, 212);
+  }
+  
+  footer .containerr {
+    
+  margin-right: 45%;
+  position: relative;
+    
+  }
+  
+  footer .containerr .sec.contact {
+    
+    position: relative;
+    margin-left: 20px;
+  
+  }
 
-
-.copyRightText{
-  width: 100%;
-  background: #181818;
-  padding: 8px 100px;
-  text-align: center;
-  color: #999;
+  .copyRightText{
+    width: 100%;
+    background: #181818;
+    padding: 8px 100px;
+    text-align: center;
+    color: #999;
 
 }
 
