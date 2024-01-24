@@ -347,6 +347,15 @@ footer .containerr .sec.contact {
   margin-left: 20px;
 
 }
+.copyRightText{
+  width: 100%;
+  background: #181818;
+  padding: 8px 100px;
+  text-align: center;
+  color: #999;
+  
+
+}
 
 @media only screen and (max-width:768px) {
   footer .grid,
@@ -378,6 +387,10 @@ footer .containerr .sec.contact {
     grid-row-start: 3;
     grid-row-end: 3;
   }
+  .copyRightText{
+    padding: 8px 40px;
+    width: auto;
+}
   
 }
   
@@ -410,6 +423,10 @@ footer .containerr .sec.contact {
       .room .heading h2 {
         font-size: 2.5em; 
       }
+      .copyRightText{
+        padding: 8px 40px;
+        width: auto;
+    }
      
     }
     

@@ -249,7 +249,6 @@ footer .container .sec.aboutus h2:before {
 
 .container {
     display: flex;
-    flex-wrap: wrap;
     margin-right: 20%;
 }
 
@@ -411,13 +410,14 @@ footer .container .sec.contact {
         margin-bottom: 40px;
 
     }
-    footer .container .sec.aboutus,
+    footer .container .sec-aboutus,
     .secquicklinks,
     .contact{
         width: 100%;
     }
     .copyRightText{
         padding: 8px 40px;
+        width: auto;
     }
 }
 
@@ -478,13 +478,25 @@ button:hover {
         width: 100%; 
         height: auto; 
     }
+    .copyRightText{
+        padding: 8px 40px;
+        width: auto;
+    }
 }
 @media only screen and (max-width: 1300px) and (min-width: 350px) {
+    .fotot {
+        width: 100%; 
+    }
+
     .background-image,
     .overlay-image {
         width: 100%; 
         
         top: 50%;
         left: 50%;
+    }
+    .copyRightText{
+        padding: 8px 40px;
+        width: auto;
     }
 }
