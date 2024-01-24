@@ -395,21 +395,24 @@ footer .container .sec.contact {
 
         
 
-    footer .container{
-        padding: 30px;
-        align-items: center;
-        width: auto;
-
-    }
-
-   
-   
-
+        footer {
+            padding: 30px;
+        }
+    
+        footer .containerr .sec {
+            margin-bottom: 40px; 
+        }
+    
+        footer .containerr .sec.aboutus,
+        .secquicklinks,
+        .contact {
+            width: 100%;
+        }
       
 
     .copyRightText{
         padding: 8px 40px;
-        width: auto;
+        width: fit-content;
     }
 }
 
@@ -467,11 +470,18 @@ button:hover {
         height: auto; 
     }
     
-    footer .container{
+    footer {
         padding: 30px;
-        align-items: center;
-        width: auto;
+    }
 
+    footer .containerr .sec {
+        margin-bottom: 40px; 
+    }
+
+    footer .containerr .sec.aboutus,
+    .secquicklinks,
+    .contact {
+        width: 100%;
     }
     
     .copyRightText{
@@ -491,11 +501,18 @@ button:hover {
         top: 50%;
         left: 50%;
     }
-    
-    footer .container{
+    footer {
         padding: 30px;
-        align-items: center;
-width: auto;
+    }
+
+    footer .containerr .sec {
+        margin-bottom: 40px; 
+    }
+
+    footer .containerr .sec.aboutus,
+    .secquicklinks,
+    .contact {
+        width: 100%;
     }
    
     .copyRightText{
