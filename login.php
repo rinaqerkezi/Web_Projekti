@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,31 +30,24 @@
     </nav>
 </header>
 <br>
+
 <br>
     <div class="wrapper">
         <h1>Log In</h1>
-        <form action="#">
-            
-           <input type="text" placeholder="username" id="username" size="15">
-           <input type="password" id="password" placeholder="password">
+        <form method="POST"  action="handle-login.php">
+       <input type="text" placeholder="username" id="username" size="15">
+     <input type="password" id="password" placeholder="password">
              
 
             <div class="recover">
            <a href="#">Forgot password?</a>
             </div>
-           
-       
-        </form>
-         
-        <button type="submit" id="login-btn">Log In</button>
+            </form>
+         <button type="submit" name="submit" id="login-btn">Log In</button>
+        <div class="member">
+             Not a memeber><a href="Signup.php">Register?</a> 
+            </div>
+         </div> 
+        </body>
 
-<div class="member">
-    Not a memeber><a href="Signup.php">Register?</a>
-    
-</div>
-
-
-    </div>
-</body>
-
-</html>
+</html>    
