@@ -18,6 +18,8 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width:100%;
+    overflow-x: hidden;
 }
 
 header {
@@ -250,7 +252,7 @@ footer .container .sec.aboutus h2:before {
 
 .container {
     display: flex;
-
+    flex-wrap: wrap;
     margin-right: 20%;
 }
 
@@ -336,14 +338,8 @@ position: relative;
 footer .container .sec.contact {
     
     position: relative;
-    margin-left: 20px;
-   
- 
-    
+    margin-left: 20px; 
 }
-
-
-
 .copyRightText{
     width: 100%;
     background: #181818;
@@ -352,8 +348,10 @@ footer .container .sec.contact {
     color: #999;
 
 }
-
-
+.copyRightText p {
+    margin: 0;
+  }
+ 
 @media screen and(max-width: 940px){
     body{
         width: 85%;
@@ -414,6 +412,10 @@ footer .container .sec.contact {
         padding: 8px 40px;
         width: fit-content;
     }
+    .copyRightText p {
+        margin: 0;
+      }
+      
 }
 
 #slider {
@@ -488,6 +490,9 @@ button:hover {
         padding: 8px 40px;
         width: auto;
     }
+    .copyRightText p {
+        margin: 0;
+      }
 }
 @media only screen and (max-width: 1300px) and (min-width: 350px) {
     .fotot {
@@ -519,4 +524,8 @@ button:hover {
         padding: 8px 40px;
         width: auto;
     }
+    .copyRightText p {
+        margin: 0;
+      }
+      
 }
