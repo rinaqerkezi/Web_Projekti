@@ -362,14 +362,9 @@ footer .containerr .sec.contact {
   
 
 }
-
-
 .copyRightText p {
   margin: 0;
 }
-
-
-
 @media only screen and (max-width:768px) {
   footer .grid,
   .blog .grid,
