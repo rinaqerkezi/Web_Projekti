@@ -52,9 +52,7 @@ nav a:hover {
     align-items:center;
     justify-content:center;
     padding: 10px;
-    
-  
-    
+ 
 }
 
 .grid{
@@ -263,8 +261,6 @@ footer .containerr .sec.aboutus h2:before {
   padding: 20px;
   background: rgb(48, 127, 200);
 }
-
-
 
 .containerr {
   display: flex;
