@@ -17,12 +17,12 @@
     <header>
     <nav>
         <ul>
-            <li><a href="index.html">HOME</a></li>
-            <li><a href="aboutus.html">ABOUT US</a></li>
-            <li><a href="login.html">LOG IN</a></li>
-            <li><a href="offers.html">OFFERS</a></li>
-            <li><a href="book.html">BOOK</a></li>
-            <li><a href="Destinations.html">DESTINATION</a></li>
+            <li><a href="index.php">HOME</a></li>
+            <li><a href="aboutus.php">ABOUT US</a></li>
+            <li><a href="login.php">LOG IN</a></li>
+            <li><a href="offers.php">OFFERS</a></li>
+            <li><a href="book.php">BOOK</a></li>
+            <li><a href="Destinations.php">DESTINATION</a></li>
 
         </ul>
     </nav>
@@ -47,7 +47,7 @@
         <button type="submit" id="login-btn">Log In</button>
 
 <div class="member">
-    Not a memeber><a href="Signup.html">Register?</a>
+    Not a memeber><a href="Signup.php">Register?</a>
     
 </div>
 

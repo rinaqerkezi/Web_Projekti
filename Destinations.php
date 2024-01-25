@@ -28,12 +28,12 @@
 
                     <nav>
         <ul>
-            <li><a href="index.html">HOME</a></li>
-                            <li><a href="aboutus.html">ABOUT US</a></li>
-                            <li><a href="Offers.html">OFFERS</a></li>
-                            <li><a href="login.html">LOG IN</a></li>
-                            <li><a href="book.html">BOOK</a></li>
-                            <li><a href="Destinations.html">DESTINATION</a></li>
+            <li><a href="index.php">HOME</a></li>
+                            <li><a href="aboutus.php">ABOUT US</a></li>
+                            <li><a href="Offers.php">OFFERS</a></li>
+                            <li><a href="login.php">LOG IN</a></li>
+                            <li><a href="book.php">BOOK</a></li>
+                            <li><a href="Destinations.php">DESTINATION</a></li>
 
 
 
@@ -60,7 +60,7 @@
     <div class="content">
         <h1>Choose what's best for you!</h1>
         <p>Indulge in unparalleled luxury and comfort at our exquisite hotels, where impeccable service meets breathtaking surroundings for an unforgettable stay.</p>
-        <a href="book.html"><button class="btn">book now</button></a>
+        <a href="book.php"><button class="btn">book now</button></a>
     </div>
 
     <div class="image">

@@ -15,12 +15,12 @@
       <header>
         <nav>
           <ul>
-            <li><a href="index.html">HOME</a></li>
-            <li><a href="aboutus.html">ABOUT US</a></li>
-            <li><a href="login.html">LOG IN</a></li>
-            <li><a href="offers.html">OFFERS</a></li>
-            <li><a href="book.html">BOOK</a></li>
-            <li><a href="Destinations.html">DESTINATION</a></li>
+            <li><a href="index.php">HOME</a></li>
+            <li><a href="aboutus.php">ABOUT US</a></li>
+            <li><a href="login.php">LOG IN</a></li>
+            <li><a href="offers.php">OFFERS</a></li>
+            <li><a href="book.php">BOOK</a></li>
+            <li><a href="Destinations.php">DESTINATION</a></li>
 
           </ul>
         </nav>
@@ -71,7 +71,7 @@
         </p>
       </div>
       <p class="para-2">
-        Already have an account? <a href="login.html">Login here</a>
+        Already have an account? <a href="login.php">Login here</a>
       </p>
   
       

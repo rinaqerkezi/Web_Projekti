@@ -22,12 +22,12 @@
             
                 <nav>
                     <ul>
-                        <li><a href="index.html">HOME</a></li>
-                        <li><a href="aboutus.html">ABOUT US</a></li>
-                        <li><a href="login.html">LOG IN</a></li>
-                        <li><a href="offers.html">OFFERS</a></li>
-                        <li><a href="offers.html">BOOK</a></li>
-                        <li><a href="Destinations.html">DESTINATION</a></li>
+                        <li><a href="index.php">HOME</a></li>
+                        <li><a href="aboutus.php">ABOUT US</a></li>
+                        <li><a href="login.php">LOG IN</a></li>
+                        <li><a href="offers.php">OFFERS</a></li>
+                        <li><a href="offers.php">BOOK</a></li>
+                        <li><a href="Destinations.php">DESTINATION</a></li>
 
 
                     </ul>
@@ -55,7 +55,7 @@
                         <input type="number" placeholder="01">
                     </div>
                     <div class="box">
-                      <a href="destinations.html" class="flex">
+                      <a href="destinations.php" class="flex">
                           <button>
                               <span>Check Availability</span>
                               <i class="fas fa-arrow-circle-right"></i>

@@ -17,12 +17,12 @@
             <img src="logo.png" class="logo">
             <nav>
                 <ul>
-                    <li><a href="index.html">HOME</a></li>
-                    <li><a href="aboutus.html">ABOUT US</a></li>
-                    <li><a href="Offers.html">OFFERS</a></li>
-                    <li><a href="login.html">LOG IN</a></li>
-                    <li><a href="book.html">BOOK</a></li>
-                    <li><a href="Destinations.html">DESTINATION</a></li>
+                    <li><a href="index.php">HOME</a></li>
+                    <li><a href="aboutus.php">ABOUT US</a></li>
+                    <li><a href="Offers.php">OFFERS</a></li>
+                    <li><a href="login.php">LOG IN</a></li>
+                    <li><a href="book.php">BOOK</a></li>
+                    <li><a href="Destinations.php">DESTINATION</a></li>
 
                 </ul>
             </nav>
@@ -36,7 +36,7 @@
                     sophistication.
                     Unveil the secrets of opulent destinations as we curate an experience tailored to your every desire.
                 </p>
-                <a href="aboutus.html"> <br>
+                <a href="aboutus.php"> <br>
                     <button type="button">Read More</button>
                 </a>
             </div>
@@ -55,52 +55,52 @@
                 <img src="paris.jpg" alt="p" style="width: 180px; height: 100px; object-fit: cover;">
                 <h3>Paris</h3>
                 <p>Book now a trip to the City of Love and get 20% off!</p>
-                <a href="book.html" class="btn">Book Now</a>
+                <a href="book.php" class="btn">Book Now</a>
             </div>
 
             <div class="box">
                 <img src="aspen.jpg" alt="as" style="width: 180px; height: 100px; object-fit: cover;">
                 <h3>Aspen</h3>
                 <p>Aspen Adventure Awaits!!</p>
-                <a href="book.html" class="btn">Book Now</a>
+                <a href="book.php" class="btn">Book Now</a>
             </div>
 
             <div class="box">
                 <img src="borabora.jpg" alt="bb" style="width: 180px; height: 100px; object-fit: cover;">
                 <h3>Bora-Bora</h3>
                 <p> Nature's Masterpiece</p>
-                <a href="book.html" class="btn">Book Now</a>
+                <a href="book.php" class="btn">Book Now</a>
             </div>
             <div class="box">
                 <img src="vienna.jpg" alt="v" style="width: 180px; height: 100px; object-fit: cover;">
                 <h3>Vienna</h3>
                 <p>Vienna: Symphony of Elegance</p>
-                <a href="book.html" class="btn">Book Now</a>
+                <a href="book.php" class="btn">Book Now</a>
             </div>
 
             <div class="box">
                 <img src="berlin.jpg" alt="b" style="width: 180px; height: 100px; object-fit: cover;">
                 <h3>Berlin</h3>
                 <p>Vibrant, Bold, Berlin Gold</p>
-                <a href="book.html" class="btn">Book Now</a>
+                <a href="book.php" class="btn">Book Now</a>
             </div>
             <div class="box">
                 <img src="maldives.jpg" alt="m" style="width: 180px; height: 100px; object-fit: cover;">
                 <h3>Maldives</h3>
                 <p>Maldives Majesty: Dive into Paradise</p>
-                <a href="book.html" class="btn">Book Now</a>
+                <a href="book.php" class="btn">Book Now</a>
             </div>
             <div class="box">
                 <img src="london.jpg" alt="l" style="width: 180px; height: 100px; object-fit: cover;">
                 <h3>London</h3>
                 <p>London Lights, Big City Delights</p>
-                <a href="book.html" class="btn">Book Now</a>
+                <a href="book.php" class="btn">Book Now</a>
             </div>
             <div class="box">
                 <img src="amsterdam.jpg" alt="am" style="width: 180px; height: 100px; object-fit: cover;">
                 <h3>Amsterdam</h3>
                 <p>Canvas of Culture and Canals.</p>
-                <a href="book.html" class="btn">Book Now</a>
+                <a href="book.php" class="btn">Book Now</a>
             </div>
         </div>
     </div>
