@@ -198,6 +198,20 @@ p {
         font-size: 4vh;
         word-wrap: break-word;
     }
+
+    footer {
+        padding: 30px;
+    }
+
+    footer .containerr .sec {
+        margin-bottom: 40px; 
+    }
+
+    footer .containerr .sec.aboutus,
+    .secquicklinks,
+    .contact {
+        width: 100%;
+    }
 }
 
 
@@ -348,25 +362,22 @@ footer .containerr .sec.contact {
 }
 
 
-@media screen and(max-width: 940px){
-    footer{
-        padding: 30px;s
+@media screen and (max-width: 940px) {
+    footer {
+        padding: 30px;
+    }
 
+    footer .containerr .sec {
+        margin-bottom: 40px; 
     }
-    footer .containerr{
-        flex-direction: row;
-    }
-    footer .containerr .sec{
-        margin-right: 0;
-        margin-bottom: 40px;
 
-    }
     footer .containerr .sec.aboutus,
     .secquicklinks,
-    .contact{
+    .contact {
         width: 100%;
     }
-    .copyRightText{
+
+    .copyRightText {
         padding: 8px 40px;
     }
 }
