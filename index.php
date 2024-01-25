@@ -1,3 +1,20 @@
+<?php
+function nrVizitave(){
+    
+$numroHits = $_COOKIE['numro'] ?:0;
+$numroHits++;
+
+setcookie('numro',$numroHits,time()+86400*30);
+
+echo "Ju keni vizituar kete Uebfaqe: ".$numroHits." here.";
+}
+?>
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -200,6 +217,7 @@
         <p>Copyright © 2023 . All Rights deserved</p>
     </div>
    
+    <h3> <?php nrVizitave(); ?></h3>
 
 
 
