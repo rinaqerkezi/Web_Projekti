@@ -8,8 +8,8 @@ if(isset($_POST['submit'])){
 
    $name = mysqli_real_escape_string($conn, $_POST['name']);
    $email = mysqli_real_escape_string($conn, $_POST['email']);
-   $pass = md5($_POST['password']);
-   $cpass = md5($_POST['cpassword']);
+   $pass = SHA1($_POST['password']);
+   $cpass = SHA1($_POST['cpassword']);
    $user_type = $_POST['user_type'];
 
    $select = " SELECT * FROM users WHERE email = '$email' && password = '$pass' ";
@@ -23,12 +23,12 @@ if(isset($_POST['submit'])){
       if($row['user_type'] == 'admin'){
 
          $_SESSION['admin_name'] = $row['name'];
-         header('location:homeAdmin.php');
+         header('location:dashboard.php');
 
       }elseif($row['user_type'] == 'user'){
 
          $_SESSION['user_name'] = $row['name'];
-         header('location:homeUser.php');
+         header('location:index.php');
 
       }
      
