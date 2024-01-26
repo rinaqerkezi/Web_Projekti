@@ -88,10 +88,7 @@ if (isset($_POST['submit'])) {
           <label>Phone Number:</label>
           <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="123-456-789" />
           <div class="error-message" id="phoneNumberError"></div>
-          <select name="user_type">
-         <option value="user">user</option>
-       <option value="admin">admin</option> 
-      </select>
+          
           <button type="submit" id="submit" size="15">Submit</button>
         </form>
       
@@ -113,7 +110,8 @@ if (isset($_POST['submit'])) {
     </html>
   </span>
   <?php
+$conn = new PDO('mysql:host=localhost;port=8008;dbname=user_db', 'root', '');
 
-$conn = PDO('localhost','root','','user_db');
+
 
 ?>
