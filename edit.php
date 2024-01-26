@@ -1,6 +1,6 @@
 
 <?php
-include 'PerdoruesitRepository.php';
+@include 'PerdoruesitRepository.php';
 $id = $_GET['id'];//e merr id e studentit prej url
 
 $strep = new PerdoruesitRepository();
