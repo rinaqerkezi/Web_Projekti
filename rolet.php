@@ -1,7 +1,7 @@
 <?php
   $user1 = [
-    "name"=>"Olsa",
-    "surname"=>"Muhaxhiri",
+    "emri"=>"Olsa",
+    "mbiemri"=>"Muhaxhiri",
     "email"=>"om@ubt-uni.net",
     "username"=>"olsamuhaxhiri",
     "password" => "olsa123",
@@ -9,7 +9,7 @@
   ];
   
   $user2 = [
-    "name"=>"Rina",
+    "emri"=>"Rina",
     "mbiemri"=>"Qerkezi",
     "email"=>"rq@ubt-uni.net.com",
     "username"=>"rinaqerkezi",
@@ -18,8 +18,8 @@
   ];
 
   $user3 = [
-    "name"=>"Sasa",
-    "surname"=>"Saaa",
+    "emri"=>"Sasa",
+    "mbiemri"=>"Saaa",
     "email"=>"ss@gmail.com",
     "username"=>"sasa",
     "password" => "sasa123",
