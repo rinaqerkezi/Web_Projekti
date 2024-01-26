@@ -1,3 +1,44 @@
+<?php
+
+@include 'config.php';
+
+session_start();
+
+if(isset($_POST['submit'])){
+
+   $name = mysqli_real_escape_string($conn, $_POST['name']);
+   $email = mysqli_real_escape_string($conn, $_POST['email']);
+   $pass = md5($_POST['password']);
+   $cpass = md5($_POST['cpassword']);
+   $user_type = $_POST['user_type'];
+
+   $select = " SELECT * FROM users WHERE email = '$email' && password = '$pass' ";
+
+   $result = mysqli_query($conn, $select);
+
+   if(mysqli_num_rows($result) > 0){
+
+      $row = mysqli_fetch_array($result);
+
+      if($row['user_type'] == 'admin'){
+
+         $_SESSION['admin_name'] = $row['name'];
+         header('location:homeAdmin.php');
+
+      }elseif($row['user_type'] == 'user'){
+
+         $_SESSION['user_name'] = $row['name'];
+         header('location:homeUser.php');
+
+      }
+     
+   }else{
+      $error[] = 'incorrect email or password!';
+   }
+
+};
+?>
+
 
 
 <!DOCTYPE html>
@@ -5,49 +46,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>log in form</title>
+    <title>Log In Form</title>
     <link rel="stylesheet" href="login.css">
     <script src="login.js"></script>
 </head>
-
-
-
-</script>
-
 <body>
     <br>
     <header>
-    <nav>
-        <ul>
-            <li><a href="index.php">HOME</a></li>
-            <li><a href="aboutus.php">ABOUT US</a></li>
-            <li><a href="login.php">LOG IN</a></li>
-            <li><a href="offers.php">OFFERS</a></li>
-            <li><a href="book.php">BOOK</a></li>
-            <li><a href="Destinations.php">DESTINATION</a></li>
-
-        </ul>
-    </nav>
-</header>
-<br>
-
-<br>
+        <nav>
+            <ul>
+                <li><a href="index.php">HOME</a></li>
+                <li><a href="aboutus.php">ABOUT US</a></li>
+                <li><a href="login.php">LOG IN</a></li>
+                <li><a href="offers.php">OFFERS</a></li>
+                <li><a href="book.php">BOOK</a></li>
+                <li><a href="Destinations.php">DESTINATION</a></li>
+            </ul>
+        </nav>
+    </header>
+    <br>
     <div class="wrapper">
         <h1>Log In</h1>
-        <form method="POST"  action="handle-login.php">
-       <input type="text" placeholder="username" id="username" size="15">
-     <input type="password" id="password" placeholder="password">
-             
-
+        <form method="POST" action="" onsubmit="return validateForm()">
+            <?php 
+            if(isset($error)){
+                foreach($error as $error){
+                    echo '<span class="error-msg">'.$error.'</span>';
+                }
+            }
+            ?>
+            <input type="email" name="email" placeholder="Email" id="email" required>
+            <div class="error-message" id="emailError"></div>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+            <div class="error-message" id="passwordError"></div>
             <div class="recover">
-           <a href="#">Forgot password?</a>
+                <a href="#">Forgot password?</a>
             </div>
-            </form>
-         <button type="submit" name="submit" id="login-btn">Log In</button>
-        <div class="member">
-             Not a memeber><a href="Signup.php">Register?</a> 
+            <button type="submit" name="submit" value="login now" class="form-btn">Log In</button>
+            <div class="member">
+                Not a member? <a href="Signup.php">Register?</a> 
             </div>
-         </div> 
-        </body>
+        </form>
 
-</html>    
+        <script>
+            function validateForm(){
+                let email = document.getElementById('email').value;
+                let emailError = document.getElementById('emailError');
+
+                let password = document.getElementById('password').value;
+                let passwordError = document.getElementById('passwordError');
+
+                emailError.innerText = '';
+                passwordError.innerText = '';
+
+                let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if(email.trim() === "" || !emailRegex.test(email)){
+                    emailError.innerText = "Email is invalid";
+                    return false;
+                }
+                if(password.trim() === ""){
+                    passwordError.innerText = 'Password is empty';
+                    return false;
+                }
+                return true;
+            }
+        </script>
+    </div>
+</body>
+</html>

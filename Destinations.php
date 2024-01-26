@@ -177,10 +177,10 @@
         </div>
         <div class="content">
             <h3>LuxeVista Inn</h3>
-            <h1>MIAMI</h1>
+            <h1>NO.1 MIAMI</h1>
             <p>Tailor your stay to perfection. Order meals, request room amenities, and plan your itinerary effortlessly on our intuitive hotel website.</p>
             <div class="price">$120/-220</div>
-            <a href="#"><button class="btn">reserve</button></a>
+            <a href="book.php"><button class="btn">reserve</button></a>
         </div>
     </div>
 
@@ -190,10 +190,10 @@
         </div>
         <div class="content">
             <h3>EliteHaven Hotels</h3>
-            <h1>BALI</h1>
+            <h1>NO.2 BALI</h1>
             <p>Make your stay seamless by customizing your experience. Order room service, schedule wake-up calls, or request additional amenities through our user-friendly website.</p>
             <div class="price">$40/-170</div>
-            <a href="#"><button class="btn">reserve</button></a>
+            <a href="book.php"><button class="btn">reserve</button></a>
         </div>
     </div>
 
@@ -203,10 +203,10 @@
         </div>
         <div class="content">
             <h3>PlatinumPeak Suites</h3>
-            <h1>AMSTERDAM</h1>
+            <h1>NO.3 AMSTERDAM</h1>
             <p>Enjoy the luxury of convenience. Order room service, request amenities, and personalize your stay effortlessly through our user-friendly website</p>
             <div class="price">$60/-230</div>
-            <a href="#"><button class="btn">reserve</button></a>
+            <a href="book.php"><button class="btn">reserve</button></a>
         </div>
     </div>
 
@@ -216,10 +216,10 @@
         </div>
         <div class="content">
             <h3>CelestialRetreat Lodgings</h3>
-<h1>TURKEY</h1>            
+<h1>NO.4 TURKEY</h1>            
 <p>Discover a new level of comfort with our online room service platform. Customize your stay by placing orders or making special requests conveniently.</p>
             <div class="price">$55/-300</div>
-            <a href="#"><button class="btn">reserve</button></a>
+            <a href="book.php"><button class="btn">reserve</button></a>
         </div>
     </div>
 

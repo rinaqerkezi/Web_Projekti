@@ -1,8 +1,7 @@
 <?php
-session_start();
-if(isset($_SESSION['user'])){
-session_destroy();
-header('Location:index.php');
-}else{
-header('Location:index.php');
-}
+  session_start();
+
+  session_destroy();
+
+  header("location:login.php");
+?>
