@@ -33,8 +33,8 @@ $perdoruesit = $strep->getAllPerdoruesit();
                         <td><?php echo $perdorues['password'];?></td>
                         <td><?php echo $perdorues['user_type'];?></td>
                         
-                        <td><a href='edit.php?id=<?php echo $perdorues['Id']?>'>Edit</a></td> <!--e dergojme id ne url permes pjeses ?id= dhe permes kodit ne php e marrim nga studenti i cili eshte i paraqitur ne kete rresht-->
-                        <td><a href='delete.php?id=<?php echo $perdorues['Id']?>'>Delete</a></td>
+                        <td><a href='dashboard.php?id=<?php echo $perdorues['Id']?>'>Edit</a></td> <!--e dergojme id ne url permes pjeses ?id= dhe permes kodit ne php e marrim nga studenti i cili eshte i paraqitur ne kete rresht-->
+                        <td><a href='dashboard.php?id=<?php echo $perdorues['Id']?>'>Delete</a></td>
                     </tr>
                 <?php }?> <!--e mbyllim foreach-->
             </tbody>

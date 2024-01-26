@@ -110,7 +110,7 @@ if (isset($_POST['submit'])) {
     </html>
   </span>
   <?php
-$conn = new PDO('mysql:host=localhost;port=8008;dbname=user_db', 'root', '');
+
 
 
 
