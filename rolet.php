@@ -4,7 +4,7 @@
     "mbiemri"=>"Muhaxhiri",
     "email"=>"om@ubt-uni.net",
     "username"=>"olsamuhaxhiri",
-    "password" => "olsa123",
+    "password" => "Olsa123!",
     "user_type"=>"admin"
   ];
   
@@ -13,7 +13,7 @@
     "mbiemri"=>"Qerkezi",
     "email"=>"rq@ubt-uni.net.com",
     "username"=>"rinaqerkezi",
-    "password" => "rina123",
+    "password" => "Rina123!",
     "user_type"=>"admin"
   ];
 
@@ -22,7 +22,7 @@
     "mbiemri"=>"Saaa",
     "email"=>"ss@gmail.com",
     "username"=>"sasa",
-    "password" => "sasa123",
+    "password" => "Sasa123!",
     "user_type"=>"user"
   ];
 
