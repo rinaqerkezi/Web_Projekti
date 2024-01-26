@@ -1,3 +1,26 @@
+<?php
+include_once 'Perdoruesit.php';
+include_once 'PerdoruesitRepository.php';
+
+if (isset($_POST['submit'])) {
+    $emri = $_POST['name'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $cpassword = $_POST['cpassword'];
+    $gjinia = $_POST['gjinia'];
+    $nrtel = $_POST['nrtel'];
+    $user_type = $_POST['user_type'];
+  
+
+    $Perdorues = new Perdoruesit($emri,$email,$password,$cpassword,$gjinia,$nrtel, $user_type);
+
+    $perdoruesitRepository = new PerdoruesitRepository();
+    $perdoruesitRepository->insertPerdoruesit($Perdorues);
+    header("location:dashboard.php");
+}
+?>
+
+
 <span style="font-family: verdana, geneva, sans-serif;">
   <!DOCTYPE html>
     <html lang="en">
@@ -27,7 +50,14 @@
       </header>
       <div class="signup-box">
         <h1>Sign Up</h1>
-        <form id="signupForm">
+        <form id="signupForm" action="<?php echo $_SERVER['PHP_SELF']?>" method="post" onsubmit="return validateForm()">
+        <?php
+      if(isset($error)){
+         foreach($error as $error){
+            echo '<span class="error-msg">'.$error.'</span>';
+         };
+      };
+      ?>
           <label for="emri" title="Enter your first name">First Name:</label>
           <input type="text" id="emri" name="emri" placeholder="John" size="15" />
           <div class="error-message" id="emriError"></div>
@@ -58,7 +88,10 @@
           <label>Phone Number:</label>
           <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="123-456-789" />
           <div class="error-message" id="phoneNumberError"></div>
-      
+          <select name="user_type">
+         <option value="user">user</option>
+       <option value="admin">admin</option> 
+      </select>
           <button type="submit" id="submit" size="15">Submit</button>
         </form>
       
@@ -79,3 +112,8 @@
   
     </html>
   </span>
+  <?php
+
+$conn = PDO('localhost','root','','user_db');
+
+?>
