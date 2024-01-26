@@ -24,10 +24,10 @@
             $emri = $perdorues->getEmri();
             $mbiemri = $perdorues->getMbiemri();
             $emaili = $perdorues->getEmaili();
-            $passwordi = $perdorues->getGjinia();
-            $cpassword=$perdorues->getDataELindjes();
-            $gjinia = $perdorues->getNiveliIStudimeve();
-            $nrtel = $perdorues->getVitiAkademik();
+            $passwordi = $perdorues->getPassword();
+            $cpassword=$perdorues->getCPassword();
+            $gjinia = $perdorues->getGjinia();
+            $nrtel = $perdorues->getNrTel();
             
 
             $sql = "INSERT INTO users (Emri, Mbiemri, Emaili, Passwordi ,CPassword,Gjinia, NrTel) VALUES (?,?,?,?,?,?,?,?)";

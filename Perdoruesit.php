@@ -4,7 +4,7 @@ include "DatabaseConnection.php";
 include_once "PerdoruesitRepository.php";
 
 $strep = new PerdoruesitRepository();
-$students = $strep->getAllPerdoruesit();
+$perdoruesit = $strep->getAllPerdoruesit();
 
 ?>
 

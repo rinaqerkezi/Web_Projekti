@@ -4,7 +4,7 @@ class Perdoruesi{
     private $Emri;
     private $Mbiemri;
     private $Emaili;
-    private $Password;
+    private $Passwordi;
     private $CPassword;
     private $Gjinia;
     private $NrTel;
@@ -14,7 +14,7 @@ class Perdoruesi{
         $this->Emri=$e;
         $this->Mbiemri=$m;
         $this->Emaili=$em;
-        $this->Password=$p;
+        $this->Passwordi=$p;
         $this->CPassword=$cp;
         $this->Gjinia=$gj;
         $this->NrTel=$nrt;
@@ -31,20 +31,20 @@ class Perdoruesi{
     public function getMbiemri(){
         return $this->Mbiemri;
     }
-    public function setMbiemri($e){
-        $this->Mbiemri = $e;
+    public function setMbiemri($m){
+        $this->Mbiemri = $m;
     }
 
     public function getEmaili(){
         return $this->Emaili;
     }
-    public function setEmaili($e){
-        $this->Emaili = $e;
+    public function setEmaili($em){
+        $this->Emaili = $em;
     }
-    public function getPassword(){
+    public function getPasswordi(){
         return $this->Password;
     }
-    public function setPassword($p){
+    public function setPasswordi($p){
         $this->Password = $p;
     }
     public function getCPassword(){
@@ -58,8 +58,8 @@ class Perdoruesi{
     public function getGjinia(){
         return $this->Gjinia;
     }
-    public function setGjinia($e){
-        $this->Gjinia = $e;
+    public function setGjinia($gj){
+        $this->Gjinia = $gj;
     }
 
     public function getNrTel(){
