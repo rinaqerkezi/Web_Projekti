@@ -5,7 +5,7 @@
     "email"=>"om@ubt-uni.net",
     "username"=>"olsamuhaxhiri",
     "password" => "olsa123",
-    "user_type"=>"1"
+    "user_type"=>"admin"
   ];
   
   $user2 = [
@@ -14,7 +14,7 @@
     "email"=>"rq@ubt-uni.net.com",
     "username"=>"rinaqerkezi",
     "password" => "rina123",
-    "user_type"=>"1"
+    "user_type"=>"admin"
   ];
 
   $user3 = [
@@ -23,7 +23,7 @@
     "email"=>"ss@gmail.com",
     "username"=>"sasa",
     "password" => "sasa123",
-    "user_type"=>"0"
+    "user_type"=>"user"
   ];
 
   

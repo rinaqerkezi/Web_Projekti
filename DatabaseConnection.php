@@ -4,7 +4,7 @@ class DatabaseConnection{
     private $server = "localhost";
     private $username = "root";
     private $password = "";
-    private $database = "users";
+    private $database = "webprojekti";
 
 
 
