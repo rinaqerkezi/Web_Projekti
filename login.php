@@ -49,6 +49,13 @@ if(isset($_POST['submit'])){
     <title>Log In Form</title>
     <link rel="stylesheet" href="login.css">
     <script src="login.js"></script>
+    <script>
+    // Disable the back button to prevent going back to the dashboard
+    window.history.forward();
+    // Listen for the page unload event and re-enable the back button
+    window.onbeforeunload = function() { return null; };
+</script>
+
 </head>
 <body>
     <br>

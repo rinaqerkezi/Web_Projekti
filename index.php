@@ -1,13 +1,18 @@
 <?php
 function nrVizitave(){
-$numroHits = $_COOKIE['numro'] ?:0;
-$numroHits++;
-setcookie('numro',$numroHits,time()+86400*30);
-echo "Ju keni vizituar kete Uebfaqe: ".$numroHits." here.";
+   
+    $numroHits = isset($_COOKIE['numro']) ? $_COOKIE['numro'] : 0;
+
+    $numroHits++;
+
+   
+    setcookie('numro', $numroHits, time() + 86400 * 30);
+
+    echo "Ju keni vizituar kete Uebfaqe: " . $numroHits . " here.";
 }
+
+nrVizitave();
 ?>
-
-
 
 
 
@@ -23,8 +28,7 @@ echo "Ju keni vizituar kete Uebfaqe: ".$numroHits." here.";
     <script src="index.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
-
-</head>
+    
 
 <body>
     <div id="Kontinieri">
@@ -208,7 +212,7 @@ echo "Ju keni vizituar kete Uebfaqe: ".$numroHits." here.";
 
             </div>
         </div>
-        <h3> <?php nrVizitave(); ?></h3>
+      
 
     </footer>
     <div class="copyRightText">
