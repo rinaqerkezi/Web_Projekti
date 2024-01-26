@@ -1,11 +1,8 @@
 <?php
 function nrVizitave(){
-    
 $numroHits = $_COOKIE['numro'] ?:0;
 $numroHits++;
-
 setcookie('numro',$numroHits,time()+86400*30);
-
 echo "Ju keni vizituar kete Uebfaqe: ".$numroHits." here.";
 }
 ?>
@@ -211,13 +208,13 @@ echo "Ju keni vizituar kete Uebfaqe: ".$numroHits." here.";
 
             </div>
         </div>
-       
+        <h3> <?php nrVizitave(); ?></h3>
+
     </footer>
     <div class="copyRightText">
         <p>Copyright © 2023 . All Rights deserved</p>
     </div>
    
-    <h3> <?php nrVizitave(); ?></h3>
 
 
 

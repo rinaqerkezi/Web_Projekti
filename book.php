@@ -38,6 +38,10 @@
             <div class="container">
                 <h1>Make Memories</h1>
                 <div class="content grid">
+                <div class="box">
+                        <span>OFFER no.</span><br>
+                        <input type="number" placeholder="01">
+                    </div>
                     <div class="box">
                         <span>Arrival Date</span><br>
                         <input type="date" placeholder="16/10/2024">
@@ -54,10 +58,12 @@
                         <span>CHILDREN</span><br>
                         <input type="number" placeholder="01">
                     </div>
+                   
+                    <br>
                     <div class="box">
-                      <a href="destinations.php" class="flex">
+                      <a href="booked.php" class="flex">
                           <button>
-                              <span>Check Availability</span>
+                              <span>BOOK</span>
                               <i class="fas fa-arrow-circle-right"></i>
                           </button>
                       </a>

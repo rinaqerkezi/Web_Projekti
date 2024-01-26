@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #e6e8ed;
+    background-color: #dde0e8;
     color: #666666;
     font-family: "Montserrat", sans-serif;
   }
@@ -10,7 +10,7 @@ body {
 
   
 #Kontinieri{
-  background:8px rgb(191, 191, 191);
+  background:8px rgb(128, 126, 126);
   margin-top: 5%;
   margin: auto;
   max-width: 2000px;
@@ -24,7 +24,7 @@ body {
 
 header {
   background-color: #333;
-  color: #fff;
+  color: #969090;
   padding: 10px 20px;
 }
 
