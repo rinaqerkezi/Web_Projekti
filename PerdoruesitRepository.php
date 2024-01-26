@@ -40,14 +40,18 @@
 
         public function getAllPerdoruesit(){
             $conn = $this->connection;
-
+        
             $sql = "SELECT * FROM users ";
-            $statement = $conn->query($sql);
-
-            $perdoruesit = $statement->fetchAll();
+            $result = $conn->query($sql);
+        
+            $perdoruesit = [];
+            while ($row = $result->fetch_assoc()) {
+                $perdoruesit[] = $row;
+            }
+        
             return $perdoruesit;
         }
-
+        
 
         //Pjesa tjeter e funksioneve CRUD: update 
         //dergohet parametri ne baze te cilit e identifikojme studentin (ne kete rast id, por mund te jete edhe ndonje atribut tjeter) dhe parametrat e tjere qe mund t'i ndryshojme (emri, mbiemri, etj...)
