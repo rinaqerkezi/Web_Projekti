@@ -1,3 +1,30 @@
+<?php 
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["delete_user"])) {
+  $user_id = $_POST["delete_user_id"];
+
+  $sql = "DELETE FROM users WHERE id = ?";
+  $stmt = $data->prepare($sql);
+
+  if ($stmt->execute([$user_id])) {
+      echo '<script>alert("User deleted successfully");</script>';
+  } else {
+      echo "Error: " . $stmt->errorInfo()[2];
+  }
+}
+
+
+
+
+
+
+
+?>
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -92,28 +119,16 @@
               <span class="material-icons-outlined">inventory_2</span> Offers
             </a>
           </li>
-          <li class="sidebar-list-item">
-            <a href="#" target="_blank">
-              <span class="material-icons-outlined">fact_check</span> Industry
-            </a>
-          </li>
-          <li class="sidebar-list-item">
-            <a href="#" target="_blank">
-              <span class="material-icons-outlined">add_shopping_cart</span> Offers ORDERS
-            </a>
-          </li>
+        
+         
           <li class="sidebar-list-item">
        <a href="#" target="_blank">
         <span class="material-icons-outlined">shopping_cart</span> Sales ORDERS
             </a>
           </li>
-    <li class="sidebar-list-item">
-                <a href="#" target="_blank">
-              <span class="material-icons-outlined">poll</span> Reports
-            </a>
-          </li>
+ 
           <li class="sidebar-list-item">
-            <a href="#" target="_blank">
+            <a href="Perdoruesit.php" target="_blank">
               <span class="material-icons-outlined">settings</span> Settings
             </a>
           </li>
@@ -135,16 +150,10 @@
               <p class="text-primary">Offers</p>
               <span class="material-icons-outlined text-blue">inventory_2</span>
             </div>
-            <span class="text-primary font-weight-bold">249</span>
+            <span class="text-primary font-weight-bold">4</span>
           </div>
 
-          <div class="card">
-            <div class="card-inner">
-              <p class="text-primary">Offers ORDERS</p>
-              <span class="material-icons-outlined text-orange">add_shopping_cart</span>
-            </div>
-            <span class="text-primary font-weight-bold">83</span>
-          </div>
+        
 
           <div class="card">
             <div class="card-inner">
@@ -154,13 +163,7 @@
             <span class="text-primary font-weight-bold">79</span>
           </div>
 
-          <div class="card">
-            <div class="card-inner">
-              <p class="text-primary">Industry ALERTS</p>
-              <span class="material-icons-outlined text-red">notification_important</span>
-            </div>
-            <span class="text-primary font-weight-bold">56</span>
-          </div>
+         
 
         </div>
 

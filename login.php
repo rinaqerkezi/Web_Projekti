@@ -36,7 +36,40 @@ if(isset($_POST['submit'])){
       $error[] = 'incorrect email or password!';
    }
 
+if(!$result){
+    die("invalid query:".$conn->error);
+
+}
+while($row=$result->mysqli_query()){
+    echo"
+    <tr>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td><a class=></a>
+         </td>
+
+    </tr>
+   " ;
+}
+
 };
+
+
+
+
+if (isset($_POST['username']) && isset($_POST['password'])) {
+
+    $_SESSION['loggedin'] = true;
+    $_SESSION['username'] = $_POST['username']; // Replace with actual username
+    $_SESSION['LAST_ACTIVITY'] = time(); // Update last activity time stamp
+
+    header("Location: dashboard.php");
+    exit;
+}
+
 ?>
 
 
@@ -50,9 +83,7 @@ if(isset($_POST['submit'])){
     <link rel="stylesheet" href="login.css">
     <script src="login.js"></script>
     <script>
-  
     window.history.forward();
-   
     window.onbeforeunload = function() { return null; };
 </script>
 
