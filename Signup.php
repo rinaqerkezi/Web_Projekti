@@ -1,22 +1,13 @@
 <?php
-include_once 'PerdoruesitRepository.php';
+include_once 'Register.php';
+include_once 'Database.php';
 
-if (isset($_POST['submit'])) {
-    $emri = $_POST['name'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $cpassword = $_POST['cpassword'];
-    $gjinia = $_POST['gjinia'];
-    $nrtel = $_POST['nrtel'];
-    $user_type = $_POST['user_type'];
-  
-
-    $Perdorues = new Perdoruesit($emri,$email,$password,$cpassword,$gjinia,$nrtel, $user_type);
-
-    $perdoruesitRepository = new PerdoruesitRepository();
-    $perdoruesitRepository->insertPerdoruesit($Perdorues);
-    header("location:dashboard.php");
+session_start();
+$re = new Register();
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
+$register= $re->addRegister($_POST, $_FILES);
 }
+
 
 ?>
 
@@ -88,7 +79,9 @@ if (isset($_POST['submit'])) {
           <div class="error-message" id="phoneNumberError"></div>
           
           <button type="submit" id="submit" size="15">Submit</button>
-    </form>
+        </form>
+      
+        
         <p>
           <br>
           By clicking the Sign Up button,you agree to our <br/>
@@ -108,6 +101,3 @@ if (isset($_POST['submit'])) {
   ?>
 
 
-
-
-?>
