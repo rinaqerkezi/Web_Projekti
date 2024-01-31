@@ -8,7 +8,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 $register= $re->addRegister($_POST, $_FILES);
 }
 
-
 ?>
 
   <!DOCTYPE html>
@@ -79,9 +78,7 @@ $register= $re->addRegister($_POST, $_FILES);
           <div class="error-message" id="phoneNumberError"></div>
           
           <button type="submit" id="submit" size="15">Submit</button>
-        </form>
-      
-        
+    </form>
         <p>
           <br>
           By clicking the Sign Up button,you agree to our <br/>
