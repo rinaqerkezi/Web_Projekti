@@ -1,10 +1,11 @@
 
 <?php
+@include 'dashboard.php';
 @include 'PerdoruesitRepository.php';
 $id = $_GET['id'];//e merr id e studentit prej url
 
 $strep = new PerdoruesitRepository();
-$perdorues = $strep->getStudentById($id);
+$perdorues = $strep->getPerdoruesById($id);
 ?>
 
 <!DOCTYPE html>
@@ -40,7 +41,7 @@ if(isset($_POST['editBtn'])){
     
   
 
-    $strep->editStudent($id,$emri,$mbiemri,$email,$password, $cpassword, $gjinia, $nrtel);
+    $strep->editPerdorues($id,$emri,$mbiemri,$email,$password, $cpassword, $gjinia, $nrtel);
     header("location:perdoruesit.php");
 }
 

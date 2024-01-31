@@ -10,20 +10,13 @@
             $this->connection = $conn->startConnection();
         }
 
-        //kur kemi parametra kryesisht e pergatisim sql per marrjen e parametrave me prepare
-        //dhe e bejme lidhjen e parametrave permes metodes execute
-        //Pikepyetjet neper queries (?) zevendesohen nga parametrat te metoda execute
-        //kurse pa parametra, vazhdojme direkt me metoden query
-        //metodat fetch/fetchAll perdoren kur duam te kthejme/marrim ndonje vlere
-        
-
 
         public function insertPerdorues($perdorues){
             $conn = $this->connection;
 
             $emri = $perdorues->getEmri();
             $mbiemri = $perdorues->getMbiemri();
-            $emaili = $perdorues->getEmaili();
+            $email = $perdorues->getEmaili();
             $passwordi = $perdorues->getPassword();
             $cpassword=$perdorues->getCPassword();
             $gjinia = $perdorues->getGjinia();
@@ -33,7 +26,7 @@
             $sql = "INSERT INTO users (Emri, Mbiemri, Emaili, Passwordi ,CPassword,Gjinia, NrTel) VALUES (?,?,?,?,?,?,?,?)";
 
             $statement = $conn->prepare($sql);
-            $statement->execute([$id,$emri,$mbiemri,$email,$passwordi, $cpassword, $gjinia, $nrtel]);
+            $statement->execute([$emri,$mbiemri,$email,$passwordi, $cpassword, $gjinia, $nrtel]);
 
             echo "<script>alert('U shtua me sukses!')</script>";
         }
@@ -60,7 +53,7 @@
             $sql = "UPDATE users SET Emri=?,Mbiemri=?, Emaili=?,Passwordi=? ,CPassword=?,Gjinia=?, NrTel=?  WHERE Id=?";
 
             $statement = $conn->prepare($sql);
-            $statement->execute([$emri,$mbiemri, $emaili,$passwordi, $cpassword, $gjinia, $nrtel]);
+            $statement->execute([$emri,$mbiemri, $email,$passwordi, $cpassword, $gjinia, $nrtel]);
 
             echo "<script>alert('U ndryshua me sukses!')</script>";
 
