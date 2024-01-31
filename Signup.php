@@ -1,25 +1,31 @@
 <?php
-include_once 'Perdoruesit.php';
+include_once 'Perdoruesi.php';
 include_once 'PerdoruesitRepository.php';
+@include 'config.php';
+
+session_start();
 
 if (isset($_POST['submit'])) {
-    $emri = $_POST['name'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $cpassword = $_POST['cpassword'];
-    $gjinia = $_POST['gjinia'];
-    $nrtel = $_POST['nrtel'];
-    $user_type = $_POST['user_type'];
-  
 
-    $Perdorues = new Perdoruesit($emri,$email,$password,$cpassword,$gjinia,$nrtel, $user_type);
+    $Emri = mysqli_real_escape_string($conn, $_POST['emri']);
+    $Mbiemri = mysqli_real_escape_string($conn, $_POST['mbiemri']);
+    $Emaili = mysqli_real_escape_string($conn, $_POST['email']);
+    $Passwordi = SHA1($_POST['password']); 
+    $CPassword = SHA1($_POST['confirm']);
+    $Gjinia = $_POST['gender'];
+    $NrTel = mysqli_real_escape_string($conn, $_POST['NrTel']);
 
-    $perdoruesitRepository = new PerdoruesitRepository();
-    $perdoruesitRepository->insertPerdoruesit($Perdorues);
-    header("location:dashboard.php");
+    $emailCheck = "SELECT * FROM userss WHERE Emaili = '$Emaili'";
+    $resultEmailCheck = mysqli_query($conn, $emailCheck);
+
+    $perdorues = new Perdoruesi($Emri, $Mbiemri, $Emaili,$Passwordi, $CPassword, $Gjinia, $NrTel);
+
+    $PerdoruesitRepository = new PerdoruesitRepository();
+    $PerdoruesitRepository->insertPerdorues($perdorues);
+    header("location:Perdoruesit.php");
 }
-?>
 
+?>
 
 <span style="font-family: verdana, geneva, sans-serif;">
   <!DOCTYPE html>
@@ -50,7 +56,7 @@ if (isset($_POST['submit'])) {
       </header>
       <div class="signup-box">
         <h1>Sign Up</h1>
-        <form id="signupForm" action="<?php echo $_SERVER['PHP_SELF']?>" method="post" onsubmit="return validateForm()">
+        <form id="signupForm" action="<?php echo $_SERVER['PHP_SELF']?>" method="post" >
         <?php
       if(isset($error)){
          foreach($error as $error){
@@ -58,35 +64,35 @@ if (isset($_POST['submit'])) {
          };
       };
       ?>
-          <label for="emri" title="Enter your first name">First Name:</label>
+          <label for="Emri" title="Enter your first name">First Name:</label>
           <input type="text" id="emri" name="emri" placeholder="John" size="15" />
           <div class="error-message" id="emriError"></div>
       
-          <label for="mbiemri" title="Enter your last name">Last Name:</label>
+          <label for="Mbiemri" title="Enter your last name">Last Name:</label>
           <input type="text" id="mbiemri" size="15" placeholder="Charles" />
           <div class="error-message" id="mbiemriError"></div>
       
-          <label for="email" title="Enter your email address">Email:</label>
+          <label for="Email" title="Enter your email address">Email:</label>
           <input type="email" id="email" size="15" placeholder="john.charles@example.com" />
           <div class="error-message" id="emailError"></div>
       
-          <label for="passwordi" title="Enter a strong password">Password:</label>
+          <label for="Passwordi" title="Enter a strong password">Password:</label>
           <input type="password" id="passwordi" size="15" placeholder="********" />
           <div class="error-message" id="passwordError"></div>
       
-          <label for="confirm" title="Confirm your password">Confirm Password:</label>
+          <label for="CPassword" title="Confirm your password">Confirm Password:</label>
           <input type="password" id="confirm" size="15" placeholder="********" />
           <div class="error-message" id="confirmPassError"></div>
       
           <label>Gender:</label>
-          <select id="gender" name="gender">
+          <select id="gender" name="Gjinia">
             <option value="male">Male</option>
             <option value="female">Female</option>
           </select>
           <div class="error-message" id="genderError"></div>
       
-          <label>Phone Number:</label>
-          <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="123-456-789" />
+          <label>Phone number:</label>
+          <input type="tel" id="phoneNumber" name="NrTel" placeholder="123-456-789" />
           <div class="error-message" id="phoneNumberError"></div>
           
           <button type="submit" id="submit" size="15">Submit</button>

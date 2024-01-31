@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const signupForm = document.getElementById('signupForm');
 
   const validateForm = (event) => {
-    event.preventDefault();
+    
 
 
     resetErrorMessages();
@@ -126,6 +126,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     alert('Form submitted successfully!');
+   
+window.location.href = 'index.php';
+
   };
 
   const resetErrorMessages = () => {
