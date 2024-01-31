@@ -6,11 +6,11 @@ session_start();
 
 if(isset($_POST['submit'])){
 
-   $name = mysqli_real_escape_string($conn, $_POST['name']);
+   /*$name = mysqli_real_escape_string($conn, $_POST['name']);*/
    $email = mysqli_real_escape_string($conn, $_POST['email']);
    $pass = SHA1($_POST['password']);
-   $cpass = SHA1($_POST['cpassword']);
-   $user_type = $_POST['user_type'];
+   /*$cpass = SHA1($_POST['cpassword']);*/
+   /*$user_type = $_POST['user_type'];*/
 
    $select = " SELECT * FROM users WHERE email = '$email' && password = '$pass' ";
 

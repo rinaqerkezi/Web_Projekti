@@ -17,10 +17,10 @@ if (isset($_POST['submit'])) {
     $perdoruesitRepository->insertPerdoruesit($Perdorues);
     header("location:dashboard.php");
 }
+
+
 ?>
 
-
-<span style="font-family: verdana, geneva, sans-serif;">
   <!DOCTYPE html>
     <html lang="en">
   
@@ -49,7 +49,7 @@ if (isset($_POST['submit'])) {
       </header>
       <div class="signup-box">
         <h1>Sign Up</h1>
-        <form id="signupForm" action="<?php echo $_SERVER['PHP_SELF']?>" method="post" onsubmit="return validateForm()">
+        <form id="signupForm" method="POST" enctype="multipart/form-data" >
         <?php
       if(isset($error)){
          foreach($error as $error){
@@ -57,35 +57,35 @@ if (isset($_POST['submit'])) {
          };
       };
       ?>
-          <label for="emri" title="Enter your first name">First Name:</label>
+          <label for="Emri" title="Enter your first name">First Name:</label>
           <input type="text" id="emri" name="emri" placeholder="John" size="15" />
           <div class="error-message" id="emriError"></div>
       
-          <label for="mbiemri" title="Enter your last name">Last Name:</label>
-          <input type="text" id="mbiemri" size="15" placeholder="Charles" />
+          <label for="Mbiemri" title="Enter your last name">Last Name:</label>
+          <input type="text" id="mbiemri" name ="mbiemri" size="15" placeholder="Charles" />
           <div class="error-message" id="mbiemriError"></div>
       
-          <label for="email" title="Enter your email address">Email:</label>
-          <input type="email" id="email" size="15" placeholder="john.charles@example.com" />
+          <label for="Email" title="Enter your email address">Email:</label>
+          <input type="email" id="email" name="email" size="15" placeholder="john.charles@example.com" />
           <div class="error-message" id="emailError"></div>
       
-          <label for="passwordi" title="Enter a strong password">Password:</label>
-          <input type="password" id="passwordi" size="15" placeholder="********" />
+          <label for="Passwordi" title="Enter a strong password">Password:</label>
+          <input type="password" id="passwordi" name="passwordi" size="15" placeholder="********" />
           <div class="error-message" id="passwordError"></div>
       
-          <label for="confirm" title="Confirm your password">Confirm Password:</label>
-          <input type="password" id="confirm" size="15" placeholder="********" />
+          <label for="CPassword" title="Confirm your password">Confirm Password:</label>
+          <input type="password" id="confirm" name="confirm" size="15" placeholder="********" />
           <div class="error-message" id="confirmPassError"></div>
       
           <label>Gender:</label>
-          <select id="gender" name="gender">
+          <select id="gender" name="gjinia">
             <option value="male">Male</option>
             <option value="female">Female</option>
           </select>
           <div class="error-message" id="genderError"></div>
       
-          <label>Phone Number:</label>
-          <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="123-456-789" />
+          <label>Phone number:</label>
+          <input type="tel" id="phoneNumber" name="nrtel" placeholder="123-456-789" />
           <div class="error-message" id="phoneNumberError"></div>
           
           <button type="submit" id="submit" size="15">Submit</button>
@@ -107,8 +107,8 @@ if (isset($_POST['submit'])) {
     </body>
   
     </html>
-  </span>
-  <?php
+  
+  ?>
 
 
 
