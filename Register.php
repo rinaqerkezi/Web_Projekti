@@ -10,6 +10,24 @@ class Register {
         $this->db->dbConnect();  
     }
 
+    public function allUsers() {
+        $query = "SELECT * FROM userss"; 
+        $result = mysqli_query($this->db->conn, $query);
+    
+        if (!$result) {
+            return false;
+        }
+    
+        return $result;
+    }
+
+    function validateInput($conn, $input) {
+        return mysqli_real_escape_string($conn, $input);
+    }
+
+   
+    
+
     public function addRegister($data, $file) {
        
         $Emri = isset($_POST['emri']) ? mysqli_real_escape_string($this->db->link, $_POST['emri']) : '';
@@ -32,5 +50,25 @@ class Register {
         }
     }
     
+    public function deleteUser($id) {
+        $id = $this->validateInput($this->db->conn, $id);
+        $query = "DELETE FROM userss WHERE id = '$id'"; 
+        $result = $this->db->delete($query);
+
+        if ($result) {
+            return "User deleted successfully";
+        } else {
+            return "Failed to delete user";
+        }
+    
+
+if (isset($_GET['delUser'])) {
+    $id = base64_decode($_GET['delUser']);
+    echo "ID to delete: " . $id;
+    $deleteUser = $re->deleteUser($id);
 }
+}
+} 
+    
+
 ?>

@@ -1,48 +1,88 @@
+<?php 
+include_once 'configg.php';
+include_once 'database.php';
+include_once 'Register.php';
+include_once 'UserController.php';
+include_once 'users-code.php';
 
-<?php
-@include 'dashboard.php';
-@include 'PerdoruesitRepository.php';
-$id = $_GET['id'];//e merr id e studentit prej url
+$re = new Register();
 
-$strep = new PerdoruesitRepository();
-$perdorues = $strep->getPerdoruesById($id);
+$db = new Database();
+$db->dbConnect();
+
+if(isset($_GET['id'])){
+    $id = base64_decode($_GET['id']);
+}
+
+if($_SERVER['REQUEST_METHOD']=='POST'){
+    $register = $re->updateUser($_POST, $_FILES, $id);
+}
+
 ?>
 
 <!DOCTYPE html>
 <html>
 <body>
-    <h3>Edit User</h3>
-    <form action="<?php echo $SERVER['PHP_SELF']?>" method="post">
-     <!-- nese nuk duam t'i ndryshojme te gjitha te dhenat, e perdorim kete pjesen tek value qe te na shfaqen vlerat aktuale, ashtu qe atributet qe nuk duam t'i ndryshojme mbesin te njejta pa pasur nevoje t'i shkruajme prape-->
-        <input type="text" name="emri"  value="<?php echo $perdorues['Emri']?>"> <br> <br> <!-- Pjesa brenda [] eshte emri i sakte i atributit si ne Databaze-->
-        <input type="text" name="mbiemri"  value="<?php echo $perdorues['Mbiemri']?>"> <br> <br>
-        <input type="text" name="emaili"  value="<?php echo $perdorues['Emaili']?>"> <br> <br>
-        <input type="password" name="password"  value="<?php echo $perdorues['Password']?>"> <br> <br>
-        <input type="cpassword" name="cpassword"  value="<?php echo $perdorues['cPassword']?>"> <br> <br>
-        <input type="text" name="gjinia"  value="<?php echo $perdorues['Gjinia']?>"> <br> <br>
-        <input type="tel" name="nrtel"  value="<?php echo $perdorues['NrTelefonit']?>"> <br> <br>
-        
-        <input type="submit" name="editBtn" value="save"> <br> <br>
+
+    <?php 
+    if(isset($_GET['id'])){
+        $userID = validateInput($db->conn, $_GET['id']);
+
+        $user = new UserController();
+
+        $result = $user->edit($userID);
+
+        if($result){
+    ?>
+    <form action="edit.php" method="POST">
+    <input type="hidden" name="user_id" value="<?=$result['id']?>">
+           <label for="Emri" title="Enter your first name">First Name:</label>
+          <input type="text" id="emri" name="emri" value="<?=$result['Emri']?>" size="15" />
+          <div class="error-message" id="emriError"></div>
+      
+          <label for="Mbiemri" title="Enter your last name">Last Name:</label>
+          <input type="text" id="mbiemri" name ="mbiemri" value="<?=$result['Mbiemri']?>" size="15" placeholder="Charles" />
+          <div class="error-message" id="mbiemriError"></div>
+      
+          
+          <label for="Passwordi" title="Enter a strong password">Password:</label>
+          <input type="password" id="passwordi" name="passwordi" value="<?=$result['passwordi']?>" size="15" placeholder="********" />
+          <div class="error-message" id="passwordError"></div>
+      
+         
+          <label>Phone number:</label>
+          <input type="tel" id="phoneNumber" name="nrtel" value="<?=$result['nrTel']?>" placeholder="123-456-789" />
+          <div class="error-message" id="phoneNumberError"></div>
+          
+          <button type="submit" name="update" id="submit" size="15">update</button>
     </form>
+
+        
+    <?php
+        } else {
+            echo "<h4>Record not found</h4>";
+        }
+    } else {
+        echo "<h4>Something went wrong</h4>";
+    }
+    ?>
+
+
 </body>
 </html>
 
 <?php 
 
-if(isset($_POST['editBtn'])){
-    $id = $perdorues['Id']; //merret nga studenti me siper
-    $emri = $_POST['emri']; //merret nga formulari
+if(isset($_POST['update'])){
+    $id = $perdorues['user_id'];
+    $emri = $_POST['emri'];
     $mbiemri = $_POST['mbiemri'];
     $email = $_POST['emaili'];
-    $password = $_POST['password'];
-    $cpassword = $_POST['cpassword'];
-    $gjinia = $_POST['gjinia'];
+    $password = $_POST['passwordi'];
     $nrtel = $_POST['nrtel'];
     
-  
-
-    $strep->editPerdorues($id,$emri,$mbiemri,$email,$password, $cpassword, $gjinia, $nrtel);
-    header("location:perdoruesit.php");
+    $re->editUser($id, $emri, $mbiemri, $email, $password, $nrtel);
+    header("location:userController.php");
 }
 
 ?>

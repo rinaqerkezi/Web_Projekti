@@ -1,16 +1,14 @@
 <?php
 
-@include 'config.php';
+@include 'configg.php';
 
 session_start();
 
 if(isset($_POST['submit'])){
 
-   /*$name = mysqli_real_escape_string($conn, $_POST['name']);*/
    $email = mysqli_real_escape_string($conn, $_POST['email']);
    $pass = SHA1($_POST['password']);
-   /*$cpass = SHA1($_POST['cpassword']);*/
-   /*$user_type = $_POST['user_type'];*/
+ 
 
    $select = " SELECT * FROM users WHERE email = '$email' && password = '$pass' ";
 
@@ -40,22 +38,9 @@ if(!$result){
     die("invalid query:".$conn->error);
 
 }
-while($row=$result->mysqli_query()){
-    echo"
-    <tr>
-         <td></td>
-         <td></td>
-         <td></td>
-         <td></td>
-         <td></td>
-         <td><a class=></a>
-         </td>
 
-    </tr>
-   " ;
+
 }
-
-};
 
 
 
@@ -63,8 +48,8 @@ while($row=$result->mysqli_query()){
 if (isset($_POST['username']) && isset($_POST['password'])) {
 
     $_SESSION['loggedin'] = true;
-    $_SESSION['username'] = $_POST['username']; // Replace with actual username
-    $_SESSION['LAST_ACTIVITY'] = time(); // Update last activity time stamp
+    $_SESSION['username'] = $_POST['username']; 
+    $_SESSION['LAST_ACTIVITY'] = time(); 
 
     header("Location: dashboard.php");
     exit;

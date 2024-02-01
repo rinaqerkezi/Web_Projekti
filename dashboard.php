@@ -1,21 +1,13 @@
 <?php 
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["delete_user"])) {
-  $user_id = $_POST["delete_user_id"];
+include_once 'Register.php';
+//include_once 'addstd.php';
 
-  $sql = "DELETE FROM users WHERE id = ?";
-  $stmt = $data->prepare($sql);
+$re = new Register();
 
-  if ($stmt->execute([$user_id])) {
-      echo '<script>alert("User deleted successfully");</script>';
-  } else {
-      echo "Error: " . $stmt->errorInfo()[2];
-  }
+if(isset($_GET['delUser'])){
+  $id=base64_decode($_GET['delUser']);
+  $deleteUser=$re->deleteUser($id);
 }
-
-
-
-
-
 
 
 ?>
@@ -45,7 +37,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["delete_user"])) {
 
     <div id="Kontinieri">
       <div class="kontenti">
-          <h2>Luxury  <br>Heavens</h2>
+         <h2>Luxury <br>
+        Heavens</h2>
   <div>
   <nav>
      
@@ -141,6 +134,79 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["delete_user"])) {
      <div class="main-title">
               <p class="font-weight-bold">DASHBOARD</p>
         </div>
+<br>
+<?php 
+if(isset($deleteUser)){
+?>
+<div class="alert-alert">
+<strong><?=$deleteUser?></strong>
+<button type="button" class="close" data-dismiss="alert"
+aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+</div>
+
+<?php
+}
+
+
+?>
+
+
+<div class="card-header">
+<div class="row">
+<div class="col-md-6">
+<h3>ALL USERS REGISTRATION</h3>
+</div>
+<div class="col-md-6">
+<a href="addstd.php" class="btn btn-info ">
+ Add User
+</a>
+</div>
+</div>
+  </div>
+  <div class="card-body">
+        <table class="table table-bordered">
+         <tr>
+          <th>NAME</th>
+          <th>EMAIL</th>
+          <th>PHONE</th>
+          <th>ADRESS</th>
+          <th>ACTION</th>
+
+         </tr>
+         <?php 
+         $allUs= $re->allUsers();
+         if($allUs){
+          while($row=mysqli_fetch_assoc($allUs)){
+            ?> 
+            <tr>
+          <td><?=$row['Emri']?></td>
+          <td><?=$row['Mbiemri']?></td>
+          <td><?=$row['Emaili']?></td>
+          <td><?=$row['Passwordi']?></td>
+          <td>
+          <a href="edit.php?id=<?=base64_encode($row['id'])?>" 
+          class="btn btn-warning">Edit
+          <a href="?delUser=<?=base64_encode($row['id'])?>" 
+          onclick="return confirm('Are you sure you want to delete this user')" class="btn btn-danger">Delete</a>
+          </a>
+          </td>
+
+         </tr>
+            
+            <?php
+          }
+         }
+         ?>
+         
+        </table>
+        </div>
+<br>
+
+
+
+
 
         <div class="main-cards">
 
