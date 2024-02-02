@@ -88,7 +88,7 @@ $berlin = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM fotot WHERE Emri
             </div>
 
             <div class="box">
-                <img src="<?php  echo $berlin['Foto']  ?>" alt="b" style="width: 180px; height: 100px; object-fit: cover;">
+                <img src="<?php  echo $berlin['']  ?>" alt="b" style="width: 180px; height: 100px; object-fit: cover;">
                 <h3>Berlin</h3>
                 <p>Vibrant, Bold, Berlin Gold</p>
                 <a href="book.php" class="btn">Book Now</a>
