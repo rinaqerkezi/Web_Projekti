@@ -20,9 +20,10 @@ class Database {
 
         if (!$this->conn) {
             $this->error = "Database connection failed";
-            return false;
+            return null;
         }
         $this->link = $this->conn; 
+        return $this->conn;
     }
 
 
