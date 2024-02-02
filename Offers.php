@@ -1,3 +1,12 @@
+<?php  
+require('config2.php');
+session_start();
+
+$amsterdam = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM fotot WHERE Emri = 'Amsterdam'"));
+$berlin = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM fotot WHERE Emri = 'Berlin'"));
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -79,7 +88,7 @@
             </div>
 
             <div class="box">
-                <img src="berlin.jpg" alt="b" style="width: 180px; height: 100px; object-fit: cover;">
+                <img src="<?php  echo $berlin['Foto']  ?>" alt="b" style="width: 180px; height: 100px; object-fit: cover;">
                 <h3>Berlin</h3>
                 <p>Vibrant, Bold, Berlin Gold</p>
                 <a href="book.php" class="btn">Book Now</a>
@@ -97,7 +106,7 @@
                 <a href="book.php" class="btn">Book Now</a>
             </div>
             <div class="box">
-                <img src="amsterdam.jpg" alt="am" style="width: 180px; height: 100px; object-fit: cover;">
+                <img src="<?php echo $amsterdam['Foto']  ?>" alt="am" style="width: 180px; height: 100px; object-fit: cover;">
                 <h3>Amsterdam</h3>
                 <p>Canvas of Culture and Canals.</p>
                 <a href="book.php" class="btn">Book Now</a>
