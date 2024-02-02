@@ -1,14 +1,16 @@
 <?php 
 include_once 'users-code.php';
+include_once 'Database.php';
 
 //$userController = new UserController();
 //$register = $userController->update($_POST, $id);
 
 class UserController {
+    private $conn;
 
     public function __construct() {
         $db = new Database(); 
-        $this->conn = $db->conn;
+        $this->conn = $db->dbConnect();
     }
 
     public function create($inputdata) {
@@ -24,10 +26,12 @@ class UserController {
 
     public function edit($id) {
         $userID = validateInput($this->conn, $id);
-        $userQuery = "SELECT * FROM userss WHERE id ='$userID' LIMIT 1";
-        $result = $this->conn->query($userQuery);
-        if ($result->num_rows == 1) {
-            $data = $result->fetch_assoc();
+        $userQuery = "SELECT * FROM userss WHERE id ='$id' LIMIT 1";
+        $result = $this->conn;
+        $s = $result->query($userQuery);
+       
+        if ($s->num_rows == 1) {
+            $data = $s->fetch_assoc();
             return $data;
         } else {
             return false;
@@ -38,11 +42,12 @@ class UserController {
         $userID = validateInput($this->conn, $id);
         $Emri = $inputData['Emri'];
         $Mbiemri = $inputData['Mbiemri'];
-        $passwordi = $inputData['passwordi'];
+        $passwordi = $inputData['Passwordi'];
         $nrTel = $inputData['Nrtel'];
     
-        $userUpdatedQuery = "UPDATE userss SET Emri='$Emri', Mbiemri='$Mbiemri', passwordi='$passwordi', nrTel='$nrTel' WHERE id='$userID' LIMIT 1";
-        $result = $this->conn->query($userUpdatedQuery);
+        $userUpdatedQuery = "UPDATE userss SET Emri='$Emri', Mbiemri='$Mbiemri', Passwordi='$passwordi', NrTel='$nrTel' WHERE id='$id' LIMIT 1";
+        $result = $this->conn;
+        $result->query($userUpdatedQuery);
     
         if ($result) {
             return true;

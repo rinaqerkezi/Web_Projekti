@@ -1,22 +1,27 @@
 <?php 
+
+
+$id = $_GET['id'];
 include_once 'configg.php';
 include_once 'database.php';
 include_once 'Register.php';
 include_once 'UserController.php';
-include_once 'users-code.php';
+
 
 $re = new Register();
 
 $db = new Database();
 $db->dbConnect();
 
-if(isset($_GET['id'])){
-    $id = base64_decode($_GET['id']);
-}
+// $id = $_GET['id'];
+// echo $id;
 
-if($_SERVER['REQUEST_METHOD']=='POST'){
-    $register = $re->updateUser($_POST, $_FILES, $id);
-}
+
+
+
+// if($_SERVER['REQUEST_METHOD']=='POST'){
+//     $register = $re->updateUser($_POST, $_FILES, $id);
+// }
 
 ?>
 
@@ -25,33 +30,35 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 <body>
 
     <?php 
-    if(isset($_GET['id'])){
-        $userID = validateInput($db->conn, $_GET['id']);
+    // if(isset($_GET['id'])){
+    //     $userID = validateInput($db->conn, $_GET['id']);
 
         $user = new UserController();
 
-        $result = $user->edit($userID);
+        $result = $user->edit($id);
+        echo $result['id'];
+        echo $result['Emri'];
 
-        if($result){
+        // if($result){
     ?>
-    <form action="edit.php" method="POST">
-    <input type="hidden" name="user_id" value="<?=$result['id']?>">
+    <form action="" method="POST">
+    <input type="hidden" name="user_id" value="<?php echo $result['id']?>">
            <label for="Emri" title="Enter your first name">First Name:</label>
-          <input type="text" id="emri" name="emri" value="<?=$result['Emri']?>" size="15" />
+          <input type="text" id="emri" name="Emri" value="<?php echo $result['Emri']?>" size="15" />
           <div class="error-message" id="emriError"></div>
       
           <label for="Mbiemri" title="Enter your last name">Last Name:</label>
-          <input type="text" id="mbiemri" name ="mbiemri" value="<?=$result['Mbiemri']?>" size="15" placeholder="Charles" />
+          <input type="text" id="mbiemri" name ="Mbiemri" value="<?php echo $result['Mbiemri']?>" size="15" placeholder="Charles" />
           <div class="error-message" id="mbiemriError"></div>
       
           
           <label for="Passwordi" title="Enter a strong password">Password:</label>
-          <input type="password" id="passwordi" name="passwordi" value="<?=$result['passwordi']?>" size="15" placeholder="********" />
+          <input type="password" id="passwordi" name="Passwordi" value="<?php echo $result['Passwordi'];?>" />
           <div class="error-message" id="passwordError"></div>
       
          
           <label>Phone number:</label>
-          <input type="tel" id="phoneNumber" name="nrtel" value="<?=$result['nrTel']?>" placeholder="123-456-789" />
+          <input type="tel" id="phoneNumber" name="Nrtel" value="<?php echo $result['NrTel']?>"  />
           <div class="error-message" id="phoneNumberError"></div>
           
           <button type="submit" name="update" id="submit" size="15">update</button>
@@ -59,12 +66,12 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 
         
     <?php
-        } else {
-            echo "<h4>Record not found</h4>";
-        }
-    } else {
-        echo "<h4>Something went wrong</h4>";
-    }
+        // } else {
+        //     echo "<h4>Record not found</h4>";
+        // }
+    //  else {
+    //     echo "<h4>Something went wrong</h4>";
+    // }
     ?>
 
 
@@ -72,17 +79,20 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 </html>
 
 <?php 
+include_once 'users-code.php';
 
-if(isset($_POST['update'])){
-    $id = $perdorues['user_id'];
-    $emri = $_POST['emri'];
-    $mbiemri = $_POST['mbiemri'];
-    $email = $_POST['emaili'];
-    $password = $_POST['passwordi'];
-    $nrtel = $_POST['nrtel'];
+
+
+// if(isset($_POST['update'])){
+//     $id = $perdorues['user_id'];
+//     $emri = $_POST['emri'];
+//     $mbiemri = $_POST['mbiemri'];
+//     $email = $_POST['emaili'];
+//     $password = $_POST['passwordi'];
+//     $nrtel = $_POST['nrtel'];
     
-    $re->editUser($id, $emri, $mbiemri, $email, $password, $nrtel);
-    header("location:userController.php");
-}
+//     $re->editUser($id, $emri, $mbiemri, $email, $password, $nrtel);
+//     header("location:userController.php");
+// }
 
 ?>

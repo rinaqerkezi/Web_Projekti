@@ -169,7 +169,9 @@ aria-label="Close">
         <table class="table table-bordered">
          <tr>
           <th>NAME</th>
+          <th>?Mbiemri</th>
           <th>EMAIL</th>
+          <th>PASSWORD</th>
           <th>PHONE</th>
           <th>ADRESS</th>
           <th>ACTION</th>
@@ -186,7 +188,7 @@ aria-label="Close">
           <td><?=$row['Emaili']?></td>
           <td><?=$row['Passwordi']?></td>
           <td>
-          <a href="edit.php?id=<?=base64_encode($row['id'])?>" 
+          <a href="edit.php?id=<?php echo $row['id'];?>" 
           class="btn btn-warning">Edit
           <a href="?delUser=<?=base64_encode($row['id'])?>" 
           onclick="return confirm('Are you sure you want to delete this user')" class="btn btn-danger">Delete</a>
