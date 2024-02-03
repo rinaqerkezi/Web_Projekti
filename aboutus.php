@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 <?php 
 session_start();
 ?>
+=======
+
+
+
+>>>>>>> 4c91445c162e6b21cf10bed0d92963de7e51b175
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,8 +49,8 @@ session_start();
         <h1 >About Us </h1>
       
         <div class="maini">
-         
-         <img src="fligggt.webp">
+        <img src="fligggt.webp" alt="am">
+
          <div class="text">
         
          <br>

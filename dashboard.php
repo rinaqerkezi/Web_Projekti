@@ -11,7 +11,12 @@ if(isset($_GET['delUser'])){
 
 ?>
 
+<?php 
 
+include_once 'config2.php';
+$query = "SELECT * FROM ofertat";
+$result0 = mysqli_query($conn, $query);
+?>
 
 <?php 
 session_start();
@@ -191,8 +196,8 @@ aria-label="Close">
           <td>
           <a href="edit.php?id=<?php echo $row['id'];?>" 
           class="btn btn-warning">Edit
-          <a href="?delUser=<?=base64_encode($row['id'])?>" 
-          onclick="return confirm('Are you sure you want to delete this user')" class="btn btn-danger">Delete</a>
+          <a href="?delUser=<?= base64_encode($row['id']) ?>" onclick="return confirm('Are you sure you want to delete this user')" class="btn btn-danger">Delete</a>
+
           </a>
           </td>
 
@@ -207,7 +212,34 @@ aria-label="Close">
         </div>
 <br>
 
-
+<div class="rg1">
+            <div class="userstable">
+                <table class="ut">
+                    <tr>
+                        <th colspan="5"><h2>Offers</h2></th>
+                    </tr>
+                    <tr>
+                        <th>ID</th>
+                        <th>cmimi</th>   
+                        <th>vendi</th>
+                        <th>koment</th>
+                       
+                    </tr>
+                    <?php while ($rows = mysqli_fetch_assoc($result0)) { ?>
+                        <tr>
+                            <td><?php echo $rows['ID']; ?></td>
+                            <td><?php echo $rows['cmimi']; ?></td>
+                            <td><?php echo $rows['vendi']; ?></td>
+                            <td><?php echo $rows['koment']; ?></td>
+                           
+                            <td><a href='deleteOffers.php?id=<?php echo $rows['ID']; ?>'>Delete</a></td>
+                            
+                            <td><a href='editOffers.php?id=<?php echo $rows['ID']; ?>'>Edit</a></td>
+                        </tr>
+                    <?php } ?>
+                </table> 
+            </div>
+        </div>
 
 
 
