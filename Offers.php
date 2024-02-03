@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+<?php 
+session_start();
+?>
+=======
 <?php  
 require('config2.php');
 session_start();
@@ -24,6 +29,7 @@ $londonO = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM   ofertat WHERE
 ?>
 
 
+>>>>>>> 4c91445c162e6b21cf10bed0d92963de7e51b175
 <!DOCTYPE html>
 <html lang="en">
 
