@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,8 +43,8 @@
         <h1 >About Us </h1>
       
         <div class="maini">
-         
-         <img src="fligggt.webp">
+        <img src="fligggt.webp" alt="am">
+
          <div class="text">
         
          <br>
