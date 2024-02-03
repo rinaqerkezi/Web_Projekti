@@ -1,11 +1,10 @@
-<<<<<<< HEAD
+
 <?php 
 session_start();
 ?>
-=======
 <?php  
 require('config2.php');
-session_start();
+
 
 $amsterdam = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM fotot WHERE Emri = 'Amsterdam'"));
 $berlin = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM fotot WHERE Emri = 'Berlin'"));
@@ -29,7 +28,7 @@ $londonO = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM   ofertat WHERE
 ?>
 
 
->>>>>>> 4c91445c162e6b21cf10bed0d92963de7e51b175
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -87,13 +86,14 @@ $londonO = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM   ofertat WHERE
     <img src="<?php echo $paris['Foto'] ?>" alt="am" style="width: 180px; height: 100px; object-fit: cover;">
     <h3><?php echo $parisO ['vendi'] ?></h3>
     <p><?php echo $parisO['koment'] ?></p>
+    
     <a href="book.php" class="btn">Book Now</a>
 </div>
 
 
             <div class="box">
             <img src="<?php echo $aspen['Foto']  ?>" alt="am" style="width: 180px; height: 100px; object-fit: cover;">
-            <h3><?php echo $aspenO ['vendi'] ?></h3>
+            <h3><?php echo isset($aspenO['vendi']) ? $aspenO['vendi'] : ''; ?></h3>
     <p><?php echo $aspenO['koment'] ?></p>
                 <a href="book.php" class="btn">Book Now</a>
             </div>
