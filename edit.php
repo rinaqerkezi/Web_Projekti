@@ -13,15 +13,6 @@ $re = new Register();
 $db = new Database();
 $db->dbConnect();
 
-// $id = $_GET['id'];
-// echo $id;
-
-
-
-
-// if($_SERVER['REQUEST_METHOD']=='POST'){
-//     $register = $re->updateUser($_POST, $_FILES, $id);
-// }
 
 ?>
 
@@ -30,9 +21,7 @@ $db->dbConnect();
 <body>
 
     <?php 
-    // if(isset($_GET['id'])){
-    //     $userID = validateInput($db->conn, $_GET['id']);
-
+  
         $user = new UserController();
 
         $result = $user->edit($id);
@@ -82,17 +71,5 @@ $db->dbConnect();
 include_once 'users-code.php';
 
 
-
-// if(isset($_POST['update'])){
-//     $id = $perdorues['user_id'];
-//     $emri = $_POST['emri'];
-//     $mbiemri = $_POST['mbiemri'];
-//     $email = $_POST['emaili'];
-//     $password = $_POST['passwordi'];
-//     $nrtel = $_POST['nrtel'];
-    
-//     $re->editUser($id, $emri, $mbiemri, $email, $password, $nrtel);
-//     header("location:userController.php");
-// }
 
 ?>
