@@ -1,6 +1,7 @@
 
 let currentIndex = 0;
-let imgArray = ['pht1.jpg', 'plannee.jpg', 'grouptour.jpg', 'holidayspecial.jpg'];
+var imgArray = JSON.parse('<?php echo json_encode($imgArray); ?>');
+
 let timer;
 
 function changeImg(index) {

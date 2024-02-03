@@ -11,6 +11,28 @@ function nrVizitave(){
 nrVizitave();
 ?>
 
+<!-- db_connection.php -->
+<?php
+require 'config2.php';
+
+// Create connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT * FROM slider";
+$result = $conn->query($sql);
+
+$imgArray = array();
+
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $imgArray[] = $row['link'];
+    }
+}
+
+$conn->close();
+?>
 
 
 
@@ -86,12 +108,15 @@ nrVizitave();
     <br>
     <div id="slider">
         <header>
-
             <img id="slideshow" />
         </header>
         <div class="dots" id="dotsContainer"></div>
         <button onclick="changeImg()">Next</button>
     </div>
+
+    <script>
+        var imgArray = <?php echo json_encode($imgArray); ?>;
+    </script>
     <div class="classes">
         <div class="loc">
             <h1>Location</h1>
