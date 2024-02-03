@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 27, 2024 at 01:10 AM
+-- Generation Time: Feb 03, 2024 at 07:59 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.1.25
 
@@ -36,6 +36,16 @@ CREATE TABLE `bileta` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Dumping data for table `bileta`
+--
+
+INSERT INTO `bileta` (`ID`, `dataArritjes`, `dataKthimit`, `nrAdults`, `nrKids`) VALUES
+(2, '2026-02-01', '2026-02-16', 3, 7),
+(3, '2024-08-20', '2024-08-25', 1, 3),
+(4, '2024-07-01', '2024-07-08', 2, 2),
+(5, '2024-06-10', '2024-06-15', 1, 0);
+
+--
 -- Indexes for dumped tables
 --
 
@@ -53,7 +63,7 @@ ALTER TABLE `bileta`
 -- AUTO_INCREMENT for table `bileta`
 --
 ALTER TABLE `bileta`
-  MODIFY `ID` int(30) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

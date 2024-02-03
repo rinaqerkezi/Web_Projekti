@@ -1,17 +1,18 @@
 <?php
-require('config2.php');
+require('configg.php');
+require('config.php');
 session_start();
 
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
 
-    $delete = $conn->prepare("DELETE FROM `ofertat` WHERE id = ?");
+    $delete = $conn->prepare("DELETE FROM `bileta` WHERE id = ?");
     $delete->bind_param("i", $id);
 
     if ($delete->execute()) {
-        echo "oferta deleted successfully!";
+        echo "bileta deleted successfully!";
     } else {
-        echo "Error deleting oferta: " . $delete->error;
+        echo "Error deleting bileta: " . $delete->error;
     }
 
     $delete->close();

@@ -1,4 +1,8 @@
 <?php 
+session_start();
+?>
+
+<?php 
 include_once 'Register.php';
 
 $re = new Register();
@@ -17,10 +21,17 @@ include_once 'config2.php';
 $query = "SELECT * FROM ofertat";
 $result0 = mysqli_query($conn, $query);
 ?>
+<?php
+include_once 'configg.php';
+include_once 'config.php';
 
-<?php 
-session_start();
+
+
+$query = "SELECT * FROM bileta";
+$result1 = mysqli_query($conn, $query);
 ?>
+
+
 
 
 <!DOCTYPE html>
@@ -127,7 +138,7 @@ session_start();
           </li>
  
           <li class="sidebar-list-item">
-            <a href="Perdoruesit.php" target="_blank">
+            <a href="#" target="_blank">
               <span class="material-icons-outlined">settings</span> Settings
             </a>
           </li>
@@ -171,16 +182,97 @@ aria-label="Close">
 </div>
 </div>
   </div>
+
+
+
+  <style>
+    .card-body {
+        margin-top: 20px;
+    }
+
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+    }
+
+    .table th, .table td {
+        border: 1px solid #ddd;
+        padding: 12px;
+        text-align: center;
+    }
+
+    .table th {
+        background-color: #3498db;
+        color: #fff;
+    }
+
+    .table tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    .table tr:hover {
+        background-color: #f1f1f1;
+    }
+
+    .table td a {
+        display: inline-block;
+        padding: 8px 12px;
+        text-decoration: none;
+        background-color: #2ecc71;
+        color: #fff;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+    }
+
+    .table td a:hover {
+        background-color: #27ae60;
+    }
+
+    .btn-warning {
+        background-color: #f39c12;
+        color: #fff;
+        border: none;
+        padding: 8px 12px;
+        border-radius: 4px;
+        text-decoration: none;
+    }
+
+    .btn-warning:hover {
+        background-color: #d68910;
+    }
+
+    .btn-danger {
+        background-color: #e74c3c;
+        color: #fff;
+        border: none;
+        padding: 8px 12px;
+        border-radius: 4px;
+        text-decoration: none;
+    }
+
+    .btn-danger:hover {
+        background-color: #c0392b;
+    }
+</style>
+
+
+
+
+
+
+
+
+
+
   <div class="card-body">
         <table class="table table-bordered">
          <tr>
           <th>NAME</th>
-          <th>?Mbiemri</th>
+          <th>MBIEMRI</th>
           <th>EMAIL</th>
           <th>PASSWORD</th>
           <th>PHONE</th>
-          <th>ADRESS</th>
-          <th>ACTION</th>
 
          </tr>
          <?php 
@@ -193,6 +285,7 @@ aria-label="Close">
           <td><?=$row['Mbiemri']?></td>
           <td><?=$row['Emaili']?></td>
           <td><?=$row['Passwordi']?></td>
+
           <td>
           <a href="edit.php?id=<?php echo $row['id'];?>" 
           class="btn btn-warning">Edit
@@ -211,6 +304,65 @@ aria-label="Close">
         </table>
         </div>
 <br>
+
+
+<style>
+  .rg1 {
+    margin-top: 20px;
+  }
+
+  .userstable {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .ut {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+
+  .ut th, .ut td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+  }
+
+  .ut th {
+    background-color: #3498db;
+    color: #fff;
+  }
+
+  .ut tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+
+  .ut tr:hover {
+    background-color: #f1f1f1;
+  }
+
+  .ut td a {
+    display: inline-block;
+    padding: 8px 12px;
+    text-decoration: none;
+    background-color: #2ecc71;
+    color: #fff;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+
+  .ut td a:hover {
+    background-color: #27ae60;
+  }
+</style>
+
+
+
+
+
+
+
+
 
 <div class="rg1">
             <div class="userstable">
@@ -235,6 +387,104 @@ aria-label="Close">
                             <td><a href='deleteOffers.php?id=<?php echo $rows['ID']; ?>'>Delete</a></td>
                             
                             <td><a href='editOffers.php?id=<?php echo $rows['ID']; ?>'>Edit</a></td>
+                        </tr>
+                    <?php } ?>
+                </table> 
+            </div>
+        </div>
+
+
+
+        <style>
+  .rg2 {
+    margin-top: 20px;
+  }
+
+  .userstabela {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .ua {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+
+  .ua th, .ua td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+  }
+
+  .ua th {
+    background-color: #3498db;
+    color: #fff;
+  }
+
+  .ua tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+
+  .ua tr:hover {
+    background-color: #f1f1f1;
+  }
+
+  .ua td a {
+    display: inline-block;
+    padding: 8px 12px;
+    text-decoration: none;
+    background-color: #e74c3c;
+    color: #fff;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+
+  .ua td a:hover {
+    background-color: #c0392b;
+  }
+</style>
+
+
+
+
+
+
+
+
+
+
+        <div class="rg2">
+            <div class="userstabela">
+                <table class="ua">
+                    <tr>
+                        <th colspan="5"><h2>Biletat</h2></th>
+                    </tr>
+                    <tr>
+                    <th>ID</th>
+
+                      <br>
+                        <th>DATA ARRITJES</th>
+                        <br>
+                        <th>DATA KTHIMIT</th> 
+                        <br>  
+                        <th>NR. I TE RRITURVE</th>
+                        <br>
+                        <th>NR.I FEMIJEVE</th>
+                       
+                    </tr>
+                    <?php while ($rows = mysqli_fetch_assoc($result1)) { ?>
+                        <tr>
+                            <td><?php echo $rows['ID']; ?></td>
+                            <td><?php echo $rows['dataArritjes']; ?></td>
+                            <td><?php echo $rows['dataKthimit']; ?></td>
+                            <td><?php echo $rows['nrAdults']; ?></td>
+                            <td><?php echo $rows['nrKids']; ?></td>
+
+                           
+                            <td><a href='deleteBileta.php?id=<?php echo $rows['ID']; ?>'>Delete</a></td>
+                            
+                            <td><a href='editBileta.php?id=<?php echo $rows['ID']; ?>'>Edit</a></td>
                         </tr>
                     <?php } ?>
                 </table> 
