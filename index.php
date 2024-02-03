@@ -1,4 +1,7 @@
 <?php
+ 
+session_start();
+
 function nrVizitave(){
    
     $numroHits = isset($_COOKIE['numro']) ? $_COOKIE['numro'] : 0;

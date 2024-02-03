@@ -1,4 +1,6 @@
 <?php 
+ 
+
 include "bileta.php";
 
 class Ofertat extends Bileta{

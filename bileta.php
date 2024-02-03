@@ -4,13 +4,16 @@ abstract class Bileta{
     private $dataKthimit;
     private $nrAdults;
     private $nrKids;
+    private $nrOfertes;
 
 
-    public function __construct($dataArritjes,$dataKthimit,$nrAdults,$nrKids){
+    public function __construct($dataArritjes,$dataKthimit,$nrAdults,$nrKids,$nrOfertes){
         $this->dataArritjes = $dataArritjes;
         $this->dataKthimit = $dataKthimit;
         $this->nrAdults = $nrAdults;
         $this->nrKids = $nrKids;
+        $this->nrOfertes = $nrAdults;
+
 
     }
     
@@ -26,6 +29,9 @@ abstract class Bileta{
     public function getNrKids(){
         return $this->nrKids;
     }
+    public function getNrOfertes(){
+        return $this->nrOfertes;
+    }
     public function setDataKthimit($dataKthimit){
         $this->dataKthimit = $dataKthimit;
     }
@@ -37,7 +43,8 @@ abstract class Bileta{
     }
 
     public function __toString(){
-        return "Personi arrin ne destinacion ".$this->dataArritjes." dhe afati i qendrimit deri me ".$this->dataKthimit." rezervimi me: ".$this->nrAdults."te rritur dhe/ose".$this->nrKids."femije";
+        return "Personi arrin ne destinacion ".$this->dataArritjes." dhe afati i qendrimit deri me ".$this->dataKthimit." rezervimi me: ".$this->nrAdults."te rritur dhe/ose".$this->nrKids."femije dhe nr ofertes".$this->nrOfertes;
     }
 }
 ?>
+

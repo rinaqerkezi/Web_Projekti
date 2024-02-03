@@ -1,6 +1,5 @@
 <?php 
 include_once 'Register.php';
-//include_once 'addstd.php';
 
 $re = new Register();
 
@@ -14,7 +13,9 @@ if(isset($_GET['delUser'])){
 
 
 
-
+<?php 
+session_start();
+?>
 
 
 <!DOCTYPE html>
@@ -318,4 +319,4 @@ aria-label="Close">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.3/apexcharts.min.js"></script>
     <script src="dashboard.js"></script>
   </body>
-</html>
+</html>    
