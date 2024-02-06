@@ -2,11 +2,14 @@
 include_once 'Register.php';
 include_once 'Database.php';
 
+
 session_start();
 $re = new Register();
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 $register= $re->addRegister($_POST, $_FILES);
+
 }
+
 
 
 ?>

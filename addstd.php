@@ -1,9 +1,8 @@
 <?php 
 
-include_once 'configg.php';
 include_once 'Register.php';
-include_once 'users-code.php';
-include_once 'UserController.php';
+//include_once 'users-code.php';
+//include_once 'UserController.php';
 $re = new Register();
 
 if($_SERVER['REQUEST_METHOD']== 'POST'){
@@ -20,6 +19,79 @@ if($_SERVER['REQUEST_METHOD']== 'POST'){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .card-header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .col-md-6 {
+            margin-top: 10px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .error-message {
+            color: red;
+            margin-top: 5px;
+        }
+    </style>
+
+
+
+
+
+
+
+
+
+
+
 <body>
 
 
@@ -29,7 +101,9 @@ if($_SERVER['REQUEST_METHOD']== 'POST'){
 </div>
 <div class="col-md-6">
     <?php 
-    include ('header.php');
+    include ('configg.php');
+    include ('config.php');
+
     ?>
     <a href="dashboard.php" class="btn btn-info">
         show user info
@@ -38,7 +112,7 @@ if($_SERVER['REQUEST_METHOD']== 'POST'){
 </div>
 </div>
 
-<form action="users-code.php.php" method="POST">
+<form action="" method="POST">
 <label for="Emri" title="Enter your first name">First Name:</label>
           <input type="text" id="emri" name="emri" placeholder="John" size="15" />
           <div class="error-message" id="emriError"></div>
@@ -71,10 +145,11 @@ if($_SERVER['REQUEST_METHOD']== 'POST'){
           <label>Phone number:</label>
           <input type="tel" id="phoneNumber" name="nrtel" placeholder="123-456-789" />
           <div class="error-message" id="phoneNumberError"></div>
+
           
 
 
-          <button type="submit" id="submit" class="btn-primary" name="submit" size="15">ADD Usesr</button>
+          <button type="submit" id="submit" class="btn-primary" name="submit" size="15">ADD User</button>
           </form>
 </body>
 </html>

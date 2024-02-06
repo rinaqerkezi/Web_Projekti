@@ -1,37 +1,20 @@
 <?php
+ 
 session_start();
 
 function nrVizitave(){
+   
     $numroHits = isset($_COOKIE['numro']) ? $_COOKIE['numro'] : 0;
+
     $numroHits++;
+
+   
     setcookie('numro', $numroHits, time() + 86400 * 30);
+
     echo "Ju keni vizituar kete Uebfaqe: " . $numroHits . " here.";
 }
 
 nrVizitave();
-?>
-
-<!-- db_connection.php -->
-<?php
-require 'config2.php';
-
-// Create connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-$sql = "SELECT * FROM slider";
-$result = $conn->query($sql);
-
-$imgArray = array();
-
-if ($result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-        $imgArray[] = $row['link'];
-    }
-}
-
-$conn->close();
 ?>
 
 
@@ -57,7 +40,6 @@ $conn->close();
     
         <div class="navbar">
 
-
                         <nav>
             <ul>
                 <li><a href="index.php">HOME</a></li>
@@ -66,7 +48,6 @@ $conn->close();
                                 <li><a href="login.php">LOG IN</a></li>
                                 <li><a href="book.php">BOOK</a></li>
                                 <li><a href="Destinations.php">DESTINATION</a></li>
-
 
 
               
@@ -86,7 +67,6 @@ $conn->close();
         Find And Book <br>
         A Great Experience</h2>
 
-
     <div class="fotot">
         <img src="sky.jpeg" alt="sky background" class="background-image">
         <img src="plane.png" alt="plane background" class="overlay-image">
@@ -94,9 +74,7 @@ $conn->close();
 
 
 
-
     </div>
-
 
     <div class="text" style="padding-top: 100px;">
         <h4 style="font-size: medium; text-align: center; font-family: 'Roboto', sans-serif; min-height: 200px;"> T R A
@@ -108,21 +86,17 @@ $conn->close();
     <br>
     <div id="slider">
         <header>
+
             <img id="slideshow" />
         </header>
         <div class="dots" id="dotsContainer"></div>
         <button onclick="changeImg()">Next</button>
     </div>
-
-    <script>
-        var imgArray = <?php echo json_encode($imgArray); ?>;
-    </script>
     <div class="classes">
         <div class="loc">
             <h1>Location</h1>
             <p>Where are we going?</p>
             <li><a href="#"><i class="fa-solid fa-location-dot"></i></a></li>
-
 
         </div>
         <div class="travelers">
@@ -135,7 +109,6 @@ $conn->close();
             <h1>Check-in</h1>
             <p>add date</p>
             <li><a href="#"><i class="fa-solid fa-calendar-days"></i></a></li>
-
 
         </div>
         <div class="checko">
@@ -244,7 +217,7 @@ $conn->close();
 
 
 
-
 </body>
 
 </html>
+

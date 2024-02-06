@@ -272,7 +272,7 @@ aria-label="Close">
           <th>MBIEMRI</th>
           <th>EMAIL</th>
           <th>PASSWORD</th>
-          <th>PHONE</th>
+
 
          </tr>
          <?php 
@@ -285,6 +285,9 @@ aria-label="Close">
           <td><?=$row['Mbiemri']?></td>
           <td><?=$row['Emaili']?></td>
           <td><?=$row['Passwordi']?></td>
+
+
+
 
           <td>
           <a href="edit.php?id=<?php echo $row['id'];?>" 
