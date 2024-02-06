@@ -1,5 +1,9 @@
 <?php 
+
 session_start();
+
+
+
 ?>
 
 <?php 
@@ -169,6 +173,15 @@ aria-label="Close">
 
 ?>
 
+<form action="logout.php" method="POST">
+        <button type="submit" name="logout">Logout</button>
+    </form>
+    <?php 
+    
+    setcookie('email', '', time() - 3600, '/');
+    
+    
+    ?>
 
 <div class="card-header">
 <div class="row">
