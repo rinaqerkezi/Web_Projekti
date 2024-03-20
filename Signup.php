@@ -1,6 +1,7 @@
 <?php
 include_once 'Register.php';
 include_once 'Database.php';
+include_once 'connect.php';
 
 
 session_start();

@@ -1,11 +1,12 @@
 <?php
 include_once 'connect.php';
+include_once 'Register.php';
 
 class Database {
     public $host = HOST;
-    public $user = USER;
+    public $user = USERNAME;
     public $password = '';
-    public $database = DATABASE;
+    public $database = DBNAME;
 
     public $conn;  
 

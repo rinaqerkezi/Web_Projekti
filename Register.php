@@ -2,6 +2,7 @@
 include_once 'connect.php';
 include_once 'Database.php';
 
+
 class Register {
     public $db;
 
