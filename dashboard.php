@@ -8,6 +8,8 @@ session_start();
 
 <?php 
 include_once 'Register.php';
+include_once 'connect.php';
+
 
 $re = new Register();
 
@@ -21,13 +23,10 @@ if(isset($_GET['delUser'])){
 
 <?php 
 
-include_once 'config2.php';
 $query = "SELECT * FROM ofertat";
 $result0 = mysqli_query($conn, $query);
 ?>
 <?php
-include_once 'configg.php';
-include_once 'config.php';
 
 
 
