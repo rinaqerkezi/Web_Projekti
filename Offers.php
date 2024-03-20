@@ -3,10 +3,10 @@
 session_start();
 ?>
 <?php  
-require('config2.php');
+require('connect.php');
 
 
-$amsterdam = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM fotot WHERE Emri = 'Amsterdam'"));
+//$amsterdam = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM fotot WHERE Emri = 'Amsterdam'"));
 $berlin = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM fotot WHERE Emri = 'Berlin'"));
 $aspen = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM fotot WHERE Emri = 'Aspen'"));
 $paris = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM fotot WHERE Emri = 'Paris'"));

@@ -2,10 +2,10 @@
 include_once 'connect.php';
 
 class Database {
-    public $host = HOST;
-    public $user = USER;
+    public $servername = "localhost";
+    public $username = "root";
     public $password = '';
-    public $database = DATABASE;
+    public $dbname = "webprojekti";
 
     public $conn;  
 
@@ -16,7 +16,7 @@ class Database {
     }
 
     public function dbConnect() {
-        $this->conn = mysqli_connect($this->host, $this->user, $this->password, $this->database);
+        $this->conn = mysqli_connect($this->servername, $this->username, $this->password, $this->dbname);
 
         if (!$this->conn) {
             $this->error = "Database connection failed";
