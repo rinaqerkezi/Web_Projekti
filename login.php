@@ -1,6 +1,6 @@
 <?php
 
-@include 'configg.php';
+@include 'connect.php';
 
 session_start();
 
@@ -10,27 +10,22 @@ if(isset($_POST['submit'])){
    $pass = SHA1($_POST['password']);
  
 
-   $select = " SELECT * FROM users WHERE email = '$email' && password = '$pass' ";
+   $select = " SELECT * FROM userss WHERE Emaili = '$email' && Passwordi = '$pass' ";
 
    $result = mysqli_query($conn, $select);
 
    if(mysqli_num_rows($result) > 0){
-
-      $row = mysqli_fetch_array($result);
-
-      if($row['user_type'] == 'admin'){
-
-         $_SESSION['admin_name'] = $row['name'];
-         header('location:homeadmin.php');
-
-      }elseif($row['user_type'] == 'user'){
-
-         $_SESSION['user_name'] = $row['name'];
-         header('location:index.php');
-
-      }
-     
-   }else{
+    $row = mysqli_fetch_array($result);
+    if($row['user_type'] == 'admin'){
+        $_SESSION['admin_name'] = $row['name'];
+        header('location:homeadmin.php');
+        exit;
+    } elseif($row['user_type'] == 'user'){
+        $_SESSION['user_name'] = $row['name'];
+        header('location:index.php');
+        exit;
+    }
+}else{
       $error[] = 'incorrect email or password!';
    }
 
@@ -45,17 +40,35 @@ if(!$result){
 
 
 
-if (isset($_POST['username']) && isset($_POST['password'])) {
+if (isset($_POST['Emaili']) && isset($_POST['Passwordi'])) {
 
     $_SESSION['loggedin'] = true;
-    $_SESSION['username'] = $_POST['username']; 
+    $_SESSION['Emaili'] = $_POST['Emaili']; 
     $_SESSION['LAST_ACTIVITY'] = time(); 
 
     header("Location: dashboard.php");
     exit;
 }
 
+
+
+
+
+
+// Check if the user is already logged in, then redirect to another page
+if(isset($_SESSION['admin_name']) || isset($_SESSION['user_name'])) {
+    // If an admin is logged in, redirect to homeadmin.php
+    if(isset($_SESSION['admin_name'])) {
+        header('Location: homeadmin.php');
+    } 
+    // If a regular user is logged in, redirect to index.php
+    elseif(isset($_SESSION['user_name'])) {
+        header('Location: index.php');
+    }
+    exit; // Stop further execution
+}
 ?>
+
 
 
 

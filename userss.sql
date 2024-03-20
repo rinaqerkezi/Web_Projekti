@@ -43,10 +43,10 @@ CREATE TABLE `userss` (
 --
 
 INSERT INTO `userss` (`id`, `Emri`, `Mbiemri`, `Emaili`, `Passwordi`, `CPassword`, `Gjinia`, `NrTel`) VALUES
-(1, 'Rina', 'Qerkezi', 'rq@ubt-uni.net', 'f9d2bcc64f597e4ab8770f4624e79c8601148ce2', 'da39a3ee5e6b4b0d3255bfef95601890afd80709', 'Female', '123-444-555'),
-(2, 'Olsa', 'Muhaxhiri', 'om@ubt-uni.net', '09abb9e064331d829943b9dcd18d97f92049a7c4', 'da39a3ee5e6b4b0d3255bfef95601890afd80709', 'Female', '888-999-777'),
-(3, 'Sasa', 'Gashi', 'ss@gmail.com', '523edc26653af50ebbe0b077ffad4ad2081d72f9', 'da39a3ee5e6b4b0d3255bfef95601890afd80709', 'Female', '222-333-444'),
-(4, 'Erris', 'Xharavina', 'err@gmail.com', '8b539d5fd69357a6e65fb619171df1cf516dc276', 'da39a3ee5e6b4b0d3255bfef95601890afd80709', 'Male', '123-456-789');
+(1, 'Rina', 'Qerkezi', 'rq@ubt-uni.net', 'f9d2bcc64f597e4ab8770f4624e79c8601148ce2', 'da39a3ee5e6b4b0d3255bfef95601890afd80709', 'Female', '123-444-555','admin'),
+(2, 'Olsa', 'Muhaxhiri', 'om@ubt-uni.net', '09abb9e064331d829943b9dcd18d97f92049a7c4', 'da39a3ee5e6b4b0d3255bfef95601890afd80709', 'Female', '888-999-777','admin'),
+(3, 'Sasa', 'Gashi', 'ss@gmail.com', '523edc26653af50ebbe0b077ffad4ad2081d72f9', 'da39a3ee5e6b4b0d3255bfef95601890afd80709', 'Female', '222-333-444','user'),
+(4, 'Erris', 'Xharavina', 'err@gmail.com', '8b539d5fd69357a6e65fb619171df1cf516dc276', 'da39a3ee5e6b4b0d3255bfef95601890afd80709', 'Male', '123-456-789','user');
 
 --
 -- Indexes for dumped tables

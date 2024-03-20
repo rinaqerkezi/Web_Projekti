@@ -1,11 +1,21 @@
 <?php
-include_once 'config.php';
+include_once 'connect.php';
 include_once 'Database.php';
 
 class Register {
     public $db;
 
+   
+
     public function __construct() {
+        
+            // Check if the constants are defined
+            if (!defined('HOST') || !defined('USERNAME') || !defined('PASSWORD') || !defined('DBNAME')) {
+                echo "Error: Database constants are not defined!";
+                exit;
+            }
+
+
         $this->db = new Database();
         $this->db->dbConnect();  
     }
@@ -25,11 +35,7 @@ class Register {
         return mysqli_real_escape_string($conn, $input);
     }
 
-   
-    
-
     public function addRegister($data, $file) {
-       
         $Emri = isset($_POST['emri']) ? mysqli_real_escape_string($this->db->link, $_POST['emri']) : '';
         $Mbiemri = isset($_POST['mbiemri']) ? mysqli_real_escape_string($this->db->link, $_POST['mbiemri']) : '';
         $Emaili = isset($_POST['email']) ? mysqli_real_escape_string($this->db->link, $_POST['email']) : '';
@@ -60,15 +66,14 @@ class Register {
         } else {
             return "Failed to delete user";
         }
-    
-
-if (isset($_GET['delUser'])) {
-    $id = base64_decode($_GET['delUser']);
-    echo "ID to delete: " . $id;
-    $deleteUser = $re->deleteUser($id);
+    }
+    public function handleDeleteUser() {
+        if (isset($_GET['delUser'])) {
+            $id = base64_decode($_GET['delUser']);
+            $register = new Register(); // Instantiate the Register class
+            echo "ID to delete: " . $id;
+            $deleteUser = $register->deleteUser($id); // Call the deleteUser method on the instantiated object
+        }
+    }
 }
-}
-} 
-    
-
 ?>

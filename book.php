@@ -1,5 +1,7 @@
 <?php 
 session_start();
+include_once 'RegisterB.php';
+include_once 'DatabaseB.php';
 ?>
 
 <!DOCTYPE html>
