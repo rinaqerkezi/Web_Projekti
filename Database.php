@@ -4,9 +4,9 @@ include_once 'Register.php';
 
 class Database {
     public $host = HOST;
-    public $user = USER;
+    public $user = USERNAME;
     public $password = '';
-    public $database = DATABASE;
+    public $database = DBNAME;
 
     public $conn;  
 
@@ -17,7 +17,7 @@ class Database {
     }
 
     public function dbConnect() {
-        $this->conn = mysqli_connect($this->servername, $this->username, $this->password, $this->dbname);
+        $this->conn = mysqli_connect($this->host, $this->user, $this->password, $this->database);
 
         if (!$this->conn) {
             $this->error = "Database connection failed";
