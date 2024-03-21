@@ -1,44 +1,40 @@
 <?php
 
-@include 'connect.php';
+$conn = include_once 'connect.php';
 
 session_start();
 
 if(isset($_POST['submit'])){
-
-   $email = mysqli_real_escape_string($conn, $_POST['email']);
-   $pass = SHA1($_POST['password']);
- 
-
-   $select = " SELECT * FROM userss WHERE Emaili = '$email' && Passwordi = '$pass' ";
-
-   $result = mysqli_query($conn, $select);
-
-   if(mysqli_num_rows($result) > 0){
-    $row = mysqli_fetch_array($result);
-    if($row['user_type'] == 'admin'){
-        $_SESSION['admin_name'] = $row['name'];
-        header('location:homeadmin.php');
-        exit;
-    } elseif($row['user_type'] == 'user'){
-        $_SESSION['user_name'] = $row['name'];
-        header('location:index.php');
-        exit;
+    if ($conn instanceof mysqli) {
+        $email = mysqli_real_escape_string($conn, $_POST['email']);
+        $pass = SHA1($_POST['password']);
+     
+        $select = " SELECT * FROM userss WHERE Emaili = '$email' && Passwordi = '$pass' ";
+     
+        $result = mysqli_query($conn, $select);
+     
+        if(mysqli_num_rows($result) > 0){
+            $row = mysqli_fetch_array($result);
+            if($row['user_type'] == 'admin'){
+                $_SESSION['admin_name'] = $row['name'];
+                header('location:homeadmin.php');
+                exit;
+            } elseif($row['user_type'] == 'user'){
+                $_SESSION['user_name'] = $row['name'];
+                header('location:index.php');
+                exit;
+            }
+        } else {
+            $error[] = 'incorrect email or password!';
+        }
+     
+        if(!$result){
+            die("invalid query:".$conn->error);
+        }
+    } else {
+        die("Error: Database connection is not established properly");
     }
-}else{
-      $error[] = 'incorrect email or password!';
-   }
-
-if(!$result){
-    die("invalid query:".$conn->error);
-
 }
-
-
-}
-
-
-
 
 if (isset($_POST['Emaili']) && isset($_POST['Passwordi'])) {
 
@@ -50,24 +46,17 @@ if (isset($_POST['Emaili']) && isset($_POST['Passwordi'])) {
     exit;
 }
 
-
-
-
-
-
-// Check if the user is already logged in, then redirect to another page
 if(isset($_SESSION['admin_name']) || isset($_SESSION['user_name'])) {
-    // If an admin is logged in, redirect to homeadmin.php
     if(isset($_SESSION['admin_name'])) {
         header('Location: homeadmin.php');
     } 
-    // If a regular user is logged in, redirect to index.php
     elseif(isset($_SESSION['user_name'])) {
         header('Location: index.php');
     }
-    exit; // Stop further execution
+    exit; 
 }
 ?>
+
 
 
 

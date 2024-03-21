@@ -1,6 +1,6 @@
 <?php
 session_start();
-require('config2.php');
+require('connect.php');
 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

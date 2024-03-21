@@ -1,6 +1,5 @@
 <?php
-require('configg.php');
-require('config.php');
+require('connect.php');
 session_start();
 
 if (isset($_GET['id'])) {

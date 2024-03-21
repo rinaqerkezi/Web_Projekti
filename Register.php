@@ -3,19 +3,31 @@ include_once 'connect.php';
 include_once 'Database.php';
 
 
+
+
+
+$re = new Register();
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $register = $re->addRegister($_POST, $_FILES);
+
+    // Set user type session variable
+    $_SESSION['user_type'] = 'user';
+
+    // Redirect user to index.php
+    header('Location: index.php');
+    exit; // Ensure script stops here to avoid any further execution
+}
+
+
 class Register {
     public $db;
 
-   
-
     public function __construct() {
-        
-            // Check if the constants are defined
-            if (!defined('HOST') || !defined('USERNAME') || !defined('PASSWORD') || !defined('DBNAME')) {
-                echo "Error: Database constants are not defined!";
-                exit;
-            }
-
+        // Check if the constants are defined
+        if (!defined('HOST') || !defined('USERNAME') || !defined('PASSWORD') || !defined('DBNAME')) {
+            echo "Error: Database constants are not defined!";
+            exit;
+        }
 
         $this->db = new Database();
         $this->db->dbConnect();  
@@ -44,18 +56,28 @@ class Register {
         $CPassword = isset($_POST['confirm']) ? SHA1($_POST['confirm']) : '';
         $Gjinia = isset($_POST['gjinia']) ? mysqli_real_escape_string($this->db->link, $_POST['gjinia']) : '';
         $NrTel = isset($_POST['nrtel']) ? mysqli_real_escape_string($this->db->link, $_POST['nrtel']) : '';
+        
+        // Set user_type to 'user'
+        $userType = 'user';
     
-        $query = "INSERT INTO `userss`(`Emri`, `Mbiemri`, `Emaili`, `Passwordi`, `CPassword`, `Gjinia`, `NrTel`) VALUES ('$Emri','$Mbiemri','$Emaili','$Passwordi','$CPassword','$Gjinia',' $NrTel')";
+        $query = "INSERT INTO `userss`(`Emri`, `Mbiemri`, `Emaili`, `Passwordi`, `CPassword`, `Gjinia`, `NrTel`, `user_type`) 
+                  VALUES ('$Emri','$Mbiemri','$Emaili','$Passwordi','$CPassword','$Gjinia','$NrTel','$userType')";
         $result = $this->db->insert($query);
     
         if ($result) {
-            $msg = "Successful";
-            return $msg;
+            // Set user_type session variable
+            $_SESSION['user_type'] = $userType;
+    
+            // Redirect the user to the index.php page
+            header('Location: index.php');
+            exit;
         } else {
+            // Handle failed registration
             $msg = "Failed";
             return $msg;
         }
     }
+    
     
     public function deleteUser($id) {
         $id = $this->validateInput($this->db->conn, $id);
@@ -68,6 +90,7 @@ class Register {
             return "Failed to delete user";
         }
     }
+    
     public function handleDeleteUser() {
         if (isset($_GET['delUser'])) {
             $id = base64_decode($_GET['delUser']);
@@ -77,4 +100,10 @@ class Register {
         }
     }
 }
+
+$re = new Register();
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $register = $re->addRegister($_POST, $_FILES);
+}
 ?>
+

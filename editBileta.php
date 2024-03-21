@@ -1,7 +1,6 @@
 <?php
 session_start();
-require('configg.php');
-require('config.php');
+require('connect.php');
 
 
 

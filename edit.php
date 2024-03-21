@@ -2,8 +2,8 @@
 
 
 $id = $_GET['id'];
-include_once 'configg.php';
-include_once 'database.php';
+include_once 'connect.php';
+include_once 'Database.php';
 include_once 'Register.php';
 include_once 'UserController.php';
 
