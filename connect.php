@@ -1,11 +1,21 @@
 <?php
 
 
-define('HOST', 'localhost');
-define('USERNAME', 'root');
-define('PASSWORD', '');
-define('DBNAME', 'webprojekti');
+if (!defined('HOST')) {
+    define('HOST', 'localhost');
+}
 
+if (!defined('USERNAME')) {
+    define('USERNAME', 'root');
+}
+
+if (!defined('PASSWORD')) {
+    define('PASSWORD', '');
+}
+
+if (!defined('DBNAME')) {
+    define('DBNAME', 'webprojekti');
+}
 
 
 $servername = "localhost";

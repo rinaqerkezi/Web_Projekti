@@ -1,8 +1,9 @@
 <?php
-
+session_start();
 $conn = include_once 'connect.php';
 
-session_start();
+
+
 
 if(isset($_POST['submit'])){
     if ($conn instanceof mysqli) {
@@ -36,25 +37,24 @@ if(isset($_POST['submit'])){
     }
 }
 
-if (isset($_POST['Emaili']) && isset($_POST['Passwordi'])) {
+//if (isset($_POST['admin_name']) && isset($_POST['password'])) {
+//
+//    $_SESSION['loggedin'] = true;
+//    $_SESSION['Emaili'] = $_POST['Emaili']; 
+//    $_SESSION['LAST_ACTIVITY'] = time(); 
+//
+//    header("Location: dashboard.php");
+//    exit;
+//}
 
-    $_SESSION['loggedin'] = true;
-    $_SESSION['Emaili'] = $_POST['Emaili']; 
-    $_SESSION['LAST_ACTIVITY'] = time(); 
-
-    header("Location: dashboard.php");
+if(isset($_SESSION['admin_name'])) {
+    header('Location: homeadmin.php');
+    exit;
+} elseif(isset($_SESSION['user_name'])) {
+    header('Location: index.php');
     exit;
 }
 
-if(isset($_SESSION['admin_name']) || isset($_SESSION['user_name'])) {
-    if(isset($_SESSION['admin_name'])) {
-        header('Location: homeadmin.php');
-    } 
-    elseif(isset($_SESSION['user_name'])) {
-        header('Location: index.php');
-    }
-    exit; 
-}
 ?>
 
 

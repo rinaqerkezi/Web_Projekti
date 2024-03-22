@@ -1,15 +1,29 @@
-<?php 
-
+<?php
+include_once 'connect.php';
 include_once 'Register.php';
-//include_once 'users-code.php';
-//include_once 'UserController.php';
+
 $re = new Register();
 
-if($_SERVER['REQUEST_METHOD']== 'POST'){
-    $register=$re->addRegister($_POST,$_FILES);
+$message = ''; // Initialize an empty message variable
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $register = $re->addRegister($_POST, $_FILES);
+    
+    if ($register) {
+        // If user addition is successful, set the success message
+        $message = 'User added successfully.';
+        
+        header("Location: dashboard.php");
+        //exit(); // Make sure to exit after redirection
+    } else {
+        // If user addition fails, you can handle the error or display an error message
+        $message = 'Failed to add user. Please try again.';
+    }
 }
 
 ?>
+
+
 
 
 <!DOCTYPE html>
@@ -101,8 +115,7 @@ if($_SERVER['REQUEST_METHOD']== 'POST'){
 </div>
 <div class="col-md-6">
     <?php 
-    include ('configg.php');
-    include ('config.php');
+    include ('connect.php');
 
     ?>
     <a href="dashboard.php" class="btn btn-info">
@@ -111,6 +124,16 @@ if($_SERVER['REQUEST_METHOD']== 'POST'){
 
 </div>
 </div>
+
+
+<?php if (!empty($message)): ?>
+    <div class="success-message"><?php echo $message; ?></div>
+<?php endif; ?>
+
+
+
+
+
 
 <form action="" method="POST">
 <label for="Emri" title="Enter your first name">First Name:</label>

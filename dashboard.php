@@ -4,11 +4,10 @@ session_start();
 
 
 
-?>
-
-<?php 
 include_once 'Register.php';
 include_once 'connect.php';
+
+
 
 
 $re = new Register();
@@ -172,15 +171,28 @@ aria-label="Close">
 
 ?>
 
-<form action="logout.php" method="POST">
+<form action="index.php" method="POST">
         <button type="submit" name="logout">Logout</button>
     </form>
     <?php 
     
-    setcookie('email', '', time() - 3600, '/');
+    //setcookie('email', '', time() - 3600, '/');
     
+
     
-    ?>
+// Logout functionality - this part should be placed in logout.php
+if(isset($_POST['logout'])) {
+    // Unset all session variables
+    session_unset();
+    // Destroy the session
+    session_destroy();
+    // Redirect to the login page
+    header("Location: login.php");
+    exit;
+}
+?>
+    
+  
 
 <div class="card-header">
 <div class="row">

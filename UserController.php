@@ -1,9 +1,5 @@
 <?php 
-include_once 'users-code.php';
 include_once 'Database.php';
-
-//$userController = new UserController();
-//$register = $userController->update($_POST, $id);
 
 class UserController {
     private $conn;
@@ -13,49 +9,86 @@ class UserController {
         $this->conn = $db->dbConnect();
     }
 
-    public function create($inputdata) {
-        $data = "'" . implode("','", $inputdata) . "'";
-        $userQuery = "INSERT INTO userss (Emri, Mbiemri, emaili, passwordi, cpassword, gjinia, nrTel) VALUES ($data)";
-        $result = $this->conn->query($userQuery);
-        if ($result) {
-            return true;
-        } else {
-            return false;
-        }
+    function create($user){
+        $conn = $this->conn;
+
+        $emri = $user->getEmri();
+        $mbiemri = $user->getMbiemri();
+        $email = $user->getEmail();
+        $nrTel = $user->getNrTel();
+        $password = $user->getPassword();
+        $user_type = $user->getUser_Type();
+
+        $sql = "INSERT INTO userss(Emri, Mbiemri, Emaili, NrTel, Passwordi, user_type) VALUES (?,?,?,?,?,?)";
+        $statement = $conn->prepare($sql);
+        $statement->execute([$emri, $mbiemri, $email, $nrTel, $password, $user_type]);
+
+        // echo "<script> alert('Register was successful!');</script>";
     }
 
-    public function edit($id) {
-        $userID = validateInput($this->conn, $id);
-        $userQuery = "SELECT * FROM userss WHERE id ='$id' LIMIT 1";
-        $result = $this->conn;
-        $s = $result->query($userQuery);
-       
-        if ($s->num_rows == 1) {
-            $data = $s->fetch_assoc();
-            return $data;
-        } else {
-            return false;
-        }
+    function getAllUsers(){
+        $conn = $this->conn;
+
+        $sql = "SELECT * FROM userss";
+        $statement = $conn->query($sql);
+        $users = $statement->fetchAll();
+
+        return $users;
     }
 
-    public function update($inputData, $id) {
-        $userID = validateInput($this->conn, $id);
-        $Emri = $inputData['Emri'];
-        $Mbiemri = $inputData['Mbiemri'];
-        $passwordi = $inputData['Passwordi'];
-        $nrTel = $inputData['Nrtel'];
-    
-        $userUpdatedQuery = "UPDATE userss SET Emri='$Emri', Mbiemri='$Mbiemri', Passwordi='$passwordi', NrTel='$nrTel' WHERE id='$id' LIMIT 1";
-        $result = $this->conn;
-        $result->query($userUpdatedQuery);
-    
-        if ($result) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-    
+    function getUserById($id){
+        $conn = $this->conn;
+        $sql = "SELECT * FROM userss WHERE id=?";
+        
+        $statement = $conn->prepare($sql);
+        $statement->execute([$id]);
+        $user = $statement->fetch();
 
+        return $user;
+    }
+
+   function update($id, $emri, $mbiemri, $email, $phoneNumber, $password, $user_type){
+    $conn = $this->conn;
+    $sql = "UPDATE userss SET Emri=?, Mbiemri=?, Emaili=?, NrTel=?, Passwordi=?, user_type=? WHERE id=?";
+    
+    $statement = $conn->prepare($sql);
+    $statement->execute([$emri, $mbiemri, $email, $phoneNumber, $password, $user_type, $id]);
+
+    // echo "<script>alert('Update was successful');</script>";
 }
+
+function emailExists($email){
+    $conn = $this->conn;
+
+    $sql = "SELECT COUNT(*) FROM userss WHERE Emaili = ?";
+    $statement = $conn->prepare($sql);
+    $statement->execute([$email]);
+    $count = $statement->fetchColumn();
+
+    return ($count > 0);
+}
+
+function usernameExists($emri){
+    $conn = $this->conn;
+
+    $sql = "SELECT COUNT(*) FROM userss WHERE Emri = ?";
+    $statement = $conn->prepare($sql);
+    $statement->execute([$emri]);
+    $count = $statement->fetchColumn();
+
+    return ($count > 0);
+}
+
+function numberExists($nrTel){
+    $conn = $this->conn;
+
+    $sql = "SELECT COUNT(*) FROM userss WHERE NrTel = ?";
+    $statement = $conn->prepare($sql);
+    $statement->execute([$nrTel]);
+    $count = $statement->fetchColumn();
+
+    return ($count > 0);
+}
+}
+
 ?>
