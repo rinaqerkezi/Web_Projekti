@@ -5,25 +5,10 @@ session_start();
 <?php  
 require('connect.php');
 
-
-//$amsterdam = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM fotot WHERE Emri = 'Amsterdam'"));
-$berlin = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM fotot WHERE Emri = 'Berlin'"));
-$aspen = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM fotot WHERE Emri = 'Aspen'"));
-$paris = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM fotot WHERE Emri = 'Paris'"));
-$borabora = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM fotot WHERE Emri = 'Borabora'"));
-$vienna = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM fotot WHERE Emri = 'Vienna'"));
-$london = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM fotot WHERE Emri = 'London'"));
-$maldives = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM fotot WHERE Emri = 'Maldives'"));
-
-$maldivesO = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM ofertat WHERE vendi = 'Maldives'"));
-
-$amsterdamO= mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM ofertat WHERE vendi = 'Amsterdam'"));
-$berlinO = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM   ofertat WHERE vendi = 'Berlin'"));
-$aspenO = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM    ofertat WHERE vendi = 'Aspen'"));
-$parisO = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM    ofertat WHERE vendi = 'Paris'"));
-$boraboraO = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM ofertat WHERE vendi = 'Borabora'"));
-$viennaO = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM   ofertat WHERE vendi = 'Vienna'"));
-$londonO = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM   ofertat WHERE vendi = 'London'"));
+$sql = "SELECT f.Emri, f.Foto, o.vendi, o.koment
+        FROM fotot f
+        INNER JOIN ofertat o ON f.offer_id = o.ID";
+$offerList = mysqli_query($conn, $sql);
 
 ?>
 
@@ -81,62 +66,17 @@ $londonO = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM   ofertat WHERE
         <h1 class="heading">Our Offers</h1>
 
         <div class="box-container">
+        <?php foreach ($offerList as $offer){ ?>
+<div class="box">
+<img src="<?php echo $offer['Foto'] ?>" alt="am" style="width: 180px; height: 100px; object-fit: cover;">
+<h3><?php echo $offer ['vendi'] ?></h3>
+<p><?php echo $offer['koment'] ?></p>
 
-        <div class="box">
-    <img src="<?php echo $paris['Foto'] ?>" alt="am" style="width: 180px; height: 100px; object-fit: cover;">
-    <h3><?php echo $parisO ['vendi'] ?></h3>
-    <p><?php echo $parisO['koment'] ?></p>
-    
-    <a href="book.php" class="btn">Book Now</a>
+<a href="book.php" class="btn">Book Now</a>
+        </div>
+<?php } ?>
 </div>
 
-
-            <div class="box">
-            <img src="<?php echo $aspen['Foto']  ?>" alt="am" style="width: 180px; height: 100px; object-fit: cover;">
-            <h3><?php echo isset($aspenO['vendi']) ? $aspenO['vendi'] : ''; ?></h3>
-    <p><?php echo $aspenO['koment'] ?></p>
-                <a href="book.php" class="btn">Book Now</a>
-            </div>
-
-            <div class="box">
-            <img src="<?php echo $borabora['Foto']  ?>" alt="am" style="width: 180px; height: 100px; object-fit: cover;">
-            <h3>Bora-Bora</h3>
-            <p>Nature's Masterpiece.</p>
-
-                <a href="book.php" class="btn">Book Now</a>
-            </div>
-            <div class="box">
-            <img src="<?php echo $vienna['Foto']  ?>" alt="am" style="width: 180px; height: 100px; object-fit: cover;">
-            <h3><?php echo $viennaO ['vendi'] ?></h3>
-    <p><?php echo $viennaO['koment'] ?></p>
-                <a href="book.php" class="btn">Book Now</a>
-            </div>
-
-            <div class="box">
-                <img src="<?php  echo $berlin['Foto']  ?>" alt="b" style="width: 180px; height: 100px; object-fit: cover;">
-                <h3><?php echo $berlinO ['vendi'] ?></h3>
-    <p><?php echo $berlinO['koment'] ?></p>
-                <a href="book.php" class="btn">Book Now</a>
-            </div>
-            <div class="box">
-            <img src="<?php echo $maldives['Foto']  ?>" alt="am" style="width: 180px; height: 100px; object-fit: cover;">
-            <h3><?php echo $maldivesO ['vendi'] ?></h3>
-    <p><?php echo $maldivesO['koment'] ?></p>
-                <a href="book.php" class="btn">Book Now</a>
-            </div>
-            <div class="box">
-            <img src="<?php echo $london['Foto']  ?>" alt="am" style="width: 180px; height: 100px; object-fit: cover;">
-            <h3><?php echo $londonO ['vendi'] ?></h3>
-    <p><?php echo $londonO['koment'] ?></p>
-                <a href="book.php" class="btn">Book Now</a>
-            </div>
-            <div class="box">
-                <img src="<?php echo $amsterdam['Foto']  ?>" alt="am" style="width: 180px; height: 100px; object-fit: cover;">
-                <h3><?php echo $amsterdamO ['vendi'] ?></h3>
-    <p><?php echo $amsterdamO['koment'] ?></p>
-                <a href="book.php" class="btn">Book Now</a>
-            </div>
-        </div>
     </div>
 
     <br>

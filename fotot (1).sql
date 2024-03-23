@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 03, 2024 at 05:55 PM
+-- Generation Time: Mar 22, 2024 at 02:09 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -39,14 +39,16 @@ CREATE TABLE `fotot` (
 --
 
 INSERT INTO `fotot` (`id`, `Foto`, `Emri`, `offer_id`) VALUES
-(1, 'https://www.travelandleisure.com/thmb/lI6nagO4MS8iZ0XRg0GbnbtvKW8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/TAL-amsterdam-AMSTERDAMTGGHOG0823-a2f9a769f3c44a23b08649daf25e1c8c.jpg', 'Amsterdam', NULL),
+(1, 'https://media-cdn.tripadvisor.com/media/photo-m/1280/28/74/c9/cf/caption.jpg', 'Amsterdam', NULL),
 (2, 'https://s7g10.scene7.com/is/image/stena/20150820_berlin-brandenburg-gate:16-9?ts=1688733511559&dpr=off', 'Berlin', NULL),
 (5, 'https://media.tacdn.com/media/attractions-splice-spp-674x446/07/03/1c/9c.jpg', 'Paris', NULL),
 (6, 'https://www.telegraph.co.uk/content/dam/Travel/hotels/2021/November/ritz-carlton-maldives-p.jpg', 'Maldives', NULL),
 (7, 'https://www.tahititourisme.com/app/uploads/2023/06/bora-bora-la-perle-du-pacifique-a-stephane-mailion-photography.webp', 'Borabora', NULL),
 (8, 'https://upload.wikimedia.org/wikipedia/commons/7/7c/Downtown_of_Aspen%2C_Colorado.jpg', 'Aspen', NULL),
 (9, 'https://static01.nyt.com/images/2023/12/07/multimedia/36hours-vienna-01-wklj/36hours-vienna-01-wklj-superJumbo.jpg', 'Vienna', NULL),
-(10, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXVlbWGWKc8LCFw40lIstzgSOaZsDz9_3zmVgKgcxwUDA99GsR3NdETWkPpLSKOAsYjz0&usqp=CAU', 'London', NULL);
+(10, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXVlbWGWKc8LCFw40lIstzgSOaZsDz9_3zmVgKgcxwUDA99GsR3NdETWkPpLSKOAsYjz0&usqp=CAU', 'London', NULL),
+(14, '\"C:\\xampp\\htdocs\\Web_Projekti\\holidayspecial.jpg\"', 'holidayspecial', NULL),
+(15, '\"C:\\xampp\\htdocs\\Web_Projekti\\holidayspecial.jpg\"', 'holidayspecial', NULL);
 
 --
 -- Indexes for dumped tables
@@ -67,7 +69,7 @@ ALTER TABLE `fotot`
 -- AUTO_INCREMENT for table `fotot`
 --
 ALTER TABLE `fotot`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- Constraints for dumped tables
