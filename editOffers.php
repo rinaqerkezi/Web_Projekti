@@ -3,14 +3,15 @@ session_start();
 require('connect.php');
 
 
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $offerId = $_POST['offer_id'];
-    
+
     $newcmimi = $_POST['new_cmimi'];
     $newvendi = $_POST['new_vendi'];
     $newkoment = $_POST['new_koment'];
 
-    
+
     $updateQuery = "UPDATE ofertat SET  cmimi='$newcmimi', vendi='$newvendi', koment='$newkoment' WHERE ID=$offerId";
     mysqli_query($conn, $updateQuery);
 }
@@ -29,7 +30,7 @@ $offer = mysqli_fetch_assoc($result);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Offers</title>
-    
+
 </head>
 
 <body>
@@ -40,7 +41,7 @@ $offer = mysqli_fetch_assoc($result);
     <hr>
     <div class="main">
         <form method="post" action="">
-            
+
             <label for="new_cmimi">offer cmimi:</label>
             <input type="text" name="new_cmimi" value="<?php echo $offer['cmimi']; ?>" required>
 
