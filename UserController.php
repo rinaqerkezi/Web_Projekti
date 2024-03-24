@@ -1,5 +1,6 @@
 <?php 
 include_once 'Database.php';
+include_once 'edit.php';
 
 class UserController {
     private $conn;
@@ -54,41 +55,48 @@ class UserController {
     $statement = $conn->prepare($sql);
     $statement->execute([$emri, $mbiemri, $email, $phoneNumber, $password, $user_type, $id]);
 
-    // echo "<script>alert('Update was successful');</script>";
-}
-
-function emailExists($email){
-    $conn = $this->conn;
-
-    $sql = "SELECT COUNT(*) FROM userss WHERE Emaili = ?";
-    $statement = $conn->prepare($sql);
-    $statement->execute([$email]);
-    $count = $statement->fetchColumn();
-
-    return ($count > 0);
-}
-
-function usernameExists($emri){
-    $conn = $this->conn;
-
-    $sql = "SELECT COUNT(*) FROM userss WHERE Emri = ?";
-    $statement = $conn->prepare($sql);
-    $statement->execute([$emri]);
-    $count = $statement->fetchColumn();
-
-    return ($count > 0);
-}
-
-function numberExists($nrTel){
-    $conn = $this->conn;
-
-    $sql = "SELECT COUNT(*) FROM userss WHERE NrTel = ?";
-    $statement = $conn->prepare($sql);
-    $statement->execute([$nrTel]);
-    $count = $statement->fetchColumn();
-
-    return ($count > 0);
+     echo "<script>alert('Update was successful');</script>";
 }
 }
+
+
+
+
+
+
+
+//function emailExists($email){
+//    $conn = $this->conn;
+//
+//    $sql = "SELECT COUNT(*) FROM userss WHERE Emaili = ?";
+//    $statement = $conn->prepare($sql);
+//    $statement->execute([$email]);
+//    $count = $statement->fetchColumn();
+//
+//    return ($count > 0);
+//}
+//
+//function usernameExists($emri){
+//    $conn = $this->conn;
+//
+//    $sql = "SELECT COUNT(*) FROM userss WHERE Emri = ?";
+//    $statement = $conn->prepare($sql);
+//    $statement->execute([$emri]);
+//    $count = $statement->fetchColumn();
+//
+//    return ($count > 0);
+//}
+//
+//function numberExists($nrTel){
+//    $conn = $this->conn;
+//
+//    $sql = "SELECT COUNT(*) FROM userss WHERE NrTel = ?";
+//    $statement = $conn->prepare($sql);
+//    $statement->execute([$nrTel]);
+//    $count = $statement->fetchColumn();
+//
+//    return ($count > 0);
+//}
+
 
 ?>

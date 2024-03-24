@@ -5,6 +5,7 @@ session_start();
 
 
 include_once 'Register.php';
+include_once 'UserController.php';
 include_once 'connect.php';
 
 
@@ -172,8 +173,7 @@ aria-label="Close">
 ?>
 
 <form action="index.php" method="POST">
-        <button type="submit" name="logout">Logout</button>
-    </form>
+<li><a href="logout.php">Log out</a></li>    </form>
     <?php 
     
     //setcookie('email', '', time() - 3600, '/');
@@ -313,12 +313,11 @@ if(isset($_POST['logout'])) {
 
 
 
-          <td>
-          <a href="edit.php?id=<?php echo $row['id'];?>" 
-          class="btn btn-warning">Edit
+          <td><a href='edit.php?id=<?php echo $row['id']; ?>'>Edit</a></td>
+
           <a href="?delUser=<?= base64_encode($row['id']) ?>" onclick="return confirm('Are you sure you want to delete this user')" class="btn btn-danger">Delete</a>
 
-          </a>
+          
           </td>
 
          </tr>

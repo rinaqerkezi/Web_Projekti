@@ -1,60 +1,79 @@
-<?php 
-session_start();
-include_once 'Database.php';
-include_once 'UserController.php';
+<?php
+include 'connect.php';
+//require('Database.php');
 
-$id = $_GET['id'];
+class EditUser
+{
+    private $conn;
 
-$userRepository = new UserController();
-$user = $userRepository->getUserById($id);
+    public function __construct($conn)
+    {
+        $this->conn = $conn;
+    }
 
-if ($user === false) {
-    echo "User not found.";
-    exit; // Stop execution to prevent further errors
+    public function update($id, $emri, $mbiemri, $email, $password)
+    {
+        $sql = "UPDATE userss SET Emri=?, Mbiemri=?, Emaili=?, Passwordi=? WHERE id=?";
+        $statement = $this->conn->prepare($sql);
+        $statement->execute([$emri, $mbiemri, $email, $password, $id]);
+        echo "<script>alert('Update was successful');</script>";
+
+
+    }
+    
+
+    public function closeConnection()
+    {
+        $this->conn->close();
+    }
 }
 
-if(isset($_POST['edit'])){
-    $id = $user['id'];
-    $emri = $_POST['Emri'];
-    $mbiemri = $_POST['Mbiemri'];
-    $email = $_POST['Emaili'];
-    $nrTel = $_POST['NrTel'];
-    $password = $_POST['Passwordi'];
-    $user_type = $_POST['user_type'];
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $id = $_POST["id"];
+    $emri = $_POST["Emri"];
+    $mbiemri = $_POST["Mbiemri"];
+    $email = $_POST["Emaili"];
+    $password = $_POST["Passwordi"];
 
-    $userRepository->update($id, $emri, $mbiemri, $email, $nrTel, $password, $user_type);
+    $editUser = new EditUser($conn);
+    $editUser->update($id, $emri, $mbiemri, $email, $password);
+    $editUser->closeConnection();
 }
-?>
+$id = isset($_GET['id']) ? $_GET['id'] : '';
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit User</title>
+</head>
 <body>
+<form action="" method="get" id="editForm">
 
-<form action="edit.php?id=<?php echo $id; ?>" method="POST">
-    <input type="hidden" name="user_id" value="<?php echo $user['id']; ?>">
-    <label for="Emri" title="Enter your first name">First Name:</label>
-    <input type="text" id="emri" name="Emri" value="<?php echo $user['Emri']; ?>" size="15" />
-    <div class="error-message" id="emriError"></div>
-  
-    <label for="Mbiemri" title="Enter your last name">Last Name:</label>
-    <input type="text" id="mbiemri" name ="Mbiemri" value="<?php echo $user['Mbiemri']; ?>" size="15" placeholder="Charles" />
-    <div class="error-message" id="mbiemriError"></div>
+    <input type="hidden" id="id" name="id" value="<?php echo $_GET['id']; ?>" />
 
-    <label for="Emaili" title="Enter your email">Email:</label>
-    <input type="text" id="Emaili" name ="Emaili" value="<?php echo $user['Emaili']; ?>" size="15" placeholder="example@example.com" />
-    <div class="error-message" id="emailError"></div>
+    <label for="Emri">Emri:</label>
+    <input type="text" id="Emri" name="Emri" required />
+    <div class="error-message" id="EmriError"></div>
 
-    <label for="Passwordi" title="Enter a strong password">Password:</label>
-    <input type="password" id="passwordi" name="Passwordi" value="<?php echo $user['Passwordi']; ?>" />
-    <div class="error-message" id="passwordError"></div>
+    <label for="Mbiemri">Mbiemri:</label>
+    <input type="text" id="Mbiemri" name="Mbiemri" required />
+    <div class="error-message" id="MbiemriError"></div>
 
-    <label for="NrTel" title="Enter your phone number">Phone number:</label>
-    <input type="tel" id="NrTel" name="NrTel" value="<?php echo $user['NrTel']; ?>" />
-    <div class="error-message" id="phoneNumberError"></div>
-    
-    <button type="submit" name="update" id="submit" size="15">Update</button>
+    <label for="Emaili">Email:</label>
+    <input type="text" id="Emaili" name="Emaili" required />
+    <div class="error-message" id="EmailiError"></div>
+
+    <label for="Passwordi">Password:</label>
+    <input type="text" id="Passwordi" name="Passwordi" required />
+    <div class="error-message" id="PasswordiError"></div>
+
+    <button type="submit">Update User</button>
 </form>
+
+</div>
 
 </body>
 </html>
