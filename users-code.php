@@ -43,17 +43,18 @@ echo $id;
    // }
 
 
-//id = isset($_POST['id']) ? validateInput($db->conn, $_POST['user_id']):null;
-//
-//f (isset($_POST['update'])) {
-//   $inputdata = [
-//       'Emri' => validateInput($db->conn, $_POST['Emri']),
-//       'Mbiemri' => validateInput($db->conn, $_POST['Mbiemri']),
-//       'passwordi' => validateInput($db->conn, $_POST['passwordi']),
-//       'nrTel' => validateInput($db->conn, $_POST['nrTel']),
-//   ];
-//
-//   $userController = new UserController;
-//   $result = $userController->update($inputdata, $id);
-//}
+ $id = isset($_POST['id']) ? validateInput($db->conn, $_POST['user_id']):null;
+
+if (isset($_POST['update'])) {
+   $inputdata = [
+       'Emri' => validateInput($db->conn, $_POST['Emri']),
+       'Mbiemri' => validateInput($db->conn, $_POST['Mbiemri']),
+       'passwordi' => validateInput($db->conn, $_POST['passwordi']),
+       'nrTel' => validateInput($db->conn, $_POST['nrTel']),
+   ];
+
+   $userController = new UserController;
+   $result = $userController->update($inputdata, $id);
+}
+
 ?>

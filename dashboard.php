@@ -38,6 +38,9 @@ $result0 = mysqli_query($conn, $query);
 
 $query = "SELECT * FROM bileta";
 $result1 = mysqli_query($conn, $query);
+
+
+
 ?>
 
 
@@ -195,9 +198,7 @@ aria-label="Close">
 <h3>ALL USERS REGISTRATION</h3>
 </div>
 <div class="col-md-6">
-<a href="addstd.php" class="btn btn-info ">
- Add User
-</a>
+    <a href="addstd.php" class="add-user-btn">Add User</a>
 </div>
 </div>
   </div>
@@ -273,6 +274,35 @@ aria-label="Close">
     .btn-danger:hover {
         background-color: #c0392b;
     }
+
+    /* CSS for logout button */
+.logout-btn {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.logout-btn:hover {
+    background-color: #c82333;
+}
+
+/* CSS for add user button */
+.add-user-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.add-user-btn:hover {
+    background-color: #0056b3;
+}
+
 </style>
 
 
@@ -284,44 +314,36 @@ aria-label="Close">
 
 
 
-  <div class="card-body">
-        <table class="table table-bordered">
-         <tr>
-          <th>NAME</th>
-          <th>MBIEMRI</th>
-          <th>EMAIL</th>
-          <th>PASSWORD</th>
-
-
-         </tr>
-         <?php 
-         $allUs= $re->allUsers();
-         if($allUs){
-          while($row=mysqli_fetch_assoc($allUs)){
-            ?> 
-            <tr>
-          <td><?=$row['Emri']?></td>
-          <td><?=$row['Mbiemri']?></td>
-          <td><?=$row['Emaili']?></td>
-          <td><?=$row['Passwordi']?></td>
-
-
-
-
-          <td>
-          <a href="edit.php?id=<?php echo $row['id'];?>" 
-          class="btn btn-warning">Edit
-          <a href="?delUser=<?= base64_encode($row['id']) ?>" onclick="return confirm('Are you sure you want to delete this user')" class="btn btn-danger">Delete</a>
-
-          </a>
-          </td>
-
-         </tr>
-            
-            <?php
-          }
-         }
-         ?>
+<div class="card-body">
+    <table class="table table-bordered">
+        <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>MBIEMRI</th>
+            <th>EMAIL</th>
+            <th>PASSWORD</th>
+            <th>ACTION</th> 
+        </tr>
+        <?php 
+        $allUs = $re->allUsers();
+        if($allUs) {
+            while($row = mysqli_fetch_assoc($allUs)) {
+                ?> 
+                <tr>
+                    <td><?= $row['id'] ?></td>
+                    <td><?= $row['Emri'] ?></td>
+                    <td><?= $row['Mbiemri'] ?></td>
+                    <td><?= $row['Emaili'] ?></td>
+                    <td><?= $row['Passwordi'] ?></td>
+                    <td>
+                        <a href="edit.php?id=<?= $row['id'] ?>">Edit</a>
+                        <a href="?delUser=<?= base64_encode($row['id']) ?>" onclick="return confirm('Are you sure you want to delete this user')">Delete</a>
+                    </td>
+                </tr>
+                <?php
+            }
+        }
+        ?>
          
         </table>
         </div>
