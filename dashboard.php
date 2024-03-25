@@ -1,23 +1,30 @@
-<?php 
-
-session_start();
-
-
-
+<?php
 include_once 'Register.php';
-include_once 'connect.php';
-
-
+session_start();
+ 
+if (!isset($_SESSION['ID'])) {
+    header('Location:index.php');
+    exit();
+}
+include('connect.php');
+$query=mysqli_query($conn,"select * from userss where id='".$_SESSION['ID']."'");
+$row=mysqli_fetch_assoc($query);
 
 
 $re = new Register();
 
-if(isset($_GET['delUser'])){
-  $id=base64_decode($_GET['delUser']);
-  $deleteUser=$re->deleteUser($id);
+if (isset($_GET['delUser'])) {
+    $id = base64_decode($_GET['delUser']);
+    $deleteUser = $re->deleteUser($id);
 }
 
+echo "Reached this point"; // Debugging message
 
+$query = "SELECT * FROM ofertat";
+$result0 = mysqli_query($conn, $query);
+var_dump($result0); // Debugging message to check $result0
+
+echo "Reached end of script"; // Debugging message
 ?>
 
 <?php 
@@ -171,25 +178,13 @@ aria-label="Close">
 
 ?>
 
-<form action="index.php" method="POST">
+<form action="logout.php" method="POST">
         <button type="submit" name="logout">Logout</button>
     </form>
     <?php 
     
-    //setcookie('email', '', time() - 3600, '/');
-    
+ 
 
-    
-// Logout functionality - this part should be placed in logout.php
-if(isset($_POST['logout'])) {
-    // Unset all session variables
-    session_unset();
-    // Destroy the session
-    session_destroy();
-    // Redirect to the login page
-    header("Location: login.php");
-    exit;
-}
 ?>
     
   

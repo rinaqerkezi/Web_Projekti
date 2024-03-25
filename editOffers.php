@@ -1,9 +1,6 @@
 <?php
 session_start();
 require('connect.php');
-
-
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $offerId = $_POST['offer_id'];
 

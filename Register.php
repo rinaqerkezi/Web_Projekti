@@ -2,10 +2,6 @@
 include_once 'connect.php';
 include_once 'Database.php';
 
-
-
-
-
 $re = new Register();
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $register = $re->addRegister($_POST, $_FILES);

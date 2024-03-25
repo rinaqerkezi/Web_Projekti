@@ -1,65 +1,36 @@
 <?php
-session_start();
+
 $conn = include_once 'connect.php';
-
-
-
-
 if(isset($_POST['submit'])){
     if ($conn instanceof mysqli) {
-        $email = mysqli_real_escape_string($conn, $_POST['email']);
+        $email = mysqli_real_escape_string($conn, $_POST['username']);
         $pass = SHA1($_POST['password']);
      
         $select = " SELECT * FROM userss WHERE Emaili = '$email' && Passwordi = '$pass' ";
      
         $result = mysqli_query($conn, $select);
-     
+   
         if(mysqli_num_rows($result) > 0){
             $row = mysqli_fetch_array($result);
+            session_start();
+            $_SESSION['ID']=$row['id'];
             if($row['user_type'] == 'admin'){
+
                 $_SESSION['admin_name'] = $row['name'];
+                
+                // Set cookie for admin role
+                setcookie("admin_role", true, time() + (86400 * 30), "/");
+                
                 header('location:homeadmin.php');
-                exit;
-            } elseif($row['user_type'] == 'user'){
-                $_SESSION['user_name'] = $row['name'];
-                header('location:index.php');
-                exit;
-            }
-        } else {
-            $error[] = 'incorrect email or password!';
-        }
-     
-        if(!$result){
-            die("invalid query:".$conn->error);
-        }
-    } else {
-        die("Error: Database connection is not established properly");
-    }
-}
+                exit;}
 
-//if (isset($_POST['admin_name']) && isset($_POST['password'])) {
-//
-//    $_SESSION['loggedin'] = true;
-//    $_SESSION['Emaili'] = $_POST['Emaili']; 
-//    $_SESSION['LAST_ACTIVITY'] = time(); 
-//
-//    header("Location: dashboard.php");
-//    exit;
-//}
-
-if(isset($_SESSION['admin_name'])) {
-    header('Location: homeadmin.php');
-    exit;
-} elseif(isset($_SESSION['user_name'])) {
-    header('Location: index.php');
-    exit;
-}
+           elseif($row['user_type'] == 'user'){
+              $_SESSION['user_name'] = $row['name'];
+              header('location:index.php');
+              exit;
+          }}}}
 
 ?>
-
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -92,7 +63,7 @@ if(isset($_SESSION['admin_name'])) {
     <br>
     <div class="wrapper">
         <h1>Log In</h1>
-        <form method="POST" action="" onsubmit="return validateForm()">
+        <form method="POST" action="login.php" onsubmit="return validateForm()">
             <?php 
             if(isset($error)){
                 foreach($error as $error){
@@ -100,14 +71,26 @@ if(isset($_SESSION['admin_name'])) {
                 }
             }
             ?>
-            <input type="email" name="email" placeholder="Email" id="email" required>
+            <input type="email"  value="<?php if (isset($_COOKIE["user"])){echo $_COOKIE["user"];}?>" name="username" placeholder="Email" id="email" required>
             <div class="error-message" id="emailError"></div>
-            <input type="password" id="password" name="password" placeholder="Password" required>
+            <input type="password"value="<?php if (isset($_COOKIE["pass"])){echo $_COOKIE["pass"];}?>"id="password" name="password" placeholder="Password" required>
             <div class="error-message" id="passwordError"></div>
+            <div class="form-group" style="text-align:left;">
+                <label><input type="checkbox" name="remember" <?php if (isset($_COOKIE["user"]) && isset($_COOKIE["pass"])){ echo "checked";}?>> Remember me </label>
+            </div>
             <div class="recover">
                 <a href="#">Forgot password?</a>
             </div>
             <button type="submit" name="submit" value="login now" class="form-btn">Log In</button>
+            <?php
+            if(isset($_SESSION['message']))
+            {
+                    echo $_SESSION['message'];
+
+            }unset($_SESSION['message']);
+            
+            ?>
+            
             <div class="member">
                 Not a member? <a href="Signup.php">Register?</a> 
             </div>
@@ -139,3 +122,4 @@ if(isset($_SESSION['admin_name'])) {
     </div>
 </body>
 </html>
+        
