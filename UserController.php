@@ -37,23 +37,24 @@ class UserController {
         return $users;
     }
 
-    function getUserById($id){
+    function getUserById($user_id){
         $conn = $this->conn;
         $sql = "SELECT * FROM userss WHERE id=?";
         
         $statement = $conn->prepare($sql);
-        $statement->execute([$id]);
+        $statement->execute([$user_id]);
         $user = $statement->fetch();
-
+    
         return $user;
     }
+    
 
-   function update($id, $emri, $mbiemri, $email, $phoneNumber, $password, $user_type){
+   function update($id, $emri, $mbiemri, $email, $password){
     $conn = $this->conn;
     $sql = "UPDATE userss SET Emri=?, Mbiemri=?, Emaili=?, NrTel=?, Passwordi=?, user_type=? WHERE id=?";
     
     $statement = $conn->prepare($sql);
-    $statement->execute([$emri, $mbiemri, $email, $phoneNumber, $password, $user_type, $id]);
+    $statement->execute([$id,$emri, $mbiemri, $email, $password]);
 
      echo "<script>alert('Update was successful');</script>";
 }

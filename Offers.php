@@ -1,7 +1,5 @@
 
-<?php 
-session_start();
-?>
+
 <?php  
 require('connect.php');
 
